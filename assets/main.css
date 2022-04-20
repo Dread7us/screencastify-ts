@@ -1,0 +1,39 @@
+
+
+.flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  width: 1000px;
+}
+
+.flex-teen {
+  background-color: White;
+  font-family: 'Helvetica';
+  color: #555555;
+  width: 100%;
+  border: 1px solid #FF8282;
+  border-radius: 6px;
+  cursor: arrow;
+  margin: 1px 1px;
+  font-size: 24px;
+  width: 100%;
+  white-space: nowrap;
+  font-style: oblique;
+}
+
+.flex-child {
+  background-color: White;
+  font-family: 'Helvetica';
+  color: #555555;
+  width: 100%;
+  border-radius: 6px;
+  cursor: arrow;
+  margin: 1px 1px;
+  font-size: 24px;
+  width: 100%;
+  white-space: nowrap;
+  font-style: normal;
+}
