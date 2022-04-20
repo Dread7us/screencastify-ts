@@ -30,7 +30,7 @@
   <link rel="stylesheet" type="text/css" href="assets/main.css">
   <base href="/">
   <meta charset="utf-8" />
-  <title>Screencastify TS: Network Check</title>
+  <title>Screencastify TS: System Checks</title>
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
@@ -38,6 +38,81 @@
 
 <body bgcolor=#FF8282>
   <center>
+    <h1 style="font-size:35px">
+      <font style="font-family:'Source Sans Pro'; font-style:bold; color:White">Screencastify System Information</font>
+    </h1>
+    <div class="flex">
+      <button class="flex-teen">
+        <br>
+        System information
+        <br>
+        <font class="flex-child">
+          <table style="margin-left:50px; margin-bottom:20px; border-spacing: 150px 5px">
+            <tbody align="left">
+              <tr>
+                <td>Operating system*</td>
+                <td id="operating"></td>
+              </tr>
+              <tr>
+                <td>IP address</td>
+                <td id="ip_address">Please wait...</td>
+              </tr>
+              <tr>
+                <td>Google signed-in</td>
+                <td id="account"></td>
+              </tr>
+              <tr>
+                <td>Temporary storage</td>
+                <td id="temp_storage"></td>
+              </tr>
+              <tr>
+                <td>Browser name</td>
+                <td id="browser"></td>
+              </tr>
+              <tr>
+                <td>Browser version</td>
+                <td id="browser_version"></td>
+              </tr>
+              <tr>
+                <td>CPU cores*</td>
+                <td id="cpu_cores"></td>
+              </tr>
+              <tr>
+                <td>RAM installed*</td>
+                <td id="ram"></td>
+              </tr>
+              <tr>
+                <td>Screen resolution*</td>
+                <td id="screen_resolution"></td>
+              </tr>
+              <tr>
+                <td>Browser resolution*</td>
+                <td id="browser_resolution"></td>
+              </tr>
+              <tr>
+                <td>Cookies enabled</td>
+                <td id="cookies"></td>
+              </tr>
+              <tr>
+                <td>Zoom detected*</td>
+                <td id="zoom"></td>
+              </tr>
+              <tr>
+                <td>Downlink effective type*</td>
+                <td id="downlink"></td>
+              </tr>
+              <tr valign="top">
+                <td>User agent</td>
+                <td id="user_agent" style="white-space: normal;"></td>
+              </tr>
+            </tbody>
+          </table>
+        </font>
+      </button>
+    </div>
+    * Browser reported information may not be entirely accurate.
+    
+    
     <h1 style="font-size:35px">
       <font style="font-family:'Source Sans Pro'; font-style:bold; color:White">Screencastify Network Check</font>
     </h1>
@@ -93,9 +168,7 @@
           </table>
         </font>
       </button>
-
     </div>
-
   </center>
   <script src="/screencastify-ts/scripts/network_check.js" type="text/javascript"></script>
 </body>
