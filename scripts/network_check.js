@@ -24,7 +24,6 @@ const web_pages = [
 
 function checkURL(url, which) {
   fetch(url, {mode: 'no-cors'}).then(r=>{
-     console.log(r);
      switch (which) {
           case 0:
             screencastify_check.innerHTML = "Passed";
@@ -59,7 +58,7 @@ function checkURL(url, which) {
         }
      })
      .catch(e=>{
-       console.log(r);
+       console.log(e);
        switch (which) {
         case 0:
           screencastify_check.innerHTML = "Failed";
