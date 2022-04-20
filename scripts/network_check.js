@@ -23,78 +23,76 @@ const web_pages = [
 ];
 
 function checkURL(url, which) {
-   fetch(url, {
-      mode: 'no-cors'
-   }).then(function(response) {
-         switch (which) {
-            case 0:
-               screencastify_check.innerHTML = "Passed";
-               break;
-            case 1:
-               firebaseapp_check.innerHTML = "Passed";
-               break;
-            case 2:
-               firebaseio_check.innerHTML = "Passed";
-               break;
-            case 3:
-               sentry_check.innerHTML = "Passed";
-               break;
-            case 4:
-               googleapis_check.innerHTML = "Passed";
-               break;
-            case 5:
-               googleusercontent_check.innerHTML = "Passed";
-               break;
-            case 6:
-               pendo_check.innerHTML = "Passed";
-               break;
-            case 7:
-               analytics_check.innerHTML = "Passed";
-               break;
-            case 8:
-               gstatic_check.innerHTML = "Passed";
-               break;
-            case 9:
-               apis_check.innerHTML = "Passed";
-               break;
-         }
-      }
-   })
-.catch(function(err) {
-   console.log(err);
-   switch (which) {
-      case 0:
-         screencastify_check.innerHTML = "Failed";
-         break;
-      case 1:
-         firebaseapp_check.innerHTML = "Failed";
-         break;
-      case 2:
-         firebaseio_check.innerHTML = "Failed";
-         break;
-      case 3:
-         sentry_check.innerHTML = "Failed";
-         break;
-      case 4:
-         googleapis_check.innerHTML = "Failed";
-         break;
-      case 5:
-         googleusercontent_check.innerHTML = "Failed";
-         break;
-      case 6:
-         pendo_check.innerHTML = "Failed";
-         break;
-      case 7:
-         analytics_check.innerHTML = "Failed";
-         break;
-      case 8:
-         gstatic_check.innerHTML = "Failed";
-         break;
-      case 9:
-         apis_check.innerHTML = "Failed";
-         break;
-   }
-});
+  fetch(url, {mode: 'no-cors'}).then(r=>{
+     console.log(r);
+     switch (which) {
+          case 0:
+            screencastify_check.innerHTML = "Passed";
+            break;
+          case 1:
+            firebaseapp_check.innerHTML = "Passed";
+            break;
+          case 2:
+            firebaseio_check.innerHTML = "Passed";
+            break;
+          case 3:
+            sentry_check.innerHTML = "Passed";
+            break;
+          case 4:
+            googleapis_check.innerHTML = "Passed";
+            break;
+          case 5:
+            googleusercontent_check.innerHTML = "Passed";
+            break;
+          case 6:
+            pendo_check.innerHTML = "Passed";
+            break;
+          case 7:
+            analytics_check.innerHTML = "Passed";
+            break;
+          case 8:
+            gstatic_check.innerHTML = "Passed";
+            break;
+          case 9:
+            apis_check.innerHTML = "Passed";
+            break;
+        }
+     })
+     .catch(e=>{
+       console.log(r);
+       switch (which) {
+        case 0:
+          screencastify_check.innerHTML = "Failed";
+          break;
+        case 1:
+          firebaseapp_check.innerHTML = "Failed";
+          break;
+        case 2:
+          firebaseio_check.innerHTML = "Failed";
+          break;
+        case 3:
+          sentry_check.innerHTML = "Failed";
+          break;
+        case 4:
+          googleapis_check.innerHTML = "Failed";
+          break;
+        case 5:
+          googleusercontent_check.innerHTML = "Failed";
+          break;
+        case 6:
+          pendo_check.innerHTML = "Failed";
+          break;
+        case 7:
+          analytics_check.innerHTML = "Failed";
+          break;
+        case 8:
+          gstatic_check.innerHTML = "Failed";
+          break;
+        case 9:
+          apis_check.innerHTML = "Failed";
+          break;
+        }  
+      });
 }
 
 for (var i = 0; i < web_pages.length; i++) {
