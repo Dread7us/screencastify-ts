@@ -23,7 +23,7 @@ const web_pages = [
 ];
 
 function checkURL(url, which) {
-  fetch(url, {mode: 'no-cors', redirect: 'follow'})
+  fetch(url, {mode: 'no-cors'})
     .then(function (response) {
       if (!response.ok) {
         console.log(response);
@@ -67,7 +67,7 @@ function checkURL(url, which) {
       }
     })
     .catch(function (err) {
-      console.log(err);
+      //console.log(err);
       switch (which) {
         case 0:
           screencastify_check.innerHTML = "Failed";
