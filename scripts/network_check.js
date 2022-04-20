@@ -19,7 +19,7 @@ const web_pages = [
   "https://pendo.io",
   "https://google-analytics.com",
   "https://fonts.gstatic.com/s/sourcesanspro/v19/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdu3cOWxw.woff2",
-  "https://apis.google.com/",
+  "https://apis.google.com/js/api.js",
 ];
 
 function checkURL(url, which) {
