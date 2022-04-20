@@ -226,13 +226,18 @@ function checkURL(url, which) {
       });
 }
 
-// Start file download.
-document.getElementById("dwn-btn").addEventListener("click", function(){
-    // Generate download of hello.txt file with some content
-    var text = document.getElementById("text-val").value;
-    var filename = "hello.txt";
-    
-    download(filename, text);
+function download(content, fileName, contentType) {
+    const a = document.createElement("a");
+    const file = new Blob([content], { type: contentType });
+    a.href = URL.createObjectURL(file);
+    a.download = fileName;
+    a.click();
+}
+
+// Listen for click in <body> then download the file
+document.body.addEventListener("click", function() {
+    var scrape = document.documentElement.innerHTML;
+    download(JSON.stringify(scrape), "screencastify-ts.json", "text/plain");
 }, false);
 
 get_IP();
