@@ -142,12 +142,6 @@ function formateffectiveType(name) {
   }
 }
 
-chrome.identity.getProfileUserInfo(function (userinfo) {
-  console.log("userinfo", userinfo);
-  email = userinfo.email;
-  email_label.innerHTML = email;
-});
-
 const web_pages = [
    "https://screencastify.com",
    "https://firebaseapp.com",
@@ -236,12 +230,11 @@ function checkURL(url, which) {
 get_IP();
 os_label.innerHTML = window.navigator.platform;
 browser_label.innerHTML = browser;
-get_browser_version();
+get_browser_version(); 
 cpu_label.innerHTML = navigator.hardwareConcurrency + " logical cores";
 ram_label.innerHTML = navigator.deviceMemory + " GBs";
 screen_label.innerHTML = screen.height + " x " + screen.width + " pixels";
-res_label.innerHTML =
-  window.screen.availHeight + " x " + window.screen.availWidth + " pixels";
+res_label.innerHTML = window.screen.availHeight + " x " + window.screen.availWidth + " pixels";
 cookies_enabled();
 zoom_label.innerHTML = zoom + "%";
 downlink_label.innerHTML = navigator.connection.downlink + " (et: " +  navigator.connection.effectiveType + ")";
