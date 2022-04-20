@@ -23,7 +23,7 @@ const web_pages = [
 ];
 
 function checkURL(url, which) {
-  fetch(url)
+  fetch(url, {mode: 'no-cors'})
     .then(function (response) {
       if (!response.ok) {
         // make the promise be rejected if we didn't get a 2xx response
