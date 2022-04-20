@@ -26,6 +26,7 @@ function checkURL(url, which) {
   fetch(url, {mode: 'no-cors', redirect: 'follow'})
     .then(function (response) {
       if (!response.ok) {
+        console.log(response);
         // make the promise be rejected if we didn't get a 2xx response
         const err = new Error("Not 2xx response");
         err.response = response;
