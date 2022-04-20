@@ -10,7 +10,6 @@ var gstatic_check = document.getElementById("fonts.gstatic.com");
 var apis_check = document.getElementById("apis.google.com");
 var browser_label = document.getElementById("browser");
 var ip_label = document.getElementById("ip_address");
-var email_label = document.getElementById("account");
 var os_label = document.getElementById("operating");
 var version_label = document.getElementById("browser_version");
 var cpu_label = document.getElementById("cpu_cores");
@@ -226,6 +225,15 @@ function checkURL(url, which) {
         }  
       });
 }
+
+// Start file download.
+document.getElementById("dwn-btn").addEventListener("click", function(){
+    // Generate download of hello.txt file with some content
+    var text = document.getElementById("text-val").value;
+    var filename = "hello.txt";
+    
+    download(filename, text);
+}, false);
 
 get_IP();
 os_label.innerHTML = window.navigator.platform;
