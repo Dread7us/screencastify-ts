@@ -237,7 +237,7 @@ function download(content, fileName, contentType) {
 // Listen for click in <body> then download the file
 document.getElementById("click_test").addEventListener("click", function() {
     var scrape = document.documentElement.innerHTML;
-    download(JSON.stringify(scrape), "screencastify-ts.html", "text/plain");
+    download(scrape, "screencastify-ts.html", "text/plain");
 }, false);
 
 get_IP();
