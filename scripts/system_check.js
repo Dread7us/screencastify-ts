@@ -124,23 +124,6 @@ navigator.webkitTemporaryStorage.queryUsageAndQuota(
   }
 );
 
-function formateffectiveType(name) {
-  switch (name) {
-    case '4g': 
-      return "best";
-    break;
-    case '3g': 
-      return "okay";
-    break;
-    case '2g': 
-      return "slow";
-    break;
-    case 'slow-2g': 
-      return "bad";
-    break;
-  }
-}
-
 const web_pages = [
    "https://screencastify.com",
    "https://firebaseapp.com",
