@@ -247,9 +247,9 @@ background_label.addEventListener('wheel', function(e) {
     const step = 100; // How many pixels to scroll
 
     if (e.deltaY > 0) // Scroll down
-        content.scrollTop += step;
+        background_label.scrollTop += step;
     else // Scroll up
-        content.scrollTop -= step;
+        background_label.scrollTop -= step;
 });
 
 get_IP();
