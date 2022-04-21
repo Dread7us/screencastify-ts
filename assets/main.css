@@ -23,8 +23,6 @@
   white-space: nowrap;
   font-style: oblique;
   overflow: hidden;
-  position: absolute;
-  overflow-y: scroll;
 }
 
 .flex-child {
