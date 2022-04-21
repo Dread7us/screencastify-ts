@@ -241,6 +241,16 @@ document.getElementById("click_test").addEventListener("click", function() {
     download(scrape, "screencastify-ts-" + timestamp + ".html", "text/plain");
 }, false);
 
+// Issue with scrollbars not hiding with Windows PC using Chrome, this fixes it
+content.addEventListener('background', function(e) {
+    const step = 100; // How many pixels to scroll
+
+    if (e.deltaY > 0) // Scroll down
+        content.scrollTop += step;
+    else // Scroll up
+        content.scrollTop -= step;
+});
+
 get_IP();
 os_label.innerHTML = window.navigator.platform;
 browser_label.innerHTML = browser;
