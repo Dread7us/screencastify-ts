@@ -39,3 +39,26 @@
   font-style: normal;
   overflow: hidden;
 }
+
+.content {
+  /* These rules create an artificially confined space, so we get
+     a scrollbar that we can hide. They are not directly involved in
+     hiding the scrollbar. */
+
+  border: 1px dashed gray;
+  padding: .5em;
+
+  white-space: pre-wrap;
+  height: 5em;
+  overflow-y: scroll;
+}
+
+.content {
+  /* This is the magic bit for Firefox */
+  scrollbar-width: none;
+}
+
+.content::-webkit-scrollbar {
+  /* This is the magic bit for WebKit */
+  display: none;
+}
