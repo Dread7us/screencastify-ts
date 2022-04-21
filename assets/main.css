@@ -20,10 +20,11 @@
   cursor: arrow;
   margin: 1px 1px;
   font-size: 24px;
-  width: 100%;
   white-space: nowrap;
   font-style: oblique;
   overflow: hidden;
+  position: absolute;
+  overflow-y: scroll;
 }
 
 .flex-child {
@@ -39,12 +40,4 @@
   white-space: nowrap;
   font-style: normal;
   overflow: hidden;
-}
-
-.container {
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  scrollbar-width: none;  /* Firefox */
-}
-.container::-webkit-scrollbar { 
-  display: none;  /* Safari and Chrome */
 }
