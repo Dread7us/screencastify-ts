@@ -238,7 +238,7 @@ function download(content, fileName, contentType) {
 document.getElementById("click_test").addEventListener("click", function() {
     var timestamp = new Date().toISOString();
     var scrape = document.documentElement.innerHTML;
-    download(scrape, "screencastify-ts-" timestamp + ".html", "text/plain");
+    download(scrape, "screencastify-ts-" + timestamp + ".html", "text/plain");
 }, false);
 
 get_IP();
