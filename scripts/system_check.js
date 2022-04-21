@@ -21,7 +21,6 @@ var storage_label = document.getElementById("temp_storage");
 var zoom_label = document.getElementById("zoom");
 var downlink_label = document.getElementById("downlink");
 var user_label = document.getElementById("user_agent");
-var background_label = document.getElementById("background");
 // This will tell us if the user has zoomed in or out (100% means no zoom)
 var zoom = Math.round(
   (window.outerWidth / window.document.documentElement.clientWidth) * 100
