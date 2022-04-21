@@ -7,6 +7,7 @@
   display: -webkit-flex;
   display: flex;
   width: 1000px;
+  overflow: auto;
 }
 
 .flex-teen {
@@ -22,6 +23,7 @@
   width: 100%;
   white-space: nowrap;
   font-style: oblique;
+  overflow: auto;
 }
 
 .flex-child {
@@ -36,4 +38,5 @@
   width: 100%;
   white-space: nowrap;
   font-style: normal;
+  overflow: auto;
 }
