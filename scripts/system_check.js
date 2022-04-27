@@ -224,7 +224,6 @@ document.getElementById("click_test").addEventListener("click", function() {
     //download(scrape, "screencastify-ts-" + timestamp + ".html", "text/plain");
     the_iframe = document.getElementById('#speedtest');   
     
-    the_iframe = the_iframe.contentWindow ||
     the_iframe.contentDocument.document ||
     the_iframe.contentDocument;
   
