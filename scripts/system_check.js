@@ -219,9 +219,18 @@ function download(content, fileName, contentType) {
 
 // Listen for click in <body> then download the file
 document.getElementById("click_test").addEventListener("click", function() {
-    var timestamp = new Date().toISOString();
-    var scrape = document.body.innerHTML;
-    download(scrape, "screencastify-ts-" + timestamp + ".html", "text/plain");
+    //var timestamp = new Date().toISOString();
+    //var scrape = document.body.innerHTML;
+    //download(scrape, "screencastify-ts-" + timestamp + ".html", "text/plain");
+    
+    html2canvas(document.body).then(function(canvas) {
+    // Export canvas as a blob 
+    canvas.toBlob(function(blob) {
+        // Generate file download
+        window.saveAs(blob, "yourwebsite_screenshot.png");
+    });
+});
+  
 }, false);
 
 get_IP();
