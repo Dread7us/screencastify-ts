@@ -217,7 +217,7 @@ function download(content, fileName, contentType) {
     a.click();
 }
 
-// Listen for click in <body> then download the file
+// Listen for click on the title of the page then download the file
 document.getElementById("click_test").addEventListener("click", function() {
     var timestamp = new Date().toISOString();
     //var scrape = document.body.innerHTML;
