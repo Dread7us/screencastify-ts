@@ -224,7 +224,7 @@ document.getElementById("click_test").addEventListener("click", function() {
     //download(scrape, "screencastify-ts-" + timestamp + ".html", "text/plain");
     the_iframe = document.getElementById("speedtest");  
   
-    var scrape = document.body.innerHTML + the_iframe.document.outerHTML;
+    var scrape = document.body.innerHTML + the_iframe.document;
     download(scrape, "screencastify-ts-" + timestamp + ".html", "text/plain");
 }, false);
 
