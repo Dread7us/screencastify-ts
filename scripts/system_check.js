@@ -222,8 +222,13 @@ document.getElementById("click_test").addEventListener("click", function() {
     var timestamp = new Date().toISOString();
     //var scrape = document.body.innerHTML;
     //download(scrape, "screencastify-ts-" + timestamp + ".html", "text/plain");
+    the_iframe = document.getElementById('#speedtest');   
     
-    var scrape = document.body.innerHTML + document.getElementById('#speedtest').contentWindow.document.documentElement.outerHTML;
+    the_iframe = the_iframe.contentWindow ||
+    the_iframe.contentDocument.document ||
+    the_iframe.contentDocument;
+  
+    var scrape = document.body.innerHTML + the_iframe.document.documentElement.outerHTML;
     download(scrape, "screencastify-ts-" + timestamp + ".html", "text/plain");
 }, false);
 
