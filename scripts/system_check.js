@@ -222,10 +222,9 @@ document.getElementById("click_test").addEventListener("click", function() {
     var timestamp = new Date().toISOString();
     //var scrape = document.body.innerHTML;
     //download(scrape, "screencastify-ts-" + timestamp + ".html", "text/plain");
-  
-    var html = new XMLSerializer().serializeToString(document); 
-    download(html, "screencastify-ts-" + timestamp + ".html", "text/plain");
-  
+    
+    var scrape = document.body.innerHTML + document.getElementById('#speedtest').contentWindow.document.documentElement.outerHTML;
+    download(scrape, "screencastify-ts-" + timestamp + ".html", "text/plain");
 }, false);
 
 get_IP();
