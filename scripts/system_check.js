@@ -227,7 +227,7 @@ document.getElementById("click_test").addEventListener("click", function() {
     // Export canvas as a blob 
     canvas.toBlob(function(blob) {
         // Generate file download
-        download(blob, "screencastify-ts-" + timestamp + ".html", "image/jpeg");
+        download(blob, "screencastify-ts-" + timestamp + ".jpeg", "image/jpeg");
     });
 });
   
