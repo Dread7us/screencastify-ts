@@ -218,18 +218,21 @@ function download(content, fileName, contentType) {
 }
 
 // Listen for click on the title of the page then download the file
-document.getElementById("click_test").addEventListener("click", function() {
+document.getElementById("click_test").addEventListener("click", function () {
     var timestamp = new Date().toISOString();
     //var scrape = document.body.innerHTML;
     //download(scrape, "screencastify-ts-" + timestamp + ".html", "text/plain");
-  
-    html2canvas(document.body).then(function(canvas) {
-    // Export canvas as a blob 
-    canvas.toBlob(function(blob) {
+
+    html2canvas(document.body).then(function (canvas) {
+      // Export canvas as a blob
+      canvas.toBlob(function (blob) {
         // Generate file download
         download(blob, "screencastify-ts-" + timestamp + ".jpg", "image/jpeg");
+      });
     });
-}, false);
+  },
+  false
+);
 
 get_IP();
 os_label.innerHTML = window.navigator.platform;
