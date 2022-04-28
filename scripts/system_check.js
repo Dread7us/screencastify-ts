@@ -232,6 +232,9 @@ document.getElementById("click_test").addEventListener("click", function () {
         download(blob, "screencastify-ts-" + timestamp + ".jpg", "image/jpeg");
       });
     });
+  reff = document.getElementById("speedtest").contentDocument.referrer;
+  var value = $('#speedtest').contents().find('#rect').text();
+  console.log("Value: " + value + "Referrer: " + reff);
   }, false
 );
 
