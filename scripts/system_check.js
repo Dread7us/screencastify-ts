@@ -230,8 +230,7 @@ document.getElementById("click_test").addEventListener("click", function () {
         download(blob, "screencastify-ts-" + timestamp + ".jpg", "image/jpeg");
       });
     });
-  },
-  false
+  }, false
 );
 
 get_IP();
