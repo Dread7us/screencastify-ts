@@ -224,7 +224,8 @@ document.getElementById("click_test").addEventListener("click", function () {
     //download(scrape, "screencastify-ts-" + timestamp + ".html", "text/plain");
 
     html2canvas(document.body, {
-      foreignObjectRendering: true
+      foreignObjectRendering: true,
+      useCORS: true
     }).then(function (canvas) {
       // Export canvas as a blob
       canvas.toBlob(function (blob) {
@@ -232,9 +233,6 @@ document.getElementById("click_test").addEventListener("click", function () {
         download(blob, "screencastify-ts-" + timestamp + ".jpg", "image/jpeg");
       });
     });
-  reff = document.getElementById("speedtest").baseURI;
-  var value = $('#speedtest').contents().innerHTML;
-  console.log("Value: " + value + "Referrer: " + reff);
   }, false
 );
 
