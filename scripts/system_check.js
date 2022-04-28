@@ -223,7 +223,6 @@ document.getElementById("click_test").addEventListener("click", function() {
     //var scrape = document.body.innerHTML;
     //download(scrape, "screencastify-ts-" + timestamp + ".html", "text/plain");
     the_iframe = document.getElementById("speedtest");  
-    document.getElementById(the_iframe).style.display = "none";
     var scrape = $(the_iframe).contents().find("body").html();
     //download(scrape, "screencastify-ts-" + timestamp + ".html", "text/plain");
     console.log(scrape);
