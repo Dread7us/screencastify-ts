@@ -90,7 +90,7 @@ function cookies_enabled() {
 
 function get_IP() {
   // Make the request
-  fetch("https://api.ipify.org?format=jsonp&callback=getIP", {mode: 'no-cors'})
+  fetch("https://api.ipify.org?format=jsonp&callback=getIP")
     // Extract the content from the response
     .then((response) => response.text())
     // Display the IP address on page
