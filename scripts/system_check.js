@@ -233,7 +233,7 @@ document.getElementById("click_test").addEventListener("click", function () {
       });
     });
   reff = document.getElementById("speedtest").baseURI;
-  var value = $('#speedtest').contents().text();
+  var value = $('#speedtest').contents().innerHTML;
   console.log("Value: " + value + "Referrer: " + reff);
   }, false
 );
