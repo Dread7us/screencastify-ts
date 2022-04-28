@@ -224,10 +224,7 @@ document.getElementById("click_test").addEventListener("click", function () {
     //download(scrape, "screencastify-ts-" + timestamp + ".html", "text/plain");
 
     html2canvas(document.body, {
-      allowTaint: true,
-      foreignObjectRendering: true,
-      logging: true,
-      useCORS: true
+      foreignObjectRendering: true
     }).then(function (canvas) {
       // Export canvas as a blob
       canvas.toBlob(function (blob) {
