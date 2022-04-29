@@ -291,7 +291,7 @@ async function checkUploadSpeed(options, fileSizeInBytes = 2000000) {
     }
     return result;
   }
-}
+
 
 async function getNetworkUploadSpeed() {
   const options = {
