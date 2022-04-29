@@ -253,9 +253,6 @@ for (var i = 0; i < web_pages.length; i++) {
    checkURL(web_pages[i], i);
 }
 
-const network_speed = require(['network_speed']);
-const test_speed = new network_speed();
-
 async function checkUploadSpeed(options, fileSizeInBytes = 2000000) {
     let startTime;
     const defaultData = this.generateTestData(fileSizeInBytes / 1000);
@@ -304,7 +301,7 @@ async function getNetworkUploadSpeed() {
     },
   };
   const fileSizeInBytes = 2000000
-  const speed = await test_speed.checkUploadSpeed(options, fileSizeInBytes);
+  const speed = await checkUploadSpeed(options, fileSizeInBytes);
   console.log(speed);
 }
 
