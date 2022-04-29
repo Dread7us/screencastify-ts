@@ -253,7 +253,7 @@ for (var i = 0; i < web_pages.length; i++) {
    checkURL(web_pages[i], i);
 }
 
-import FastSpeedtest = "fast-speedtest-api";
+
    
 const myPromise = fastnetApi();
 myPromise.then(res =>{
