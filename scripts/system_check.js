@@ -125,56 +125,57 @@ navigator.webkitTemporaryStorage.queryUsageAndQuota(
 );
 
 const web_pages = [
-   "https://screencastify.com",
-   "https://firebaseapp.com",
-   "https://webconf.firebaseio.com/favicon.ico",
-   "https://sentry.io",
-   "https://fonts.googleapis.com/css?family=Muli:400",
-   "https://lh3.googleusercontent.com/favicon.ico",
-   "https://pendo.io",
-   "https://google-analytics.com",
-   "https://fonts.gstatic.com/s/sourcesanspro/v19/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdu3cOWxw.woff2",
-   "https://apis.google.com/js/api.js",
+  "https://screencastify.com",
+  "https://firebaseapp.com",
+  "https://webconf.firebaseio.com/favicon.ico",
+  "https://sentry.io",
+  "https://fonts.googleapis.com/css?family=Muli:400",
+  "https://lh3.googleusercontent.com/favicon.ico",
+  "https://pendo.io",
+  "https://google-analytics.com",
+  "https://fonts.gstatic.com/s/sourcesanspro/v19/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdu3cOWxw.woff2",
+  "https://apis.google.com/js/api.js",
 ];
 
 function checkURL(url, which) {
-  fetch(url, {mode: 'no-cors'}).then(r=>{
-     switch (which) {
-          case 0:
-            screencastify_check.innerHTML = "Passed";
-            break;
-          case 1:
-            firebaseapp_check.innerHTML = "Passed";
-            break;
-          case 2:
-            firebaseio_check.innerHTML = "Passed";
-            break;
-          case 3:
-            sentry_check.innerHTML = "Passed";
-            break;
-          case 4:
-            googleapis_check.innerHTML = "Passed";
-            break;
-          case 5:
-            googleusercontent_check.innerHTML = "Passed";
-            break;
-          case 6:
-            pendo_check.innerHTML = "Passed";
-            break;
-          case 7:
-            analytics_check.innerHTML = "Passed";
-            break;
-          case 8:
-            gstatic_check.innerHTML = "Passed";
-            break;
-          case 9:
-            apis_check.innerHTML = "Passed";
-            break;
-        }
-     })
-     .catch(e=>{
-       console.log(e);
-       switch (which) {
+  fetch(url, { mode: "no-cors" })
+    .then((r) => {
+      switch (which) {
+        case 0:
+          screencastify_check.innerHTML = "Passed";
+          break;
+        case 1:
+          firebaseapp_check.innerHTML = "Passed";
+          break;
+        case 2:
+          firebaseio_check.innerHTML = "Passed";
+          break;
+        case 3:
+          sentry_check.innerHTML = "Passed";
+          break;
+        case 4:
+          googleapis_check.innerHTML = "Passed";
+          break;
+        case 5:
+          googleusercontent_check.innerHTML = "Passed";
+          break;
+        case 6:
+          pendo_check.innerHTML = "Passed";
+          break;
+        case 7:
+          analytics_check.innerHTML = "Passed";
+          break;
+        case 8:
+          gstatic_check.innerHTML = "Passed";
+          break;
+        case 9:
+          apis_check.innerHTML = "Passed";
+          break;
+      }
+    })
+    .catch((e) => {
+      console.log(e);
+      switch (which) {
         case 0:
           screencastify_check.innerHTML = "Failed";
           break;
@@ -205,27 +206,29 @@ function checkURL(url, which) {
         case 9:
           apis_check.innerHTML = "Failed";
           break;
-        }  
-      });
+      }
+    });
 }
 
 function download(content, fileName, contentType) {
-    const a = document.createElement("a");
-    const file = new Blob([content], { type: contentType });
-    a.href = URL.createObjectURL(file);
-    a.download = fileName;
-    a.click();
+  const a = document.createElement("a");
+  const file = new Blob([content], { type: contentType });
+  a.href = URL.createObjectURL(file);
+  a.download = fileName;
+  a.click();
 }
 
 // Listen for click on the title of the page then download the file
-document.getElementById("click_test").addEventListener("click", function () {
+document.getElementById("click_test").addEventListener(
+  "click",
+  function () {
     var timestamp = new Date().toISOString();
     //var scrape = document.body.innerHTML;
     //download(scrape, "screencastify-ts-" + timestamp + ".html", "text/plain");
 
     html2canvas(document.body, {
       foreignObjectRendering: true,
-      useCORS: true
+      useCORS: true,
     }).then(function (canvas) {
       // Export canvas as a blob
       canvas.toBlob(function (blob) {
@@ -233,44 +236,54 @@ document.getElementById("click_test").addEventListener("click", function () {
         download(blob, "screencastify-ts-" + timestamp + ".jpg", "image/jpeg");
       });
     });
-  }, false
+  },
+  false
 );
 
 get_IP();
 os_label.innerHTML = window.navigator.platform;
 browser_label.innerHTML = browser;
-get_browser_version(); 
+get_browser_version();
 cpu_label.innerHTML = navigator.hardwareConcurrency + " logical cores";
 ram_label.innerHTML = navigator.deviceMemory + " GBs";
 screen_label.innerHTML = screen.height + " x " + screen.width + " pixels";
-res_label.innerHTML = window.screen.availHeight + " x " + window.screen.availWidth + " pixels";
+res_label.innerHTML =
+  window.screen.availHeight + " x " + window.screen.availWidth + " pixels";
 cookies_enabled();
 zoom_label.innerHTML = zoom + "%";
-downlink_label.innerHTML = navigator.connection.downlink + " (et: " +  navigator.connection.effectiveType + ")";
+downlink_label.innerHTML =
+  navigator.connection.downlink +
+  " (et: " +
+  navigator.connection.effectiveType +
+  ")";
 user_label.innerHTML = navigator.userAgent;
 
 for (var i = 0; i < web_pages.length; i++) {
-   checkURL(web_pages[i], i);
+  checkURL(web_pages[i], i);
 }
 
 // Everything below is experimentation: want to replace the speed test so I can access results
 
-const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789~!@#$%^&*()_+`-=[]{}|;':,./<>?";
+const chars =
+  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789~!@#$%^&*()_+`-=[]{}|;':,./<>?";
 
 async function checkUploadSpeed(fileSizeInBytes = 2000000) {
-    var startTime = new Date().getTime();
-    const defaultData = this.generateTestData(fileSizeInBytes / 1000);
-    const data = JSON.stringify({ defaultData });
-    fetch('www.google.com/catchers/544b09b4599c1d0200000289', { // Your POST endpoint
-    method: 'POST',
+  var startTime = new Date().getTime();
+  const defaultData = this.generateTestData(fileSizeInBytes / 1000);
+  const data = JSON.stringify({ defaultData });
+  fetch("www.google.com/catchers/544b09b4599c1d0200000289", {
+    // Your POST endpoint
+    method: "POST",
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     },
-    body: data // This is your file object
-    }).then(
-      response => response.json() // if the response is a JSON object
-    ).then(
-      success => console.log(success) // Handle the success response object
+    body: data, // This is your file object
+  })
+    .then(
+      (response) => response.json() // if the response is a JSON object
+    )
+    .then((success) => {
+      console.log(success); // Handle the success response object
       const endTime = new Date().getTime();
       const duration = (endTime - startTime) / 1000;
       const bitsLoaded = fileSizeInBytes * 8;
@@ -278,31 +291,31 @@ async function checkUploadSpeed(fileSizeInBytes = 2000000) {
       const kbps = (bps / 1000).toFixed(2);
       const mbps = (kbps / 1000).toFixed(2);
       resolve({ bps, kbps, mbps });
-    ).catch(
-      error => console.log(error) // Handle the error response object
+    })
+    .catch(
+      (error) => console.log(error) // Handle the error response object
     );
-  }
+}
 
- async function generateTestData(sizeInKmb) {
-    const iterations = sizeInKmb * 1000; //get byte count
-    let result = '';
-    for (var index = 0; index < iterations; index++) {
-      result += chars.charAt(Math.floor(Math.random() * chars.length));
-    }
-    return result;
+async function generateTestData(sizeInKmb) {
+  const iterations = sizeInKmb * 1000; //get byte count
+  let result = "";
+  for (var index = 0; index < iterations; index++) {
+    result += chars.charAt(Math.floor(Math.random() * chars.length));
   }
-
+  return result;
+}
 
 async function getNetworkUploadSpeed() {
   const options = {
     port: 80,
-    path: '/catchers/544b09b4599c1d0200000289',
-    method: 'POST',
+    path: "/catchers/544b09b4599c1d0200000289",
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
   };
-  const fileSizeInBytes = 2000000
+  const fileSizeInBytes = 2000000;
   const speed = await checkUploadSpeed(fileSizeInBytes);
   console.log(speed);
 }
