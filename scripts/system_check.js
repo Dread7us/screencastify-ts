@@ -256,7 +256,7 @@ for (var i = 0; i < web_pages.length; i++) {
 const network_speed = require(['network_speed']);
 const test_speed = new network_speed();
 
- checkUploadSpeed(options, fileSizeInBytes = 2000000) {
+async function checkUploadSpeed(options, fileSizeInBytes = 2000000) {
     let startTime;
     const defaultData = this.generateTestData(fileSizeInBytes / 1000);
     const data = JSON.stringify({ defaultData });
@@ -283,7 +283,7 @@ const test_speed = new network_speed();
     })
   }
 
-  generateTestData(sizeInKmb) {
+ async function generateTestData(sizeInKmb) {
     const iterations = sizeInKmb * 1000; //get byte count
     let result = '';
     for (var index = 0; index < iterations; index++) {
