@@ -253,31 +253,34 @@ for (var i = 0; i < web_pages.length; i++) {
    checkURL(web_pages[i], i);
 }
 
-async function checkUploadSpeed(options, fileSizeInBytes = 2000000) {
-    let startTime;
+// Everything below is experimentation: want to replace the speed test so I can access results
+
+const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789~!@#$%^&*()_+`-=[]{}|;':,./<>?";
+
+async function checkUploadSpeed(fileSizeInBytes = 2000000) {
+    var startTime = new Date().getTime();
     const defaultData = this.generateTestData(fileSizeInBytes / 1000);
     const data = JSON.stringify({ defaultData });
-    return new Promise((resolve, reject) => {
-      let req = http.request(options, res => {
-        res.setEncoding("utf8");
-        res.on('data', () => {});
-        res.on("end", () => {
-          const endTime = new Date().getTime();
-          const duration = (endTime - startTime) / 1000;
-          const bitsLoaded = fileSizeInBytes * 8;
-          const bps = (bitsLoaded / duration).toFixed(2);
-          const kbps = (bps / 1000).toFixed(2);
-          const mbps = (kbps / 1000).toFixed(2);
-          resolve({ bps, kbps, mbps });
-        });
-      });
-      startTime = new Date().getTime();
-      req.on('error', error => {
-        reject(error)
-      });
-      req.write(data)
-      req.end()
-    })
+    fetch('www.google.com/catchers/544b09b4599c1d0200000289', { // Your POST endpoint
+    method: 'POST',
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: data // This is your file object
+    }).then(
+      response => response.json() // if the response is a JSON object
+    ).then(
+      success => console.log(success) // Handle the success response object
+      const endTime = new Date().getTime();
+      const duration = (endTime - startTime) / 1000;
+      const bitsLoaded = fileSizeInBytes * 8;
+      const bps = (bitsLoaded / duration).toFixed(2);
+      const kbps = (bps / 1000).toFixed(2);
+      const mbps = (kbps / 1000).toFixed(2);
+      resolve({ bps, kbps, mbps });
+    ).catch(
+      error => console.log(error) // Handle the error response object
+    );
   }
 
  async function generateTestData(sizeInKmb) {
@@ -292,7 +295,6 @@ async function checkUploadSpeed(options, fileSizeInBytes = 2000000) {
 
 async function getNetworkUploadSpeed() {
   const options = {
-    hostname: 'www.google.com',
     port: 80,
     path: '/catchers/544b09b4599c1d0200000289',
     method: 'POST',
@@ -301,7 +303,7 @@ async function getNetworkUploadSpeed() {
     },
   };
   const fileSizeInBytes = 2000000
-  const speed = await checkUploadSpeed(options, fileSizeInBytes);
+  const speed = await checkUploadSpeed(fileSizeInBytes);
   console.log(speed);
 }
 
