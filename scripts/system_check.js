@@ -264,16 +264,15 @@ for (var i = 0; i < web_pages.length; i++) {
 
 // Everything below is experimentation: want to replace the speed test so I can access results
 
-const chars =
-  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789~!@#$%^&*()_+`-=[]{}|;':,./<>?";
+const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789~!@#$%^&*()_+`-=[]{}|;':,./<>?";
 
 async function checkUploadSpeed(fileSizeInBytes = 2000000) {
   var startTime = new Date().getTime();
   const defaultData = this.generateTestData(fileSizeInBytes / 1000);
   const data = JSON.stringify({ defaultData });
   fetch("www.google.com/catchers/544b09b4599c1d0200000289", {
-    // Your POST endpoint
     method: "POST",
+    port: 80,
     headers: {
       "Content-Type": "application/json",
     },
