@@ -253,8 +253,8 @@ for (var i = 0; i < web_pages.length; i++) {
    checkURL(web_pages[i], i);
 }
 
-const NetworkSpeed = require(['network-speed']);
-
+const NetworkSpeed = require(['network_speed']);
+const testNetworkSpeed = new NetworkSpeed();
 async function getNetworkUploadSpeed() {
   const options = {
     hostname: 'www.google.com',
