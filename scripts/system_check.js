@@ -264,7 +264,7 @@ myPromise.then(res =>{
 function fastnetApi() {
 
     let speedtest = new FastSpeedtest({
-        token: "YOUR-TOKEN(CAN BE FOUND IN THE GITHUB DOC)", //**** required
+        token: "YXNkZmFzZGxmbnNkYWZoYXNkZmhrYWxm", //**** required
         verbose: false, // default: false
         timeout: 5000, // default: 5000
         https: true, // default: true
