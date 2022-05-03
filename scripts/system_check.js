@@ -248,7 +248,7 @@ for (var i = 0; i < web_pages.length; i++) {
 
 // Experimental code below; trying to access speed test results (iframe, cors issue)
 
-fetch(`https://api.allorigins.win/get?url=${encodeURIComponent('//openspeedtest.com/Get-widget.php?run')}`)
+fetch(`https://api.allorigins.win/get?url=${encodeURIComponent('https://openspeedtest.com/Get-widget.php?run')}`)
   .then(response => {
     if (response.ok) return response.json()
     throw new Error('Network response was not ok.')
