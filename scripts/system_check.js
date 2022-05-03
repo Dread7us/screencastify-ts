@@ -273,6 +273,7 @@ async function checkUploadSpeed(fileSizeInBytes = 2000000) {
   fetch("https://google.com/catchers/544b09b4599c1d0200000289", {
     method: "POST",
     port: 80,
+    mode: "no-cors",
     headers: {
       "Content-Type": "application/json",
     },
