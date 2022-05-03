@@ -236,15 +236,10 @@ get_browser_version();
 cpu_label.innerHTML = navigator.hardwareConcurrency + " logical cores";
 ram_label.innerHTML = navigator.deviceMemory + " GBs";
 screen_label.innerHTML = screen.height + " x " + screen.width + " pixels";
-res_label.innerHTML =
-  window.screen.availHeight + " x " + window.screen.availWidth + " pixels";
+res_label.innerHTML = window.screen.availHeight + " x " + window.screen.availWidth + " pixels";
 cookies_enabled();
 zoom_label.innerHTML = zoom + "%";
-downlink_label.innerHTML =
-  navigator.connection.downlink +
-  " (et: " +
-  navigator.connection.effectiveType +
-  ")";
+downlink_label.innerHTML = navigator.connection.downlink + " (et: " + navigator.connection.effectiveType + ")";
 user_label.innerHTML = navigator.userAgent;
 
 for (var i = 0; i < web_pages.length; i++) {
