@@ -284,17 +284,5 @@ function GoGoGadget() {
 
 //GoGoGadget();
 
-function getOriginUrl() {
-    var href = document.location.href;
-    var referrer = document.referrer;
-    // Detect if you're inside an iframe
-    if(window.parent != window) {
-        // Take referrer as origin
-        return referrer;
-    } else {
-        // Take href
-        return href;
-    }
-}
-
-console.log(getOriginUrl());
+var link = document.getElementById("iframe_id").contentWindow.location.href;
+console.log(link);
