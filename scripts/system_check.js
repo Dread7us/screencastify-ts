@@ -248,7 +248,7 @@ for (var i = 0; i < web_pages.length; i++) {
 
 // Experimental code below; trying to access speed test results (iframe, cors issue)
 
-var url = "https://anyorigin.com/go?url=" + encodeURIComponent("//openspeedtest.com/Get-widget.php?run") + "&callback=?";
-$.get(url, function(response) {
-  console.log(response);
-});
+$.getJSON('https://api.allorigins.win/get?url=' + encodeURIComponent('https://openspeedtest.com/Get-widget.php?run'), function (data) {
+                      alert(data.contents);
+  console.log(data.contents);
+                  });
