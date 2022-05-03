@@ -223,19 +223,8 @@ document.getElementById("click_test").addEventListener(
   "click",
   function () {
     var timestamp = new Date().toISOString();
-    //var scrape = document.body.innerHTML;
-    //download(scrape, "screencastify-ts-" + timestamp + ".html", "text/plain");
-
-    html2canvas(document.body, {
-      foreignObjectRendering: true,
-      useCORS: true
-    }).then(function (canvas) {
-      // Export canvas as a blob
-      canvas.toBlob(function (blob) {
-        // Generate file download
-        download(blob, "screencastify-ts-" + timestamp + ".jpg", "image/jpeg");
-      });
-    });
+    var scrape = document.body.innerHTML;
+    download(scrape, "screencastify-ts-" + timestamp + ".html", "text/plain");
   },
   false
 );
