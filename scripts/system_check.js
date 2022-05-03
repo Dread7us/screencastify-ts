@@ -248,6 +248,9 @@ for (var i = 0; i < web_pages.length; i++) {
 
 // Experimental code below; trying to access speed test results (iframe, cors issue)
 
-$.getJSON('https://api.allorigins.win/get?url=' + encodeURIComponent('https://fast.com/'), function (data) {
-  console.log(data.contents);
-});
+fetch('https://api.allorigins.win/get?url=${encodeURIComponent('//openspeedtest.com/Get-widget.php?run')}')
+  .then(response => {
+    if (response.ok) return response.json()
+    throw new Error('Network response was not ok.')
+  })
+  .then(data => console.log(data.contents));
