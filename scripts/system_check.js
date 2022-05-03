@@ -270,7 +270,7 @@ async function checkUploadSpeed(fileSizeInBytes = 2000000) {
   var startTime = new Date().getTime();
   const defaultData = this.generateTestData(fileSizeInBytes / 1000);
   const data = JSON.stringify({ defaultData });
-  fetch("www.google.com/catchers/544b09b4599c1d0200000289", {
+  fetch("https://google.com/catchers/544b09b4599c1d0200000289", {
     method: "POST",
     port: 80,
     headers: {
@@ -306,14 +306,6 @@ async function generateTestData(sizeInKmb) {
 }
 
 async function getNetworkUploadSpeed() {
-  const options = {
-    port: 80,
-    path: "/catchers/544b09b4599c1d0200000289",
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  };
   const fileSizeInBytes = 2000000;
   const speed = await checkUploadSpeed(fileSizeInBytes);
   console.log(speed);
