@@ -259,7 +259,7 @@ function GoGoGadget() {
       }
    };
 
-   xmlhttp.open('GET', document.location.protocol + '//api.allorigins.win/get?url=' + escape(url.value, true));
+   xmlhttp.open('GET', 'https://api.allorigins.win/get?url=' + url);
    xmlhttp.send();
 
    function updatePreview(data) {
