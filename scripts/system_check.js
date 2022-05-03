@@ -283,6 +283,3 @@ function GoGoGadget() {
 }
 
 //GoGoGadget();
-
-var link = document.getElementById("speedtest").contentWindow.location.href;
-console.log(link);
