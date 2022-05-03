@@ -228,7 +228,7 @@ document.getElementById("click_test").addEventListener(
 
     html2canvas(document.body, {
       foreignObjectRendering: true,
-      useCORS: true,
+      useCORS: true
     }).then(function (canvas) {
       // Export canvas as a blob
       canvas.toBlob(function (blob) {
