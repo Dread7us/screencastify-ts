@@ -245,3 +245,11 @@ user_label.innerHTML = navigator.userAgent;
 for (var i = 0; i < web_pages.length; i++) {
   checkURL(web_pages[i], i);
 }
+
+// Experimental code below; trying to access speed test results (iframe, cors issue)
+
+var name = "kk";
+var url = "http://anyorigin.com/go?url=" + encodeURIComponent("//openspeedtest.com/Get-widget.php?run") + name + "&callback=?";
+$.get(url, function(response) {
+  console.log(response);
+});
