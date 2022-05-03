@@ -248,6 +248,6 @@ for (var i = 0; i < web_pages.length; i++) {
 
 // Experimental code below; trying to access speed test results (iframe, cors issue)
 
-$.getJSON('https://api.allorigins.win/get?url=' + encodeURIComponent('https://api.fast.com/netflix/speedtest/v2?https=true&token=YXNkZmFzZGxmbnNkYWZoYXNkZmhrYWxm&urlCount=5'), function (data) {
+$.getJSON('https://api.allorigins.win/get?url=' + encodeURIComponent('https://fast.com/'), function (data) {
   console.log(data.contents);
 });
