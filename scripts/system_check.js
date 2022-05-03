@@ -248,9 +248,34 @@ for (var i = 0; i < web_pages.length; i++) {
 
 // Experimental code below; trying to access speed test results (iframe, cors issue)
 
-fetch(`https://api.allorigins.win/get?url=${encodeURIComponent('https://openspeedtest.com/Get-widget.php?run')}`)
-  .then(response => {
-    if (response.ok) return response.json()
-    throw new Error('Network response was not ok.')
-  })
-  .then(data => console.log(data.contents));
+function GoGoGadget() {
+   var url = "https://openspeedtest.com/Get-widget.php?run";
+   var xmlhttp = new XMLHttpRequest();
+
+   xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+         var myArr = JSON.parse(this.responseText);
+         updatePreview(myArr);
+      }
+   };
+
+   xmlhttp.open('GET', document.location.protocol + '//api.allorigins.win/get?url=' + escape(url.value, true));
+   xmlhttp.send();
+
+   function updatePreview(data) {
+      var iframe = document.getElementById('output');
+      var doc = iframe.document;
+
+      if (iframe.contentDocument) {
+         doc = iframe.contentDocument;
+      } else if (iframe.contentWindow) {
+         doc = iframe.contentWindow.document;
+      }
+      doc.open();
+      doc.writeln(data.contents);
+      doc.close();
+   }
+   return false;
+}
+
+GoGoGadget();
