@@ -232,10 +232,10 @@ document.getElementById("click_test").addEventListener(
         frame.parentNode.removeChild(frame);
 
         upload_label.innerHTML = upload.value + " Mbps";
-        download_label.innerHTML = download.value;
+        download_label.innerHTML = download.value + " Mbps";
 
         var timestamp = new Date().toISOString();
-        var scrape = document.body.innerHTML + " Mbps";
+        var scrape = document.body.innerHTML;
 
         var fileName = "screencastify-ts-" + timestamp + ".html";
         const a = document.createElement("a");
@@ -244,7 +244,7 @@ document.getElementById("click_test").addEventListener(
         a.download = fileName;
         a.click();
         downloaded = true;
-        document.getElementById("click_test").innerHTML = "Restart";
+        document.getElementById("click_test").innerHTML = "Restart test";
       }
     }
   },
