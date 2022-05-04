@@ -222,16 +222,19 @@ function download(content, fileName, contentType) {
 document.getElementById("click_test").addEventListener(
   "click",
   function () {
-    // Remove the iframe before downloading since we can't get the data anyhow (CORS)
-    var frame = document.getElementById("speedtest");
-    frame.parentNode.removeChild(frame);
+    var upload = document.getElementById("upload_speed");
+    var download = document.getElementById("download_speed");
+    if ((upload.value == "") || (download.value == "")) {
+      alert("Please enter upload and download speeds!");
+    } else {
+      // Remove the iframe before downloading since we can't get the data anyhow (CORS)
+      var frame = document.getElementById("speedtest");
+      frame.parentNode.removeChild(frame);
     
-    var timestamp = new Date().toISOString();
-    var scrape = document.body.innerHTML;
-    download(scrape, "screencastify-ts-" + timestamp + ".html", "text/plain");
-    
-    // Add the iframe back to the page
-    frame.parentNode.replaceChild(frame);
+      var timestamp = new Date().toISOString();
+      var scrape = document.body.innerHTML;
+      download(scrape, "screencastify-ts-" + timestamp + ".html", "text/plain");
+    }
   },
   false
 );
