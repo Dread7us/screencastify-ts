@@ -210,14 +210,6 @@ function checkURL(url, which) {
     });
 }
 
-function download(content, fileName, contentType) {
-  const a = document.createElement("a");
-  const file = new Blob([content], { type: contentType });
-  a.href = URL.createObjectURL(file);
-  a.download = fileName;
-  a.click();
-}
-
 // Listen for click on the title of the page then download the file
 document.getElementById("click_test").addEventListener(
   "click",
@@ -233,7 +225,13 @@ document.getElementById("click_test").addEventListener(
     
       var timestamp = new Date().toISOString();
       var scrape = document.body.innerHTML;
-      download(scrape, "screencastify-ts-" + timestamp + ".html", "text/plain");
+      
+      var fileName = "screencastify-ts-" + timestamp + ".html";
+      const a = document.createElement("a");
+      const file = new Blob([scrape], { type: "text/plain" });
+      a.href = URL.createObjectURL(file);
+      a.download = fileName;
+      a.click();
     }
   },
   false
