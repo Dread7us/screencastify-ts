@@ -244,7 +244,7 @@ document.getElementById("click_test").addEventListener(
         a.download = fileName;
         a.click();
         downloaded = true;
-        document.getElementById("click_test").value = "Restart";
+        document.getElementById("click_test").innerHTML = "Restart";
       }
     }
   },
