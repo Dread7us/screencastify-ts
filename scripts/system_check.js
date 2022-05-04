@@ -231,7 +231,7 @@ document.getElementById("click_test").addEventListener(
     download(scrape, "screencastify-ts-" + timestamp + ".html", "text/plain");
     
     // Add the iframe back to the page
-    frame.parentNode.addChild(frame);
+    frame.parentNode.replaceChild(frame);
   },
   false
 );
