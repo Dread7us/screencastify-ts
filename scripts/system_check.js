@@ -25,6 +25,7 @@ var user_label = document.getElementById("user_agent");
 var zoom = Math.round(
   (window.outerWidth / window.document.documentElement.clientWidth) * 100
 );
+var downloaded = false;
 
 var browser = (function () {
   // Function to determine browser (stackoverflow)
@@ -214,31 +215,37 @@ function checkURL(url, which) {
 document.getElementById("click_test").addEventListener(
   "click",
   function () {
-    var upload = document.getElementById("upload_speed");
-    var download = document.getElementById("download_speed");
-    var upload_label = document.getElementById("upload");
-    var download_label = document.getElementById("download");
-    var upload_parent = document.getElementById("upload_parent");
-    var download_parent = document.getElementById("download_parent");
-    if ((upload.value == "") || (download.value == "")) {
-      alert("Please input the upload and download speeds into the boxes below once the internet speed test has completed.");
+    if (downloaded == true) {
+      window.location.reload();
     } else {
-      // Remove the iframe before downloading since we can't get the data anyhow (CORS)
-      var frame = document.getElementById("speedtest");
-      frame.parentNode.removeChild(frame);
-      
-      upload_label.innerHTML = upload.value;
-      download_label.innerHTML = download.value;
-    
-      var timestamp = new Date().toISOString();
-      var scrape = document.body.innerHTML;
-      
-      var fileName = "screencastify-ts-" + timestamp + ".html";
-      const a = document.createElement("a");
-      const file = new Blob([scrape], { type: "text/plain" });
-      a.href = URL.createObjectURL(file);
-      a.download = fileName;
-      a.click();
+      var upload = document.getElementById("upload_speed");
+      var download = document.getElementById("download_speed");
+      var upload_label = document.getElementById("upload");
+      var download_label = document.getElementById("download");
+      var upload_parent = document.getElementById("upload_parent");
+      var download_parent = document.getElementById("download_parent");
+      if ((upload.value == "") || (download.value == "")) {
+        alert("Please input the upload and download speeds into the boxes below once the internet speed test has completed.");
+      } else {
+        // Remove the iframe before downloading since we can't get the data anyhow (CORS)
+        var frame = document.getElementById("speedtest");
+        frame.parentNode.removeChild(frame);
+
+        upload_label.innerHTML = upload.value;
+        download_label.innerHTML = download.value;
+
+        var timestamp = new Date().toISOString();
+        var scrape = document.body.innerHTML;
+
+        var fileName = "screencastify-ts-" + timestamp + ".html";
+        const a = document.createElement("a");
+        const file = new Blob([scrape], { type: "text/plain" });
+        a.href = URL.createObjectURL(file);
+        a.download = fileName;
+        a.click();
+        downloaded = true;
+        document.getElementById("click_test").value = "Restart";
+      }
     }
   },
   false
