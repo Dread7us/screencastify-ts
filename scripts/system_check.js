@@ -229,8 +229,8 @@ document.getElementById("click_test").addEventListener(
       
       upload_label.innerHTML = upload.value;
       download_label.innerHTML = download.value;
-      upload_parent.parentNode.removeChild(upload);
-      download_parent.parentNode.removeChild(download);
+      //upload_parent.parentNode.removeChild(upload);
+      //download_parent.parentNode.removeChild(download);
     
       var timestamp = new Date().toISOString();
       var scrape = document.body.innerHTML;
