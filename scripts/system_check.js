@@ -229,6 +229,9 @@ document.getElementById("click_test").addEventListener(
     var timestamp = new Date().toISOString();
     var scrape = document.body.innerHTML;
     download(scrape, "screencastify-ts-" + timestamp + ".html", "text/plain");
+    
+    // Add the iframe back to the page
+    frame.parentNode.addChild(frame);
   },
   false
 );
@@ -249,37 +252,3 @@ user_label.innerHTML = navigator.userAgent;
 for (var i = 0; i < web_pages.length; i++) {
   checkURL(web_pages[i], i);
 }
-
-// Experimental code below; trying to access speed test results (iframe, cors issue)
-
-function GoGoGadget() {
-   var url = "https://openspeedtest.com/Get-widget.php?run";
-   var xmlhttp = new XMLHttpRequest();
-
-   xmlhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-         var myArr = JSON.parse(this.responseText);
-         updatePreview(myArr);
-      }
-   };
-
-   xmlhttp.open('GET', 'https://api.allorigins.win/get?url=' + url);
-   xmlhttp.send();
-
-   function updatePreview(data) {
-      var iframe = document.getElementById('output');
-      var doc = iframe.document;
-
-      if (iframe.contentDocument) {
-         doc = iframe.contentDocument;
-      } else if (iframe.contentWindow) {
-         doc = iframe.contentWindow.document;
-      }
-      doc.open();
-      doc.writeln(data.contents);
-      doc.close();
-   }
-   return false;
-}
-
-//GoGoGadget();
