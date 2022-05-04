@@ -221,7 +221,7 @@ document.getElementById("click_test").addEventListener(
     var upload_parent = document.getElementById("upload_parent");
     var download_parent = document.getElementById("download_parent");
     if ((upload.value == "") || (download.value == "")) {
-      alert("Please input the upload and download speeds once the internet speed test has completed and try again.");
+      alert("Please input the upload and download speeds into the boxes below once the internet speed test has completed, then try again.");
     } else {
       // Remove the iframe before downloading since we can't get the data anyhow (CORS)
       var frame = document.getElementById("speedtest");
