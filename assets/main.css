@@ -46,3 +46,27 @@
   /* This is the magic bit for WebKit */
   display: none;
 }
+
+.button {
+   background-color: #FF8282;
+   font-family: 'Helvetica';
+   color: White;
+   height: 43px;
+   width: 100%;
+   /* box-shadow: 0 4px 8px 0 rgba(44, 44, 44, 0.15), 0 6px 20px 0 rgba(44, 44, 44, 0.15); */
+   border: 1px solid #FF8282;
+   border-radius: 6px;
+   cursor: pointer;
+   margin: 1px 1px;
+   font-size: 16px;
+   width: 100%;
+   white-space: nowrap;
+   text-align: center;
+   font-style: oblique;
+}
+
+.button:hover {
+   color: White;
+   background-color: #00AAFF;
+   border: 1px solid #00AAFF;
+}
