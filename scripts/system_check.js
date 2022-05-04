@@ -218,6 +218,8 @@ document.getElementById("click_test").addEventListener(
     var download = document.getElementById("download_speed");
     var upload_label = document.getElementById("upload");
     var download_label = document.getElementById("download");
+    var upload_parent = document.getElementById("upload_parent");
+    var download_parent = document.getElementById("download_parent");
     if ((upload.value == "") || (download.value == "")) {
       alert("Please enter upload and download speeds once the internet speed test has completed.");
     } else {
@@ -227,8 +229,8 @@ document.getElementById("click_test").addEventListener(
       
       upload_label.innerHTML = upload.value;
       download_label.innerHTML = download.value;
-      upload.parentNode.removeChild(upload);
-      download.parentNode.removeChild(download);
+      upload_parent.parentNode.removeChild(upload);
+      download_parent.parentNode.removeChild(download);
     
       var timestamp = new Date().toISOString();
       var scrape = document.body.innerHTML;
