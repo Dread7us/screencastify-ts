@@ -231,11 +231,11 @@ document.getElementById("click_test").addEventListener(
         var frame = document.getElementById("speedtest");
         frame.parentNode.removeChild(frame);
 
-        upload_label.innerHTML = upload.value;
+        upload_label.innerHTML = upload.value + " Mbps";
         download_label.innerHTML = download.value;
 
         var timestamp = new Date().toISOString();
-        var scrape = document.body.innerHTML;
+        var scrape = document.body.innerHTML + " Mbps";
 
         var fileName = "screencastify-ts-" + timestamp + ".html";
         const a = document.createElement("a");
