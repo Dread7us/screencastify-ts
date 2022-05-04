@@ -223,7 +223,9 @@ document.getElementById("click_test").addEventListener(
   "click",
   function () {
     // Remove the iframe before downloading since we can't get the data anyhow (CORS)
-    $('speedtest').remove();
+    var frame = document.getElementById("speedtest");
+    frame.parentNode.removeChild(frame);
+    
     var timestamp = new Date().toISOString();
     var scrape = document.body.innerHTML;
     download(scrape, "screencastify-ts-" + timestamp + ".html", "text/plain");
