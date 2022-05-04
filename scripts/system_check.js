@@ -222,13 +222,11 @@ function download(content, fileName, contentType) {
 document.getElementById("click_test").addEventListener(
   "click",
   function () {
-    // Hide the iframe before downloading since we can't get the data anyhow (CORS)
-    document.getElementById("speedtest").style.display = "none";
+    // Remove the iframe before downloading since we can't get the data anyhow (CORS)
+    $('speedtest').remove();
     var timestamp = new Date().toISOString();
     var scrape = document.body.innerHTML;
     download(scrape, "screencastify-ts-" + timestamp + ".html", "text/plain");
-    // Unhides the iframe now that we downloaded the relavant webpage data
-    document.getElementById("speedtest").style.display = "block";
   },
   false
 );
