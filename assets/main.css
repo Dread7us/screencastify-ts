@@ -53,7 +53,7 @@
    color: White;
    height: 43px;
    width: 100%;
-   /* box-shadow: 0 4px 8px 0 rgba(44, 44, 44, 0.15), 0 6px 20px 0 rgba(44, 44, 44, 0.15); */
+   box-shadow: 0 4px 8px 0 rgba(44, 44, 44, 0.15), 0 6px 20px 0 rgba(44, 44, 44, 0.15); 
    border: 1px solid #00AAFF;
    border-radius: 6px;
    cursor: pointer;
@@ -67,6 +67,6 @@
 
 .button:hover {
    color: White;
-   background-color: #FF8282;
-   border: 1px solid #FF8282;
+   background-color: #555555;
+   border: 1px solid #555555;
 }
