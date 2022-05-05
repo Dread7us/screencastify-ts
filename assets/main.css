@@ -79,13 +79,12 @@
 }
 
 .input:hover {
-   color: Black;
    border: 1px solid #00AAFF;
 }
 
 .input:focus {
-  color: Black;
-  border: 1px solid #00AAFF;
+  border-color: transparent;
+  border: 1px solid red;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
