@@ -222,10 +222,10 @@ function checkURL(url, which) {
 function changeBorderColor(id) {
   var load = setTimeout(function() {
     //document.getElementById(id).style.border = "1px solid #ddd";
-    document.getElementById(id).className = "inputred";
+    document.getElementById(id).className = "input";
   }, 5000);
   //document.getElementById(id).style.border = "1px solid Red";
-  document.getElementById(id).className = "input";
+  document.getElementById(id).className = "inputred";
 }
 
 // Listen for click on the title of the page then download the file
