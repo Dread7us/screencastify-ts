@@ -222,8 +222,6 @@ document.getElementById("click_test").addEventListener(
       var download = document.getElementById("download_speed");
       var upload_label = document.getElementById("upload");
       var download_label = document.getElementById("download");
-      var upload_parent = document.getElementById("upload_parent");
-      var download_parent = document.getElementById("download_parent");
       if ((upload.value == "") || (download.value == "")) {
         alert("Please input the upload and download speeds into the boxes below, once the internet speed test has completed.");
       } else {
