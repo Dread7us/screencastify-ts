@@ -221,9 +221,11 @@ function checkURL(url, which) {
 
 function changeBorderColor(id) {
   var load = setTimeout(function() {
-    document.getElementById(id).style.border = "1px solid #ddd";
+    //document.getElementById(id).style.border = "1px solid #ddd";
+    document.getElementById(id).setAttribut("style", "border: 1px solid #ddd;");
   }, 5000);
-  document.getElementById(id).style.border = "1px solid Red";
+  //document.getElementById(id).style.border = "1px solid Red";
+  document.getElementById(id).setAttribut("style", "border: 1px solid Red;");
 }
 
 // Listen for click on the title of the page then download the file
