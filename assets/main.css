@@ -70,6 +70,9 @@
 }
 
 .input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   font-family: 'Helvetica';
   padding: 10px 10px;
   border: 1px solid #ddd;
