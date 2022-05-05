@@ -90,7 +90,7 @@ input:focus {
 .inputred {
   font-family: 'Helvetica';
   padding: 10px 10px;
-  border: 1px solid Red;
+  border: 2px solid Red;
   border-radius: 3px;
   background-color: transparent;
   font-size: 16px;
