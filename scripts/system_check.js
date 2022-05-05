@@ -219,42 +219,6 @@ function checkURL(url, which) {
     });
 }
 
-function changeBorderColor(id) {
-  document.getElementById(id).style.border = "solid #00AAFF";
-}
-
-download.addEventListener(
-  "click",
-  function () {
-    changeBorderColor('download_speed');
-  },
-  false
-);
-
-upload.addEventListener(
-  "click",
-  function () {
-    changeBorderColor('upload_speed');
-  },
-  false
-);
-
-jitter.addEventListener(
-  "click",
-  function () {
-    changeBorderColor('jitter_speed');
-  },
-  false
-);
-
-ping.addEventListener(
-  "click",
-  function () {
-    changeBorderColor('ping_speed');
-  },
-  false
-);
-
 // Listen for click on the title of the page then download the file
 document.getElementById("click_test").addEventListener(
   "click",
