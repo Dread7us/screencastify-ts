@@ -84,7 +84,7 @@
 
 input:focus {
 	outline: none;
-  border: 1px solid red;
+  border: 1px solid #00AAFF;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
