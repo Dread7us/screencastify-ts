@@ -220,6 +220,9 @@ function checkURL(url, which) {
 }
 
 function changeBorderColor(id) {
+  var load = setTimeout(function() {
+    document.getElementById(id).style.border = "1px solid #ddd";
+  }, 5000);
   document.getElementById(id).style.border = "1px solid Red";
 }
 
