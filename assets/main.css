@@ -70,9 +70,10 @@
 }
 
 .input {
+  font-family: 'Helvetica';
   padding: 20px 10px;
   border: 1px solid #ddd;
   border-radius: 3px;
   background-color: transparent;
-  font-size: 16px;
+  font-size: 14px;
 }
