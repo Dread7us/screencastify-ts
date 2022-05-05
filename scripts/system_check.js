@@ -220,10 +220,14 @@ document.getElementById("click_test").addEventListener(
     } else {
       var upload = document.getElementById("upload_speed");
       var download = document.getElementById("download_speed");
+      var jitter = document.getElementById("jitter_speed");
+      var ping = document.getElementById("ping_speed");
       var upload_label = document.getElementById("upload");
       var download_label = document.getElementById("download");
-      if ((upload.value == "") || (download.value == "")) {
-        alert("Please input the upload and download speeds into the boxes below, once the internet speed test has completed.");
+      var jitter_label = document.getElementById("jitter");
+      var ping_label = document.getElementById("ping");
+      if ((upload.value == "") || (download.value == "") || (jitter.value == "") || (ping.value == "")) {
+        alert("Please input the download, jitter, ping and upload values into the boxes below, once the internet speed test has completed.");
       } else {
         // Remove the iframe before downloading since we can't get the data anyhow (CORS)
         var frame = document.getElementById("speedtest");
@@ -231,6 +235,8 @@ document.getElementById("click_test").addEventListener(
 
         upload_label.innerHTML = upload.value + " Mbps";
         download_label.innerHTML = download.value + " Mbps";
+        jitter_label.innerHTML = jitter.value + " ms";
+        ping_label.innerHTML = ping.value + " ms";
 
         var timestamp = new Date().toISOString();
         var scrape = document.body.innerHTML;
