@@ -220,7 +220,7 @@ function checkURL(url, which) {
 }
 
 function changeBorderColor(id) {
-  document.getElementById(id).style.border = "solid Red";
+  document.getElementById(id).style.border = "1px solid Red";
 }
 
 // Listen for click on the title of the page then download the file
