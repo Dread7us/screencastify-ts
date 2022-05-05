@@ -237,6 +237,8 @@ document.getElementById("click_test").addEventListener(
         download_label.innerHTML = download.value + " Mbps";
         jitter_label.innerHTML = jitter.value + " ms";
         ping_label.innerHTML = ping.value + " ms";
+        
+        document.getElementById("click_test").style.display="none";
 
         var timestamp = new Date().toISOString();
         var scrape = document.body.innerHTML;
@@ -248,6 +250,7 @@ document.getElementById("click_test").addEventListener(
         a.download = fileName;
         a.click();
         downloaded = true;
+        document.getElementById("click_test").style.display="block";
         document.getElementById("click_test").innerHTML = "Restart test";
       }
     }
