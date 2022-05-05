@@ -226,7 +226,7 @@ function changeBorderColor(id) {
 download.addEventListener(
   "click",
   function () {
-    changeBorderColor('download');
+    changeBorderColor('download_speed');
   },
   false
 );
@@ -234,7 +234,7 @@ download.addEventListener(
 upload.addEventListener(
   "click",
   function () {
-    changeBorderColor('upload');
+    changeBorderColor('upload_speed');
   },
   false
 );
@@ -242,7 +242,7 @@ upload.addEventListener(
 jitter.addEventListener(
   "click",
   function () {
-    changeBorderColor('jitter');
+    changeBorderColor('jitter_speed');
   },
   false
 );
@@ -250,7 +250,7 @@ jitter.addEventListener(
 ping.addEventListener(
   "click",
   function () {
-    changeBorderColor('ping');
+    changeBorderColor('ping_speed');
   },
   false
 );
