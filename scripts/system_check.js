@@ -26,6 +26,14 @@ var zoom = Math.round(
   (window.outerWidth / window.document.documentElement.clientWidth) * 100
 );
 var downloaded = false;
+var upload = document.getElementById("upload_speed");
+var download = document.getElementById("download_speed");
+var jitter = document.getElementById("jitter_speed");
+var ping = document.getElementById("ping_speed");
+var upload_label = document.getElementById("upload");
+var download_label = document.getElementById("download");
+var jitter_label = document.getElementById("jitter");
+var ping_label = document.getElementById("ping");
 
 var browser = (function () {
   // Function to determine browser (stackoverflow)
@@ -211,6 +219,42 @@ function checkURL(url, which) {
     });
 }
 
+function changeBorderColor(id) {
+  document.getElementById(id).style.border = "solid #00AAFF";
+}
+
+download.addEventListener(
+  "click",
+  function () {
+    changeBorderColor('download');
+  },
+  false
+);
+
+upload.addEventListener(
+  "click",
+  function () {
+    changeBorderColor('upload');
+  },
+  false
+);
+
+jitter.addEventListener(
+  "click",
+  function () {
+    changeBorderColor('jitter');
+  },
+  false
+);
+
+ping.addEventListener(
+  "click",
+  function () {
+    changeBorderColor('ping');
+  },
+  false
+);
+
 // Listen for click on the title of the page then download the file
 document.getElementById("click_test").addEventListener(
   "click",
@@ -218,14 +262,6 @@ document.getElementById("click_test").addEventListener(
     if (downloaded == true) {
       window.location.reload();
     } else {
-      var upload = document.getElementById("upload_speed");
-      var download = document.getElementById("download_speed");
-      var jitter = document.getElementById("jitter_speed");
-      var ping = document.getElementById("ping_speed");
-      var upload_label = document.getElementById("upload");
-      var download_label = document.getElementById("download");
-      var jitter_label = document.getElementById("jitter");
-      var ping_label = document.getElementById("ping");
       if ((upload.value == "") || (download.value == "") || (jitter.value == "") || (ping.value == "")) {
         alert("Please input the download, jitter, ping and upload values into the boxes below, once the internet speed test has completed.");
       } else {
