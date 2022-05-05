@@ -235,13 +235,13 @@ document.getElementById("click_test").addEventListener(
           changeBorderColor("upload_speed");
         }
         if (download.value = "") {
-          changeBorderColor("download_speed"):
+          changeBorderColor("download_speed");
         }
         if (jitter.value = "") {
-          changeBorderColor("jitter_speed"):
+          changeBorderColor("jitter_speed");
         }
         if (ping.value = "") {
-          changeBorderColor("ping_speed"):
+          changeBorderColor("ping_speed");
         }
         alert("Please input the download, jitter, ping and upload values into the boxes below, once the internet speed test has completed.");
       } else {
