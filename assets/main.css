@@ -77,3 +77,9 @@
   background-color: transparent;
   font-size: 16px;
 }
+
+.input:hover {
+   color: Black;
+   background-color: ##DCD6F7;
+   border: 1px solid #00AAFF;
+}
