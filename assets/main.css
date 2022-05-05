@@ -87,6 +87,15 @@ input:focus {
   border: 1px solid #00AAFF;
 }
 
+.inputred {
+  font-family: 'Helvetica';
+  padding: 10px 10px;
+  border: 1px solid Red;
+  border-radius: 3px;
+  background-color: transparent;
+  font-size: 16px;
+}
+
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
     -webkit-appearance: none;
