@@ -219,6 +219,10 @@ function checkURL(url, which) {
     });
 }
 
+function changeBorderColor(id) {
+  document.getElementById(id).style.border = "solid Red";
+}
+
 // Listen for click on the title of the page then download the file
 document.getElementById("click_test").addEventListener(
   "click",
@@ -227,6 +231,18 @@ document.getElementById("click_test").addEventListener(
       window.location.reload();
     } else {
       if ((upload.value == "") || (download.value == "") || (jitter.value == "") || (ping.value == "")) {
+        if (upload.value == "") {
+          changeBorderColor("upload_speed");
+        }
+        if (download.value = "") {
+          changeBorderColor("download_speed"):
+        }
+        if (jitter.value = "") {
+          changeBorderColor("jitter_speed"):
+        }
+        if (ping.value = "") {
+          changeBorderColor("ping_speed"):
+        }
         alert("Please input the download, jitter, ping and upload values into the boxes below, once the internet speed test has completed.");
       } else {
         // Remove the iframe before downloading since we can't get the data anyhow (CORS)
