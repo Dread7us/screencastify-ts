@@ -231,8 +231,16 @@ document.getElementById("click_test").addEventListener(
       window.location.reload();
     } else {
       if ((upload.value == "") || (download.value == "") || (jitter.value == "") || (ping.value == "")) {
-        
-        if (ping.value = "") {
+        if (upload.value == "") {
+          changeBorderColor("upload_speed");
+        }
+        if (download.value == "") {
+          changeBorderColor("download_speed");
+        }
+        if (jitter.value == "") {
+          changeBorderColor("jitter_speed");
+        }
+        if (ping.value == "") {
           changeBorderColor("ping_speed");
         }
         alert("Please input the download, jitter, ping and upload values into the boxes below, once the internet speed test has completed.");
