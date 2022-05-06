@@ -1,14 +1,14 @@
 @-webkit-keyframes fade {
   0%   { border-color:red; }
-  100% { border-color:#555555; }
+  100% { border-color:#ddd; }
 }
 @-moz-keyframes fade {
   0%   { border-color:red; }
-  100% { border-color:#555555; }
+  100% { border-color:#ddd; }
 }
 @-ms-keyframes fade {
   0%   { border-color:red; }
-  100% { border-color:#555555; }
+  100% { border-color:#ddd; }
 }
 
 .flex {
