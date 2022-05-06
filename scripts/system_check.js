@@ -237,7 +237,7 @@ document.getElementById("click_test").addEventListener(
     } else {
       var missing_details_alert = "Please input the download, jitter, ping and upload values into the boxes below, once the internet speed test has completed.";
       if ((upload.value == "") || (download.value == "") || (jitter.value == "") || (ping.value == "")) {
-        if(!alert(missing_details_alert)) {
+        if (!alert(missing_details_alert)) {
           if (upload.value == "") {
             changeBorderColor("upload_speed");
           }
@@ -260,7 +260,7 @@ document.getElementById("click_test").addEventListener(
         download_label.innerHTML = download.value + " Mbps";
         jitter_label.innerHTML = jitter.value + " ms";
         ping_label.innerHTML = ping.value + " ms";
-        
+        // Temporarily remove the button as we don't need on resulting HTML download
         document.getElementById("click_test").style.display="none";
 
         var timestamp = new Date().toISOString();
