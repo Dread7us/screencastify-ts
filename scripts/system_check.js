@@ -238,18 +238,10 @@ document.getElementById("click_test").addEventListener(
       var missing_details_alert = "Please input the download, jitter, ping and upload values into the boxes below, once the internet speed test has completed.";
       if ((upload.value == "") || (download.value == "") || (jitter.value == "") || (ping.value == "")) {
         if (!alert(missing_details_alert)) {
-          if (upload.value == "") {
-            changeBorderColor("upload_speed");
-          }
-          if (download.value == "") {
-            changeBorderColor("download_speed");
-          }
-          if (jitter.value == "") {
-            changeBorderColor("jitter_speed");
-          }
-          if (ping.value == "") {
-            changeBorderColor("ping_speed");
-          }
+          if (upload.value == "") changeBorderColor("upload_speed");
+          if (download.value == "") changeBorderColor("download_speed");
+          if (jitter.value == "") changeBorderColor("jitter_speed");
+          if (ping.value == "") changeBorderColor("ping_speed");
         }                
       } else {
         // Remove the iframe before downloading since we can't get the data anyhow (CORS)
