@@ -261,8 +261,9 @@ document.getElementById("click_test").addEventListener(
         download_label.innerHTML = download.value + " Mbps";
         jitter_label.innerHTML = jitter.value + " ms";
         ping_label.innerHTML = ping.value + " ms";
-        // Temporarily remove the button as we don't need on resulting HTML download
+        // Temporarily remove the buttons as we don't need on resulting HTML download
         document.getElementById("click_test").style.display="none";
+        document.getElementById("help").style.display="none";
 
         var timestamp = new Date().toISOString();
         var scrape = document.body.innerHTML;
@@ -276,6 +277,7 @@ document.getElementById("click_test").addEventListener(
         downloaded = true;
         document.getElementById("click_test").style.display="block";
         document.getElementById("click_test").innerHTML = "Restart test";
+        document.getElementById("help").style.display="block";
       }
     }
   },
