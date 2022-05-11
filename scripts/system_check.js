@@ -21,11 +21,6 @@ var storage_label = document.getElementById("temp_storage");
 var zoom_label = document.getElementById("zoom");
 var downlink_label = document.getElementById("downlink");
 var user_label = document.getElementById("user_agent");
-// This will tell us if the user has zoomed in or out (100% means no zoom)
-var zoom = Math.round(
-  (window.outerWidth / window.document.documentElement.clientWidth) * 100
-);
-var downloaded = false;
 var upload = document.getElementById("upload_speed");
 var download = document.getElementById("download_speed");
 var jitter = document.getElementById("jitter_speed");
@@ -34,6 +29,12 @@ var upload_label = document.getElementById("upload");
 var download_label = document.getElementById("download");
 var jitter_label = document.getElementById("jitter");
 var ping_label = document.getElementById("ping");
+// This will tell us if the user has zoomed in or out (100% means no zoom)
+var zoom = Math.round(
+  (window.outerWidth / window.document.documentElement.clientWidth) * 100
+);
+var downloaded = false;
+var help_url = "https://learn.screencastify.com/hc/en-us/articles/6000436901143-Diagnostic-Tool";
 
 var browser = (function () {
   // Function to determine browser (stackoverflow)
@@ -227,6 +228,14 @@ function changeBorderColor(id) {
   //document.getElementById(id).style.border = "1px solid Red";
   document.getElementById(id).className = "inputred";
 }
+
+document.getElementById("help").addEventListener(
+  "click",
+  function () {
+    window.open(help_url, '_blank');
+  },
+  false
+);
 
 // Listen for click on the title of the page then download the file
 document.getElementById("click_test").addEventListener(
