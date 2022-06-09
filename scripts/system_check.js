@@ -8,7 +8,6 @@ var pendo_check = document.getElementById("pendo.io");
 var analytics_check = document.getElementById("google-analytics.com");
 var gstatic_check = document.getElementById("fonts.gstatic.com");
 var apis_check = document.getElementById("apis.google.com");
-var castify_storage = document.getElementById("castify-storage.firebaseapp.com");
 var browser_label = document.getElementById("browser");
 var ip_label = document.getElementById("ip_address");
 var os_label = document.getElementById("operating");
@@ -183,48 +182,10 @@ function checkURL(url, which) {
         case 9:
           apis_check.innerHTML = "Passed";
           break;
-        case 10:
-          castify_storage.innerHTML = "Passed";
-          break;
       }
     })
     .catch((e) => {
       console.log(e);
-      switch (which) {
-        case 0:
-          screencastify_check.innerHTML = "Failed";
-          break;
-        case 1:
-          firebaseapp_check.innerHTML = "Failed";
-          break;
-        case 2:
-          firebaseio_check.innerHTML = "Failed";
-          break;
-        case 3:
-          sentry_check.innerHTML = "Failed";
-          break;
-        case 4:
-          googleapis_check.innerHTML = "Failed";
-          break;
-        case 5:
-          googleusercontent_check.innerHTML = "Failed";
-          break;
-        case 6:
-          pendo_check.innerHTML = "Failed";
-          break;
-        case 7:
-          analytics_check.innerHTML = "Failed";
-          break;
-        case 8:
-          gstatic_check.innerHTML = "Failed";
-          break;
-        case 9:
-          apis_check.innerHTML = "Failed";
-          break;
-        case 10:
-          castify_storage.innerHTML = "Failed";
-          break;
-      }
     });
 }
 
