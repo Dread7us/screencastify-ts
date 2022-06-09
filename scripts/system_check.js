@@ -148,7 +148,7 @@ web_pages[7] = new Array ("https://google-analytics.com");
 web_pages[8] = new Array ("https://fonts.gstatic.com/s/sourcesanspro/v19/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdu3cOWxw.woff2");
 web_pages[9] = new Array ("https://apis.google.com/js/api.js");
 
-function checkURL(url, which) {
+async function checkURL(url, which) {
   fetch(url, { mode: "no-cors" })
     .then((r) => {
       switch (which) {
@@ -187,6 +187,25 @@ function checkURL(url, which) {
     .catch((e) => {
       console.log(e);
     });
+  return;
+}
+
+async function network_checks() {
+  for (var i = 0; i < web_pages.length; i++) {
+    for (var j = 0; j < web_pages[i].length; j++) {
+      await checkURL(web_pages[i][j], i);
+    }
+  }
+  if (screencastify_check.innerHTML = "Checking...") { screencastify_check.innerHTML = "Failed" }
+  if (firebaseapp_check.innerHTML = "Checking...") { firebaseapp_check.innerHTML = "Failed" }
+  if (firebaseio_check.innerHTML = "Checking...") { firebaseio_check.innerHTML = "Failed" }
+  if (sentry_check.innerHTML = "Checking...") { sentry_check.innerHTML = "Failed" }
+  if (googleapis_check.innerHTML = "Checking...") { googleapis_check.innerHTML = "Failed" }
+  if (googleusercontent_check.innerHTML = "Checking...") { googleusercontent_check.innerHTML = "Failed" }
+  if (pendo_check.innerHTML = "Checking...") { pendo_check.innerHTML = "Failed" }
+  if (analytics_check.innerHTML = "Checking...") { analytics_check.innerHTML = "Failed" }
+  if (gstatic_check.innerHTML = "Checking...") { gstatic_check.innerHTML = "Failed" }
+  if (apis_check.innerHTML = "Checking...") { apis_check.innerHTML = "Failed" }
 }
 
 function changeBorderColor(id) {
@@ -260,24 +279,6 @@ document.getElementById("click_test").addEventListener(
   },
   false
 );
-
-function network_checks() {
-  for (var i = 0; i < web_pages.length; i++) {
-    for (var j = 0; j < web_pages[i].length; j++) {
-      checkURL(web_pages[i][j], i);
-    }
-  }
-  if (screencastify_check.innerHTML = "Checking...") { screencastify_check.innerHTML = "Failed" }
-  if (firebaseapp_check.innerHTML = "Checking...") { firebaseapp_check.innerHTML = "Failed" }
-  if (firebaseio_check.innerHTML = "Checking...") { firebaseio_check.innerHTML = "Failed" }
-  if (sentry_check.innerHTML = "Checking...") { sentry_check.innerHTML = "Failed" }
-  if (googleapis_check.innerHTML = "Checking...") { googleapis_check.innerHTML = "Failed" }
-  if (googleusercontent_check.innerHTML = "Checking...") { googleusercontent_check.innerHTML = "Failed" }
-  if (pendo_check.innerHTML = "Checking...") { pendo_check.innerHTML = "Failed" }
-  if (analytics_check.innerHTML = "Checking...") { analytics_check.innerHTML = "Failed" }
-  if (gstatic_check.innerHTML = "Checking...") { gstatic_check.innerHTML = "Failed" }
-  if (apis_check.innerHTML = "Checking...") { apis_check.innerHTML = "Failed" }
-}
 
 get_IP();
 os_label.innerHTML = window.navigator.platform;
