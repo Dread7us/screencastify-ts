@@ -80,6 +80,29 @@
    border: 1px solid #0088cc;
 }
 
+.cancel {
+   background-color: #F9FAFC;
+   font-family: 'Helvetica';
+   color: Red;
+   height: 50px;
+   width: 260px;
+   box-shadow: 0 4px 8px 0 rgba(44, 44, 44, 0.15), 0 6px 20px 0 rgba(44, 44, 44, 0.15); 
+   border: 1px solid #F9FAFC;
+   border-radius: 6px;
+   cursor: pointer;
+   margin: 1px 1px;
+   font-size: 24px;
+   white-space: nowrap;
+   text-align: center;
+   font-style: oblique;
+}
+
+.cancel:hover {
+   color: White;
+   background-color: Red;
+   border: 1px solid Red;
+}
+
 .input {
   font-family: 'Helvetica';
   padding: 10px 10px;
