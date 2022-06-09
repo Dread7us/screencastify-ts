@@ -1,223 +1,318 @@
-<!Doctype html>
-<html>
-<style>
-@font-face {
-  font-family: 'Helvetica';
-  src: url('assets/fonts/helvetica-regular.ttf');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+var screencastify_check = document.getElementById("screencastify.com");
+var firebaseapp_check = document.getElementById("firebaseapp.com");
+var firebaseio_check = document.getElementById("firebaseio.com");
+var sentry_check = document.getElementById("sentry.io");
+var googleapis_check = document.getElementById("googleapis.com");
+var googleusercontent_check = document.getElementById("googleusercontent.com");
+var pendo_check = document.getElementById("pendo.io");
+var analytics_check = document.getElementById("google-analytics.com");
+var gstatic_check = document.getElementById("fonts.gstatic.com");
+var apis_check = document.getElementById("apis.google.com");
+var castify_storage = document.getElementById("castify-storage.firebaseapp.com");
+var browser_label = document.getElementById("browser");
+var ip_label = document.getElementById("ip_address");
+var os_label = document.getElementById("operating");
+var version_label = document.getElementById("browser_version");
+var cpu_label = document.getElementById("cpu_cores");
+var ram_label = document.getElementById("ram");
+var res_label = document.getElementById("browser_resolution");
+var screen_label = document.getElementById("screen_resolution");
+var cookies_label = document.getElementById("cookies");
+var storage_label = document.getElementById("temp_storage");
+var zoom_label = document.getElementById("zoom");
+var downlink_label = document.getElementById("downlink");
+var user_label = document.getElementById("user_agent");
+var upload = document.getElementById("upload_speed");
+var download = document.getElementById("download_speed");
+var jitter = document.getElementById("jitter_speed");
+var ping = document.getElementById("ping_speed");
+var upload_label = document.getElementById("upload");
+var download_label = document.getElementById("download");
+var jitter_label = document.getElementById("jitter");
+var ping_label = document.getElementById("ping");
+// This will tell us if the user has zoomed in or out (100% means no zoom)
+var zoom = Math.round(
+  (window.outerWidth / window.document.documentElement.clientWidth) * 100
+);
+var downloaded = false;
+var help_url = "https://learn.screencastify.com/hc/en-us/articles/6000436901143-Diagnostic-Tool";
+
+var browser = (function () {
+  // Function to determine browser (stackoverflow)
+  var test = function (regexp) {
+    return regexp.test(window.navigator.userAgent);
+  };
+  switch (true) {
+    case test(/edg/i):
+      return "Microsoft Edge";
+    case test(/trident/i):
+      return "Microsoft Internet Explorer";
+    case test(/firefox|fxios/i):
+      return "Mozilla Firefox";
+    case test(/opr\//i):
+      return "Opera";
+    case test(/ucbrowser/i):
+      return "UC Browser";
+    case test(/samsungbrowser/i):
+      return "Samsung Browser";
+    case test(/chrome|chromium|crios/i):
+      return "Google Chrome";
+    case test(/safari/i):
+      return "Apple Safari";
+    default:
+      return "Other";
+  }
+})();
+
+function get_browser_version() {
+  // Function to get browser version (stackoverflow)
+  var ua = navigator.userAgent,
+    tem,
+    M =
+      ua.match(
+        /(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*([0-9|\.]+)/i
+      ) || [];
+  if (/trident/i.test(M[1])) {
+    tem = /\brv[ :]+(\d+)/g.exec(ua) || [];
+    version_label.innerHTML = tem[1] || "";
+  }
+  if (M[1] === "Chrome") {
+    tem = ua.match(/\bOPR|Edge\/(\d+)/);
+    if (tem != null) {
+      version_label.innerHTML = tem[1];
+    }
+  }
+  M = M[2] ? [M[1], M[2]] : [navigator.appName, navigator.appVersion, "-?"];
+  if ((tem = ua.match(/version\/(\d+)/i)) != null) {
+    M.splice(1, 1, tem[1]);
+  }
+  version_label.innerHTML = M[1];
 }
 
-@font-face {
-  font-family: 'Helvetica';
-  src: url('assets/fonts/helvetica-bold.ttf');
-  font-weight: 700;
-  font-style: oblique;
-  font-display: swap;
+function cookies_enabled() {
+  // Check to see if cookies are enabled
+  var cookies = navigator.cookieEnabled;
+  if ((cookies = true)) {
+    cookies_label.innerHTML = "True";
+  } else {
+    rcookies_label.innerHTML = "False";
+  }
 }
 
-@font-face {
-  font-family: 'Source Sans Pro';
-  src: url('assets/fonts/SourceSansPro-Black.ttf');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
+function get_IP() {
+  // Make the request
+  fetch("https://api.ipify.org?format=jsonp&callback=getIP")
+    // Extract the content from the response
+    .then((response) => response.text())
+    // Display the IP address on page
+    .then((data) => {
+      ip_label.innerHTML = data.slice(13, -4);
+    });
 }
-</style>
 
-<head>
-  <title>Screencastify Troubleshooting Tool</title>
-  <link rel="stylesheet" type="text/css" href="assets/main.css">
-  <link rel="shortcut icon" type="image/png" href="screencastify-ts/assets/icons/favicon.png?">
-  <base href="/">
-  <meta charset="utf-8" />
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
-  <meta name="robots" content="noindex,nofollow" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LGPFFG6ZGJ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-LGPFFG6ZGJ');
-  </script>
-</head>
+function formatBytes(bytes, decimals = 2) {
+  // Function to convert bytes to human readable KB, MG, GB, TB, etc.
+  if (bytes === 0) return "0 Bytes";
+  const k = 1024;
+  const dm = decimals < 0 ? 0 : decimals;
+  const sizes = ["Bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
+  const i = Math.floor(Math.log(bytes) / Math.log(k));
+  return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + " " + sizes[i];
+}
 
-<body bgcolor=#FF8282 class="content">
-  <center>
-    <h1 style="font-size:35px">
-      <font style="font-family:'Source Sans Pro'; font-style:bold; color:White">Screencastify Troubleshooting Tool</font>
-    </h1>
-    <div class="flex">
-      <button class="flex-teen">
-        <br>
-        Network check results
-        <br>
-        <font class="flex-child">
-          <table style="margin-left:50px; margin-bottom:20px; border-spacing: 150px 5px">
-            <tbody align="left">
-              <tr>
-                <td>Testing screencastify</td>
-                <td id="screencastify.com">Checking...</td>
-              </tr>
-              <tr>
-                <td>Testing firebaseapp</td>
-                <td id="firebaseapp.com">Checking...</td>
-              </tr>
-              <tr>
-                <td>Testing firebaseio</td>
-                <td id="firebaseio.com">Checking...</td>
-              </tr>
-              <tr>
-                <td>Testing sentry.io</td>
-                <td id="sentry.io">Checking...</td>
-              </tr>
-              <tr>
-                <td>Testing googleapis</td>
-                <td id="googleapis.com">Checking...</td>
-              </tr>
-              <tr>
-                <td>Testing googleusercontent</td>
-                <td id="googleusercontent.com">Checking...</td>
-              </tr>
-              <tr>
-                <td>Testing pendo.io</td>
-                <td id="pendo.io">Checking...</td>
-              </tr>
-              <tr>
-                <td>Testing google-analytics</td>
-                <td id="google-analytics.com">Checking...</td>
-              </tr>
-              <tr>
-                <td>Testing fonts.gstatic</td>
-                <td id="fonts.gstatic.com">Checking...</td>
-              </tr>
-              <tr>
-                <td>Testing apis.google</td>
-                <td id="apis.google.com">Checking...</td>
-              </tr>
-            </tbody>
-          </table>
-        </font>
-      </button>
-    </div>
-    <br>
-    <br>
-    <div class="flex">
-      <button class="flex-teen">
-        <br>
-        System information results
-        <br>
-        <font class="flex-child">
-          <table style="margin-left:50px; margin-bottom:20px; border-spacing: 150px 5px">
-            <tbody align="left">
-              <tr>
-                <td>Operating system*</td>
-                <td id="operating"></td>
-              </tr>
-              <tr>
-                <td>IP address</td>
-                <td id="ip_address">Please wait...</td>
-              </tr>
-              <tr>
-                <td>Temporary storage</td>
-                <td id="temp_storage"></td>
-              </tr>
-              <tr>
-                <td>Browser name*</td>
-                <td id="browser"></td>
-              </tr>
-              <tr>
-                <td>Chrome version</td>
-                <td id="browser_version"></td>
-              </tr>
-              <tr>
-                <td>CPU cores*</td>
-                <td id="cpu_cores"></td>
-              </tr>
-              <tr>
-                <td>RAM installed*</td>
-                <td id="ram"></td>
-              </tr>
-              <tr>
-                <td>Screen resolution*</td>
-                <td id="screen_resolution"></td>
-              </tr>
-              <tr>
-                <td>Browser resolution*</td>
-                <td id="browser_resolution"></td>
-              </tr>
-              <tr>
-                <td>Cookies enabled</td>
-                <td id="cookies"></td>
-              </tr>
-              <tr>
-                <td>Zoom detected*</td>
-                <td id="zoom"></td>
-              </tr>
-              <tr>
-                <td>Downlink effective type**&nbsp;&nbsp;</td>
-                <td id="downlink"></td>
-              </tr>
-              <tr valign="top">
-                <td>User agent</td>
-                <td id="user_agent" style="white-space: normal;"></td>
-              </tr>
-            </tbody>
-          </table>
-        </font>
-      </button>
-    </div>
-    <br>
-    <iframe id="speedtest" align="center"; style="text-align:center;border:none;overflow:hidden !important;width:70%;height:70%;min-height:590px;margin-top:-30px;margin-bottom:-30px" src="//openspeedtest.com/Get-widget.php?run"></iframe>
-    <div class="flex" style="margin-top:20px;">
-      <button class="flex-teen">
-        <br>
-        Input internet speed
-        <br>
-        <br>
-        <font style="font-family:'Helvetica'; font-size:15px; font-style:normal; color:#555555"><p style="margin:0px;" line-height:10px;>
-          Please wait for the speed test above to conclude and then input the download, jitter, ping and upload values below. Once you have &nbsp;&nbsp;&nbsp;&nbsp;<br>
-          the download, jitter, ping and upload values, please press the 'Download results' button and then send us the file that is generated 🎉</p></font>
-        <font class="flex-child">
-          <table style="margin-left:50px; margin-bottom:20px; border-spacing: 150px 5px">
-            <tbody align="left">
-              <tr>
-                <td>Download speed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                <td id="download"><input id="download_speed" class="input" type="number" autocomplete="off"></td>
-              </tr>           
-              <tr>
-                <td>Jitter time</td>
-                <td id="jitter"><input id="jitter_speed" class="input" type="number" autocomplete="off"></td>
-              </tr>
-              <tr>
-                <td>Ping time</td>
-                <td id="ping"><input id="ping_speed" class="input" type="number" autocomplete="off"></td>
-              </tr>
-              <tr>
-                <td>Upload speed</td>
-                <td id="upload"><input id="upload_speed" class="input" type="number" autocomplete="off"></td>
-              </tr>
-            </tbody>
-          </table>
-        </font>
-      </button>
-    </div>
-    <br>
-    <br>
-    <button id="click_test" class="button" type="button">Download results</button>&nbsp;&nbsp;<button id="help" class="button" type="button">Help article</button>
-    <br>
-    <br>
-    <br>
-    <font style="font-family:'Helvetica'; font-size:12px; font-style:normal; color:#555555"><p style="margin:0px;" line-height:5px;><b>
-      * Browser reported information may not be entirely accurate - some experimental technology is being used&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-      ** Returns the information about the quality of the current connection based on recently observed performance metrics.</p></font></b>
-    <br>
-  </center>
-  <script src="/screencastify-ts/scripts/system_check.js" type="text/javascript"></script>
-</body>
-</html>
+navigator.webkitTemporaryStorage.queryUsageAndQuota(
+  function (usedBytes, grantedBytes) {
+    storage_label.innerHTML = formatBytes(grantedBytes);
+    console.log(
+      "Using ",
+      formatBytes(usedBytes),
+      " of ",
+      formatBytes(grantedBytes)
+    );
+  },
+  function (e) {
+    console.log("Error", e);
+  }
+);
+
+const web_pages = [
+  "https://api.screencastify.com/images/cleardot.gif",
+  "https://dental2-test.firebaseapp.com",
+  "https://webconf.firebaseio.com/favicon.ico",
+  "https://sentry.io",
+  "https://firestore.googleapis.com",
+  "https://lh3.googleusercontent.com/favicon.ico",
+  "https://pendo.io",
+  "https://google-analytics.com",
+  "https://fonts.gstatic.com/s/sourcesanspro/v19/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdu3cOWxw.woff2",
+  "https://apis.google.com/js/api.js",
+  "https://castify-storage.firebaseapp.com"
+];
+
+function checkURL(url, which) {
+  fetch(url, { mode: "no-cors" })
+    .then((r) => {
+      switch (which) {
+        case 0:
+          screencastify_check.innerHTML = "Passed";
+          break;
+        case 1:
+          firebaseapp_check.innerHTML = "Passed";
+          break;
+        case 2:
+          firebaseio_check.innerHTML = "Passed";
+          break;
+        case 3:
+          sentry_check.innerHTML = "Passed";
+          break;
+        case 4:
+          googleapis_check.innerHTML = "Passed";
+          break;
+        case 5:
+          googleusercontent_check.innerHTML = "Passed";
+          break;
+        case 6:
+          pendo_check.innerHTML = "Passed";
+          break;
+        case 7:
+          analytics_check.innerHTML = "Passed";
+          break;
+        case 8:
+          gstatic_check.innerHTML = "Passed";
+          break;
+        case 9:
+          apis_check.innerHTML = "Passed";
+          break;
+        case 10:
+          castify_storage.innerHTML = "Passed";
+          break;
+      }
+    })
+    .catch((e) => {
+      console.log(e);
+      switch (which) {
+        case 0:
+          screencastify_check.innerHTML = "Failed";
+          break;
+        case 1:
+          firebaseapp_check.innerHTML = "Failed";
+          break;
+        case 2:
+          firebaseio_check.innerHTML = "Failed";
+          break;
+        case 3:
+          sentry_check.innerHTML = "Failed";
+          break;
+        case 4:
+          googleapis_check.innerHTML = "Failed";
+          break;
+        case 5:
+          googleusercontent_check.innerHTML = "Failed";
+          break;
+        case 6:
+          pendo_check.innerHTML = "Failed";
+          break;
+        case 7:
+          analytics_check.innerHTML = "Failed";
+          break;
+        case 8:
+          gstatic_check.innerHTML = "Failed";
+          break;
+        case 9:
+          apis_check.innerHTML = "Failed";
+          break;
+        case 10:
+          castify_storage.innerHTML = "Failed";
+          break;
+      }
+    });
+}
+
+function changeBorderColor(id) {
+  var load = setTimeout(function() {
+    //document.getElementById(id).style.border = "1px solid #ddd";
+    document.getElementById(id).className = "input";
+  }, 5000);
+  //document.getElementById(id).style.border = "1px solid Red";
+  document.getElementById(id).className = "inputred";
+}
+
+document.getElementById("help").addEventListener(
+  "click",
+  function () {
+    window.open(help_url, '_blank');
+  },
+  false
+);
+
+document.getElementById("restart").addEventListener(
+  "click",
+  function () {
+    window.location.reload();
+  },
+  false
+);
+
+// Listen for click on the title of the page then download the file
+document.getElementById("click_test").addEventListener(
+  "click",
+  function () {
+    if (downloaded == true) {
+      window.location.reload();
+    } else {
+      var missing_details_alert = "Please input the download, jitter, ping and upload values into the boxes below, once the internet speed test has completed.";
+      if ((upload.value == "") || (download.value == "") || (jitter.value == "") || (ping.value == "")) {
+        if (!alert(missing_details_alert)) {
+          if (upload.value == "") changeBorderColor("upload_speed");
+          if (download.value == "") changeBorderColor("download_speed");
+          if (jitter.value == "") changeBorderColor("jitter_speed");
+          if (ping.value == "") changeBorderColor("ping_speed");
+        }                
+      } else {
+        // Remove the iframe before downloading since we can't get the data anyhow (CORS)
+        var frame = document.getElementById("speedtest");
+        frame.parentNode.removeChild(frame);
+
+        upload_label.innerHTML = upload.value + " Mbps";
+        download_label.innerHTML = download.value + " Mbps";
+        jitter_label.innerHTML = jitter.value + " ms";
+        ping_label.innerHTML = ping.value + " ms";
+        // Temporarily remove the buttons as we don't need on resulting HTML download
+        document.getElementById("click_test").style.display="none";
+        document.getElementById("help").style.display="none";
+        document.getElementById("restart").style.display="none";
+
+        var timestamp = new Date().toISOString();
+        var scrape = document.body.innerHTML;
+
+        var fileName = "screencastify-ts-" + timestamp + ".html";
+        const a = document.createElement("a");
+        const file = new Blob([scrape], { type: "text/plain" });
+        a.href = URL.createObjectURL(file);
+        a.download = fileName;
+        a.click();
+        downloaded = true;
+        document.getElementById("restart").style.display="block";
+        document.getElementById("help").style.display="block";
+      }
+    }
+  },
+  false
+);
+
+get_IP();
+os_label.innerHTML = window.navigator.platform;
+browser_label.innerHTML = browser;
+get_browser_version();
+cpu_label.innerHTML = navigator.hardwareConcurrency + " logical cores";
+ram_label.innerHTML = navigator.deviceMemory + " GBs";
+screen_label.innerHTML = screen.height + " x " + screen.width + " pixels";
+res_label.innerHTML = window.screen.availHeight + " x " + window.screen.availWidth + " pixels";
+cookies_enabled();
+zoom_label.innerHTML = zoom + "%";
+downlink_label.innerHTML = navigator.connection.downlink + " (et: " + navigator.connection.effectiveType + ")";
+user_label.innerHTML = navigator.userAgent;
+
+for (var i = 0; i < web_pages.length; i++) {
+  checkURL(web_pages[i], i);
+}
