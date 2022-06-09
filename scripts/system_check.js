@@ -148,7 +148,7 @@ web_pages[7] = new Array ("https://google-analytics.com");
 web_pages[8] = new Array ("https://fonts.gstatic.com/s/sourcesanspro/v19/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdu3cOWxw.woff2");
 web_pages[9] = new Array ("https://apis.google.com/js/api.js");
 
-function checkURL(url, which) {
+async function checkURL(url, which) {
   fetch(url, { mode: "no-cors" })
     .then((r) => {
       switch (which) {
@@ -183,6 +183,7 @@ function checkURL(url, which) {
           apis_check.innerHTML = "Passed";
           break;
       }
+    return;
     })
     .catch((e) => {
       console.log(e);
@@ -264,7 +265,7 @@ document.getElementById("click_test").addEventListener(
 async function network_checks() {
   for (var i = 0; i < web_pages.length; i++) {
     for (var j = 0; j < web_pages[i].length; j++) {
-      checkURL(web_pages[i][j], i);
+      await checkURL(web_pages[i][j], i);
     }
   }
   return;
