@@ -315,6 +315,6 @@ user_label.innerHTML = navigator.userAgent;
 
 for (var i = 0; i < web_pages.length; i++) {
   for (var j = 0; j < web_pages[i].length; j++) {
-    checkURL(web_pages[j], i);
+    checkURL(web_pages[i][j], i);
   }
 }
