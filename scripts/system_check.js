@@ -148,7 +148,7 @@ web_pages[7] = new Array ("https://google-analytics.com");
 web_pages[8] = new Array ("https://fonts.gstatic.com/s/sourcesanspro/v19/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdu3cOWxw.woff2");
 web_pages[9] = new Array ("https://apis.google.com/js/api.js");
 
-async function checkURL(url, which) {
+function checkURL(url, which) {
   fetch(url, { mode: "no-cors" })
     .then((r) => {
       switch (which) {
@@ -187,13 +187,12 @@ async function checkURL(url, which) {
     .catch((e) => {
       console.log(e);
     });
-  return;
 }
 
-async function network_checks() {
+function network_checks() {
   for (var i = 0; i < web_pages.length; i++) {
     for (var j = 0; j < web_pages[i].length; j++) {
-      await checkURL(web_pages[i][j], i);
+      checkURL(web_pages[i][j], i);
     }
   }
   if (screencastify_check.innerHTML = "Checking...") { screencastify_check.innerHTML = "Failed" }
