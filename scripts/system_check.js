@@ -8,6 +8,7 @@ var pendo_check = document.getElementById("pendo.io");
 var analytics_check = document.getElementById("google-analytics.com");
 var gstatic_check = document.getElementById("fonts.gstatic.com");
 var apis_check = document.getElementById("apis.google.com");
+var castify_storage = document.getElementById("castify-storage.firebaseapp.com");
 var browser_label = document.getElementById("browser");
 var ip_label = document.getElementById("ip_address");
 var os_label = document.getElementById("operating");
@@ -135,16 +136,17 @@ navigator.webkitTemporaryStorage.queryUsageAndQuota(
 );
 
 const web_pages = [
-  "https://screencastify.com",
-  "https://firebaseapp.com",
+  "https://api.screencastify.com/images/cleardot.gif",
+  "https://dental2-test.firebaseapp.com",
   "https://webconf.firebaseio.com/favicon.ico",
   "https://sentry.io",
-  "https://fonts.googleapis.com/css?family=Muli:400",
+  "https://firestore.googleapis.com",
   "https://lh3.googleusercontent.com/favicon.ico",
   "https://pendo.io",
   "https://google-analytics.com",
   "https://fonts.gstatic.com/s/sourcesanspro/v19/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdu3cOWxw.woff2",
   "https://apis.google.com/js/api.js",
+  "https://castify-storage.firebaseapp.com"
 ];
 
 function checkURL(url, which) {
@@ -181,6 +183,9 @@ function checkURL(url, which) {
         case 9:
           apis_check.innerHTML = "Passed";
           break;
+        case 10:
+          castify_storage.innerHTML = "Passed";
+          break;
       }
     })
     .catch((e) => {
@@ -216,6 +221,9 @@ function checkURL(url, which) {
         case 9:
           apis_check.innerHTML = "Failed";
           break;
+        case 10:
+          castify_storage.innerHTML = "Failed";
+          break;
       }
     });
 }
@@ -233,6 +241,14 @@ document.getElementById("help").addEventListener(
   "click",
   function () {
     window.open(help_url, '_blank');
+  },
+  false
+);
+
+document.getElementById("restart").addEventListener(
+  "click",
+  function () {
+    window.location.reload();
   },
   false
 );
@@ -264,6 +280,7 @@ document.getElementById("click_test").addEventListener(
         // Temporarily remove the buttons as we don't need on resulting HTML download
         document.getElementById("click_test").style.display="none";
         document.getElementById("help").style.display="none";
+        document.getElementById("restart").style.display="none";
 
         var timestamp = new Date().toISOString();
         var scrape = document.body.innerHTML;
@@ -275,8 +292,7 @@ document.getElementById("click_test").addEventListener(
         a.download = fileName;
         a.click();
         downloaded = true;
-        document.getElementById("click_test").style.display="block";
-        document.getElementById("click_test").innerHTML = "Restart test";
+        document.getElementById("restart").style.display="block";
         document.getElementById("help").style.display="block";
       }
     }
