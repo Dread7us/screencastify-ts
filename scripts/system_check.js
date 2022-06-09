@@ -35,6 +35,7 @@ var zoom = Math.round(
 );
 var downloaded = false;
 var help_url = "https://learn.screencastify.com/hc/en-us/articles/6000436901143-Diagnostic-Tool";
+var wait_for_it = false;
 
 var browser = (function () {
   // Function to determine browser (stackoverflow)
@@ -262,27 +263,34 @@ document.getElementById("click_test").addEventListener(
   false
 );
 
-async function network_checks() {
+function network_checks() {
+  wait_for_it = true;
   for (var i = 0; i < web_pages.length; i++) {
     for (var j = 0; j < web_pages[i].length; j++) {
       await checkURL(web_pages[i][j], i);
     }
   }
-  return;
-};
+  wait_for_it = false;
+}
 
-async function finish_up() {
-  await network_checks();
-  if (screencastify_check.innerHTML = "Checking...") { screencastify_check.innerHTML = "Failed" }
-  if (firebaseapp_check.innerHTML = "Checking...") { firebaseapp_check.innerHTML = "Failed" }
-  if (firebaseio_check.innerHTML = "Checking...") { firebaseio_check.innerHTML = "Failed" }
-  if (sentry_check.innerHTML = "Checking...") { sentry_check.innerHTML = "Failed" }
-  if (googleapis_check.innerHTML = "Checking...") { googleapis_check.innerHTML = "Failed" }
-  if (googleusercontent_check.innerHTML = "Checking...") { googleusercontent_check.innerHTML = "Failed" }
-  if (pendo_check.innerHTML = "Checking...") { pendo_check.innerHTML = "Failed" }
-  if (analytics_check.innerHTML = "Checking...") { analytics_check.innerHTML = "Failed" }
-  if (gstatic_check.innerHTML = "Checking...") { gstatic_check.innerHTML = "Failed" }
-  if (apis_check.innerHTML = "Checking...") { apis_check.innerHTML = "Failed" }
+function finish_up() {
+  network_checks();
+  function wait_for_checks_to_complete () {
+    if (wait_for_it) {
+      setTimeout(function(){wait_for_checks_to_complete()}, 100);
+    } else {
+      if (screencastify_check.innerHTML = "Checking...") { screencastify_check.innerHTML = "Failed" }
+      if (firebaseapp_check.innerHTML = "Checking...") { firebaseapp_check.innerHTML = "Failed" }
+      if (firebaseio_check.innerHTML = "Checking...") { firebaseio_check.innerHTML = "Failed" }
+      if (sentry_check.innerHTML = "Checking...") { sentry_check.innerHTML = "Failed" }
+      if (googleapis_check.innerHTML = "Checking...") { googleapis_check.innerHTML = "Failed" }
+      if (googleusercontent_check.innerHTML = "Checking...") { googleusercontent_check.innerHTML = "Failed" }
+      if (pendo_check.innerHTML = "Checking...") { pendo_check.innerHTML = "Failed" }
+      if (analytics_check.innerHTML = "Checking...") { analytics_check.innerHTML = "Failed" }
+      if (gstatic_check.innerHTML = "Checking...") { gstatic_check.innerHTML = "Failed" }
+      if (apis_check.innerHTML = "Checking...") { apis_check.innerHTML = "Failed" }
+    }
+  }
 };
 
 get_IP();
