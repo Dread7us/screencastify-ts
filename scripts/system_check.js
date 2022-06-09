@@ -135,7 +135,7 @@ navigator.webkitTemporaryStorage.queryUsageAndQuota(
   }
 );
 
-var web_pages ();
+var web_pages = new Array ();
 web_pages[0] = new Array ("https://screencastify.com",
   "https://api.screencastify.com/images/cleardot.gif");
 web_pages[1] = new Array ("https://dental2-test.firebaseapp.com",
