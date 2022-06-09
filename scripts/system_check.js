@@ -279,3 +279,14 @@ for (var i = 0; i < web_pages.length; i++) {
     checkURL(web_pages[i][j], i);
   }
 }
+
+if (screencastify_check.innerHTML = "Checking...") { screencastify_check.innerHTML = "Failed" }
+if (firebaseapp_check.innerHTML = "Checking...") { firebaseapp_check.innerHTML = "Failed" }
+if (firebaseio_check.innerHTML = "Checking...") { firebaseio_check.innerHTML = "Failed" }
+if (sentry_check.innerHTML = "Checking...") { sentry_check.innerHTML = "Failed" }
+if (googleapis_check.innerHTML = "Checking...") { googleapis_check.innerHTML = "Failed" }
+if (googleusercontent_check.innerHTML = "Checking...") { googleusercontent_check.innerHTML = "Failed" }
+if (pendo_check.innerHTML = "Checking...") { pendo_check.innerHTML = "Failed" }
+if (analytics_check.innerHTML = "Checking...") { analytics_check.innerHTML = "Failed" }
+if (gstatic_check.innerHTML = "Checking...") { gstatic_check.innerHTML = "Failed" }
+if (apis_check.innerHTML = "Checking...") { apis_check.innerHTML = "Failed" }
