@@ -276,7 +276,7 @@ function finish_up() {
   network_checks();
   function wait_for_checks_to_complete () {
     if (wait_for_it) {
-      setTimeout(function(){wait_for_checks_to_complete()}, 100);
+      setTimeout(function(){wait_for_checks_to_complete()}, 500);
     } else {
       if (screencastify_check.innerHTML = "Checking...") { screencastify_check.innerHTML = "Failed" }
       if (firebaseapp_check.innerHTML = "Checking...") { firebaseapp_check.innerHTML = "Failed" }
