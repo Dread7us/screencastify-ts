@@ -136,7 +136,8 @@ navigator.webkitTemporaryStorage.queryUsageAndQuota(
 
 var web_pages = new Array ();
 web_pages[0] = new Array ("https://screencastify.com",
-  "https://api.screencastify.com/images/cleardot.gif");
+  "https://api.screencastify.com/images/cleardot.gif",
+  "https://umbrella.svc.screencastify.com");
 web_pages[1] = new Array ("https://dental2-test.firebaseapp.com",
   "https://castify-storage.firebaseapp.com");
 web_pages[2] = new Array ("https://webconf.firebaseio.com/favicon.ico");
