@@ -36,6 +36,8 @@ var zoom = Math.round(
 var downloaded = false;
 var help_url = "https://learn.screencastify.com/hc/en-us/articles/6000436901143-Diagnostic-Tool";
 
+console.log("Screencastify TS: Testing in progress, ignore any console errors");
+
 var browser = (function () {
   // Function to determine browser (stackoverflow)
   var test = function (regexp) {
