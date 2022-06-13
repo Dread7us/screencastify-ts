@@ -158,7 +158,7 @@ function checkURL(url, which) {
       // Nothing to do
     })
     .catch((e) => {
-      console.log(e);
+      //console.log(e);
       switch (which) {
         case 0:
           screencastify_check.innerHTML = "Failed";
