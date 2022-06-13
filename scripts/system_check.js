@@ -149,8 +149,10 @@ web_pages[4] = new Array ("https://firestore.googleapis.com",
 web_pages[5] = new Array ("https://lh3.googleusercontent.com/favicon.ico");
 web_pages[6] = new Array ("https://pendo.io");
 web_pages[7] = new Array ("https://google-analytics.com");
-web_pages[8] = new Array ("https://fonts.gstatic.com/s/sourcesanspro/v19/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdu3cOWxw.woff2");
-web_pages[9] = new Array ("https://apis.google.com/js/api.js");
+web_pages[8] = new Array ("https://fonts.gstatic.com/s/sourcesanspro/v19/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdu3cOWxw.woff2", 
+                          "https://fonts.gstatic.com");
+web_pages[9] = new Array ("https://apis.google.com/js/api.js", 
+                          "https://apis.google.com");
 
 function checkURL(url, which) {
   fetch(url, { mode: "no-cors" })
