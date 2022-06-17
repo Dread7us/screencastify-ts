@@ -166,7 +166,7 @@ function checkURL(url, which) {
       //console.log(e);
       switch (which) {
         case 0:
-          screencastify_check.innerHTML = "Failed";
+          screencastify_check.innerHTML = "Failed " + url;
           failed_webpages.push(url);
           break;
         case 1:
