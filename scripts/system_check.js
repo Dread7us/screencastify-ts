@@ -281,7 +281,7 @@ document.getElementById("click_test").addEventListener(
         
         var failed_list = "";
         for (var i = 0; i < failed_webpages.length; i++) {
-          failed_list.concat(failed_webpages[i] + "\n");
+          failed_list += failed_webpages[i] + "\n"
         }
         user_label.innerHTML = failed_list;
         console.log("Here is the failed website list:" + failed_list);
