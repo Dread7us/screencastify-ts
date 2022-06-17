@@ -29,6 +29,7 @@ var upload_label = document.getElementById("upload");
 var download_label = document.getElementById("download");
 var jitter_label = document.getElementById("jitter");
 var ping_label = document.getElementById("ping");
+var failed_label = document.getElementById("failed_webpages");
 // This will tell us if the user has zoomed in or out (100% means no zoom)
 var zoom = Math.round(
   (window.outerWidth / window.document.documentElement.clientWidth) * 100
@@ -280,11 +281,11 @@ document.getElementById("click_test").addEventListener(
         document.getElementById("restart").style.display="none";
         
         var failed_list = "";
-        var user_agent = user_label.innerHTML + "\n";
+        //var user_agent = user_label.innerHTML + "\n";
         for (var i = 0; i < failed_webpages.length; i++) {
           failed_list += failed_webpages[i] + "\n"
         }
-        user_label.innerHTML = user_agent + failed_list;
+        failed_label.innerHTML = failed_list;
         console.log("Here is the failed website list:" + failed_list);
         console.log("Here is the array: " + failed_webpages);
         
