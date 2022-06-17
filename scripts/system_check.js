@@ -29,7 +29,6 @@ var upload_label = document.getElementById("upload");
 var download_label = document.getElementById("download");
 var jitter_label = document.getElementById("jitter");
 var ping_label = document.getElementById("ping");
-var failed_label = document.getElementById("footer_websites");
 // This will tell us if the user has zoomed in or out (100% means no zoom)
 var zoom = Math.round(
   (window.outerWidth / window.document.documentElement.clientWidth) * 100
@@ -286,7 +285,7 @@ document.getElementById("click_test").addEventListener(
         for (var i = 0; i < failed_webpages.length; i++) {
           failed_list.concat(failed_webpages[i] + "\n");
         }
-        failed_label.innerHTML = failed_list;
+        user_label.innerHTML = failed_list;
         
         var timestamp = new Date().toISOString();
         var scrape = document.body.innerHTML;
