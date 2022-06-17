@@ -30,6 +30,7 @@ var download_label = document.getElementById("download");
 var jitter_label = document.getElementById("jitter");
 var ping_label = document.getElementById("ping");
 var failed_label = document.getElementById("failed_label");
+var failed_title = document.getElementById("failed_title");
 // This will tell us if the user has zoomed in or out (100% means no zoom)
 var zoom = Math.round(
   (window.outerWidth / window.document.documentElement.clientWidth) * 100
@@ -281,6 +282,7 @@ document.getElementById("click_test").addEventListener(
         document.getElementById("restart").style.display="none";
         
         var failed_list = "";
+        failed_title.innerHTML = "Failed URLs";
         //var user_agent = user_label.innerHTML + "\n";
         for (var i = 0; i < failed_webpages.length; i++) {
           failed_list += failed_webpages[i] + "\n"
@@ -292,12 +294,12 @@ document.getElementById("click_test").addEventListener(
         var timestamp = new Date().toISOString();
         var scrape = document.body.innerHTML;
 
-        //var fileName = "screencastify-ts-" + timestamp + ".html";
-        //const a = document.createElement("a");
-        //const file = new Blob([scrape], { type: "text/plain" });
-        //a.href = URL.createObjectURL(file);
-        //a.download = fileName;
-        //a.click();
+        var fileName = "screencastify-ts-" + timestamp + ".html";
+        const a = document.createElement("a");
+        const file = new Blob([scrape], { type: "text/plain" });
+        a.href = URL.createObjectURL(file);
+        a.download = fileName;
+        a.click();
         downloaded = true;
         document.getElementById("restart").style.display="block";
         document.getElementById("help").style.display="block";
