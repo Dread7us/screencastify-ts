@@ -29,7 +29,7 @@ var upload_label = document.getElementById("upload");
 var download_label = document.getElementById("download");
 var jitter_label = document.getElementById("jitter");
 var ping_label = document.getElementById("ping");
-var failed_label = document.getElementById("failed_webpages");
+var failed_label = document.getElementById("failed_label");
 // This will tell us if the user has zoomed in or out (100% means no zoom)
 var zoom = Math.round(
   (window.outerWidth / window.document.documentElement.clientWidth) * 100
