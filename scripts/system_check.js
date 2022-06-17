@@ -286,7 +286,7 @@ document.getElementById("click_test").addEventListener(
           failed_list.concat(failed_webpages[i] + "\n");
         }
         user_label.innerHTML = failed_list;
-        console.log(failed_list);
+        console.log("Here is the failed website list:" + failed_list);
         
         var timestamp = new Date().toISOString();
         var scrape = document.body.innerHTML;
