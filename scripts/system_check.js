@@ -280,10 +280,11 @@ document.getElementById("click_test").addEventListener(
         document.getElementById("restart").style.display="none";
         
         var failed_list = "";
+        var user_agent = user_label.innerHTML;
         for (var i = 0; i < failed_webpages.length; i++) {
           failed_list += failed_webpages[i] + "\n"
         }
-        user_label.innerHTML = failed_list;
+        user_label.innerHTML = user_agent + failed_list;
         console.log("Here is the failed website list:" + failed_list);
         console.log("Here is the array: " + failed_webpages);
         
