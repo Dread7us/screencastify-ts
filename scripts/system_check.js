@@ -166,7 +166,7 @@ function checkURL(url, which) {
       //console.log(e);
       switch (which) {
         case 0:
-          screencastify_check.innerHTML = "Failed " + url;
+          screencastify_check.innerHTML = "Failed";
           failed_webpages.push(url);
           break;
         case 1:
@@ -229,10 +229,8 @@ function network_checks() {
 
 function changeBorderColor(id) {
   var load = setTimeout(function() {
-    //document.getElementById(id).style.border = "1px solid #ddd";
     document.getElementById(id).className = "input";
   }, 5000);
-  //document.getElementById(id).style.border = "1px solid Red";
   document.getElementById(id).className = "inputred";
 }
 
@@ -287,6 +285,7 @@ document.getElementById("click_test").addEventListener(
         }
         user_label.innerHTML = failed_list;
         console.log("Here is the failed website list:" + failed_list);
+        console.log("Here is the array: " + failed_webpages);
         
         var timestamp = new Date().toISOString();
         var scrape = document.body.innerHTML;
