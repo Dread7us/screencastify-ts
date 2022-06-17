@@ -286,16 +286,17 @@ document.getElementById("click_test").addEventListener(
           failed_list.concat(failed_webpages[i] + "\n");
         }
         user_label.innerHTML = failed_list;
+        console.log(failed_list);
         
         var timestamp = new Date().toISOString();
         var scrape = document.body.innerHTML;
 
-        var fileName = "screencastify-ts-" + timestamp + ".html";
-        const a = document.createElement("a");
-        const file = new Blob([scrape], { type: "text/plain" });
-        a.href = URL.createObjectURL(file);
-        a.download = fileName;
-        a.click();
+        //var fileName = "screencastify-ts-" + timestamp + ".html";
+        //const a = document.createElement("a");
+        //const file = new Blob([scrape], { type: "text/plain" });
+        //a.href = URL.createObjectURL(file);
+        //a.download = fileName;
+        //a.click();
         downloaded = true;
         document.getElementById("restart").style.display="block";
         document.getElementById("help").style.display="block";
