@@ -281,15 +281,16 @@ document.getElementById("click_test").addEventListener(
         document.getElementById("help").style.display="none";
         document.getElementById("restart").style.display="none";
         
-        var failed_list = "";
-        failed_title.innerHTML = "Failed URLs";
-        //var user_agent = user_label.innerHTML + "\n";
-        for (var i = 0; i < failed_webpages.length; i++) {
-          failed_list += failed_webpages[i] + "\n"
+        if (failed_webpages.length > 0) {
+          var failed_list = "";
+          failed_title.innerHTML = "Failed URLs";
+          for (var i = 0; i < failed_webpages.length; i++) {
+            failed_list += failed_webpages[i] + "\n"
+          }
+          failed_label.innerHTML = failed_list;
+          console.log("Here is the failed website list:" + failed_list);
+          console.log("Here is the array: " + failed_webpages);
         }
-        failed_label.innerHTML = failed_list;
-        console.log("Here is the failed website list:" + failed_list);
-        console.log("Here is the array: " + failed_webpages);
         
         var timestamp = new Date().toISOString();
         var scrape = document.body.innerHTML;
