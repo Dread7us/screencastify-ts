@@ -280,7 +280,7 @@ document.getElementById("click_test").addEventListener(
         document.getElementById("restart").style.display="none";
         
         var failed_list = "";
-        var user_agent = user_label.innerHTML;
+        var user_agent = user_label.innerHTML + "\n";
         for (var i = 0; i < failed_webpages.length; i++) {
           failed_list += failed_webpages[i] + "\n"
         }
