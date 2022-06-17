@@ -29,6 +29,7 @@ var upload_label = document.getElementById("upload");
 var download_label = document.getElementById("download");
 var jitter_label = document.getElementById("jitter");
 var ping_label = document.getElementById("ping");
+var failed_label = document.getElementById("footer_websites");
 // This will tell us if the user has zoomed in or out (100% means no zoom)
 var zoom = Math.round(
   (window.outerWidth / window.document.documentElement.clientWidth) * 100
@@ -136,6 +137,7 @@ navigator.webkitTemporaryStorage.queryUsageAndQuota(
   }
 );
 
+var failed_webpages = new Array ();
 var web_pages = new Array ();
 web_pages[0] = new Array ("https://screencastify.com", 
                           "https://api.screencastify.com/images/cleardot.gif", 
@@ -166,33 +168,43 @@ function checkURL(url, which) {
       switch (which) {
         case 0:
           screencastify_check.innerHTML = "Failed";
+          failed_webpages.push(url);
           break;
         case 1:
           firebaseapp_check.innerHTML = "Failed";
+          failed_webpages.push(url);
           break;
         case 2:
           firebaseio_check.innerHTML = "Failed";
+          failed_webpages.push(url);
           break;
         case 3:
           sentry_check.innerHTML = "Failed";
+          failed_webpages.push(url);
           break;
         case 4:
           googleapis_check.innerHTML = "Failed";
+          failed_webpages.push(url);
           break;
         case 5:
           googleusercontent_check.innerHTML = "Failed";
+          failed_webpages.push(url);
           break;
         case 6:
           pendo_check.innerHTML = "Failed";
+          failed_webpages.push(url);
           break;
         case 7:
           analytics_check.innerHTML = "Failed";
+          failed_webpages.push(url);
           break;
         case 8:
           gstatic_check.innerHTML = "Failed";
+          failed_webpages.push(url);
           break;
         case 9:
           apis_check.innerHTML = "Failed";
+          failed_webpages.push(url);
           break;
         }
     });
@@ -269,7 +281,13 @@ document.getElementById("click_test").addEventListener(
         document.getElementById("click_test").style.display="none";
         document.getElementById("help").style.display="none";
         document.getElementById("restart").style.display="none";
-
+        
+        var failed_list = "";
+        for (var i = 0; i < failed_webpages.length; i++) {
+          failed_list.concat(failed_webpages[i] + "\n");
+        }
+        failed_label.innerHTML = failed_list;
+        
         var timestamp = new Date().toISOString();
         var scrape = document.body.innerHTML;
 
