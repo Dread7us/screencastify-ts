@@ -282,12 +282,12 @@ document.getElementById("click_test").addEventListener(
         document.getElementById("restart").style.display="none";
         
         if (failed_webpages.length > 0) {
-          var failed_list = "";
-          failed_title.innerHTML = "Failed URLs";
+          var failed_list = "Failed URLs:\n";
+          //failed_title.innerHTML = "Failed URLs";
           for (var i = 0; i < failed_webpages.length; i++) {
             failed_list += failed_webpages[i] + "\n"
           }
-          failed_label.innerHTML = failed_list;
+          failed_title.innerHTML = failed_list;
         }
         
         var timestamp = new Date().toISOString();
