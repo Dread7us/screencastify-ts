@@ -288,8 +288,6 @@ document.getElementById("click_test").addEventListener(
             failed_list += failed_webpages[i] + "\n"
           }
           failed_label.innerHTML = failed_list;
-          console.log("Here is the failed website list:" + failed_list);
-          console.log("Here is the array: " + failed_webpages);
         }
         
         var timestamp = new Date().toISOString();
