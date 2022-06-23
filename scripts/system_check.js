@@ -98,7 +98,7 @@ function cookies_enabled() {
   if ((cookies = true)) {
     cookies_label.innerHTML = "True";
   } else {
-    rcookies_label.innerHTML = "False";
+    cookies_label.innerHTML = "False";
   }
 }
 
