@@ -168,43 +168,43 @@ function checkURL(url, which) {
       //console.log(e);
       switch (which) {
         case 0:
-          screencastify_check.innerHTML = "Failed";
+          screencastify_check.innerHTML = "❌";
           failed_webpages.push(url);
           break;
         case 1:
-          firebaseapp_check.innerHTML = "Failed";
+          firebaseapp_check.innerHTML = "❌";
           failed_webpages.push(url);
           break;
         case 2:
-          firebaseio_check.innerHTML = "Failed";
+          firebaseio_check.innerHTML = "❌";
           failed_webpages.push(url);
           break;
         case 3:
-          sentry_check.innerHTML = "Failed";
+          sentry_check.innerHTML = "❌";
           failed_webpages.push(url);
           break;
         case 4:
-          googleapis_check.innerHTML = "Failed";
+          googleapis_check.innerHTML = "❌";
           failed_webpages.push(url);
           break;
         case 5:
-          googleusercontent_check.innerHTML = "Failed";
+          googleusercontent_check.innerHTML = "❌";
           failed_webpages.push(url);
           break;
         case 6:
-          pendo_check.innerHTML = "Failed";
+          pendo_check.innerHTML = "❌";
           failed_webpages.push(url);
           break;
         case 7:
-          analytics_check.innerHTML = "Failed";
+          analytics_check.innerHTML = "❌";
           failed_webpages.push(url);
           break;
         case 8:
-          gstatic_check.innerHTML = "Failed";
+          gstatic_check.innerHTML = "❌";
           failed_webpages.push(url);
           break;
         case 9:
-          apis_check.innerHTML = "Failed";
+          apis_check.innerHTML = "❌";
           failed_webpages.push(url);
           break;
         }
@@ -217,16 +217,16 @@ function network_checks() {
       checkURL(web_pages[i][j], i);
     }
   }
-  if (screencastify_check.innerHTML = "Checking...") { screencastify_check.innerHTML = "Passed" }
-  if (firebaseapp_check.innerHTML = "Checking...") { firebaseapp_check.innerHTML = "Passed" }
-  if (firebaseio_check.innerHTML = "Checking...") { firebaseio_check.innerHTML = "Passed" }
-  if (sentry_check.innerHTML = "Checking...") { sentry_check.innerHTML = "Passed" }
-  if (googleapis_check.innerHTML = "Checking...") { googleapis_check.innerHTML = "Passed" }
-  if (googleusercontent_check.innerHTML = "Checking...") { googleusercontent_check.innerHTML = "Passed" }
-  if (pendo_check.innerHTML = "Checking...") { pendo_check.innerHTML = "Passed" }
-  if (analytics_check.innerHTML = "Checking...") { analytics_check.innerHTML = "Passed" }
-  if (gstatic_check.innerHTML = "Checking...") { gstatic_check.innerHTML = "Passed" }
-  if (apis_check.innerHTML = "Checking...") { apis_check.innerHTML = "Passed" }
+  if (screencastify_check.innerHTML = "Checking...") { screencastify_check.innerHTML = "✅" }
+  if (firebaseapp_check.innerHTML = "Checking...") { firebaseapp_check.innerHTML = "✅" }
+  if (firebaseio_check.innerHTML = "Checking...") { firebaseio_check.innerHTML = "✅" }
+  if (sentry_check.innerHTML = "Checking...") { sentry_check.innerHTML = "✅" }
+  if (googleapis_check.innerHTML = "Checking...") { googleapis_check.innerHTML = "✅" }
+  if (googleusercontent_check.innerHTML = "Checking...") { googleusercontent_check.innerHTML = "✅" }
+  if (pendo_check.innerHTML = "Checking...") { pendo_check.innerHTML = "✅" }
+  if (analytics_check.innerHTML = "Checking...") { analytics_check.innerHTML = "✅" }
+  if (gstatic_check.innerHTML = "Checking...") { gstatic_check.innerHTML = "✅" }
+  if (apis_check.innerHTML = "Checking...") { apis_check.innerHTML = "✅" }
 }
 
 function changeBorderColor(id) {
