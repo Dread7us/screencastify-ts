@@ -178,7 +178,7 @@ function checkURL(url, which) {
       switch (which) {
         case 0:
           screencastify_check.innerHTML = failed;
-          applyRandEffects(screencastify_check, 'shake');
+          applyRandEffects(screencastify_check, shake);
           failed_webpages.push(url);
           break;
         case 1:
@@ -236,7 +236,7 @@ function network_checks() {
       checkURL(web_pages[i][j], i);
     }
   }
-  if (screencastify_check.innerHTML = "Checking...") { screencastify_check.innerHTML = passed; applyRandEffects(screencastify_check, 'bounce'); }
+  if (screencastify_check.innerHTML = "Checking...") { screencastify_check.innerHTML = passed; applyRandEffects(screencastify_check, bounce); }
   if (firebaseapp_check.innerHTML = "Checking...") { firebaseapp_check.innerHTML = passed; firebaseapp_check.classList.add('bounceIn'); }
   if (firebaseio_check.innerHTML = "Checking...") { firebaseio_check.innerHTML = passed; firebaseio_check.classList.add('bounceIn'); }
   if (sentry_check.innerHTML = "Checking...") { sentry_check.innerHTML = passed; sentry_check.classList.add('bounceIn'); }
