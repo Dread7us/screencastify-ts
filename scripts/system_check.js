@@ -220,16 +220,16 @@ function network_checks() {
       checkURL(web_pages[i][j], i);
     }
   }
-  if (screencastify_check.innerHTML = "Checking...") { screencastify_check.innerHTML = passed }
-  if (firebaseapp_check.innerHTML = "Checking...") { firebaseapp_check.innerHTML = passed }
-  if (firebaseio_check.innerHTML = "Checking...") { firebaseio_check.innerHTML = passed }
-  if (sentry_check.innerHTML = "Checking...") { sentry_check.innerHTML = passed }
-  if (googleapis_check.innerHTML = "Checking...") { googleapis_check.innerHTML = passed }
-  if (googleusercontent_check.innerHTML = "Checking...") { googleusercontent_check.innerHTML = passed }
-  if (pendo_check.innerHTML = "Checking...") { pendo_check.innerHTML = passed }
-  if (analytics_check.innerHTML = "Checking...") { analytics_check.innerHTML = passed }
-  if (gstatic_check.innerHTML = "Checking...") { gstatic_check.innerHTML = passed }
-  if (apis_check.innerHTML = "Checking...") { apis_check.innerHTML = passed }
+  if (screencastify_check.innerHTML = "Checking...") { screencastify_check.innerHTML = passed; screencastify_check.classList.add('bounceIn'); }
+  if (firebaseapp_check.innerHTML = "Checking...") { firebaseapp_check.innerHTML = passed; screencastify_check.classList.add('bounceIn'); }
+  if (firebaseio_check.innerHTML = "Checking...") { firebaseio_check.innerHTML = passed; screencastify_check.classList.add('bounceIn'); }
+  if (sentry_check.innerHTML = "Checking...") { sentry_check.innerHTML = passed; screencastify_check.classList.add('bounceIn'); }
+  if (googleapis_check.innerHTML = "Checking...") { googleapis_check.innerHTML = passed; screencastify_check.classList.add('bounceIn'); }
+  if (googleusercontent_check.innerHTML = "Checking...") { googleusercontent_check.innerHTML = passed; screencastify_check.classList.add('bounceIn'); }
+  if (pendo_check.innerHTML = "Checking...") { pendo_check.innerHTML = passed; screencastify_check.classList.add('bounceIn'); }
+  if (analytics_check.innerHTML = "Checking...") { analytics_check.innerHTML = passed; screencastify_check.classList.add('bounceIn'); }
+  if (gstatic_check.innerHTML = "Checking...") { gstatic_check.innerHTML = passed; screencastify_check.classList.add('bounceIn'); }
+  if (apis_check.innerHTML = "Checking...") { apis_check.innerHTML = passed; screencastify_check.classList.add('bounceIn'); }
 }
 
 function changeBorderColor(id) {
