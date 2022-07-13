@@ -159,8 +159,8 @@ web_pages[8] = new Array ("https://fonts.gstatic.com/s/sourcesanspro/v19/6xKydSB
                           "https://fonts.gstatic.com");
 web_pages[9] = new Array ("https://apis.google.com/js/api.js");
 
-passed = "✅Passed";
-failed = "❌ Failed";
+passed = "✅Passed✅";
+failed = "❌ Failed ❌";
 
 function checkURL(url, which) {
   fetch(url, { mode: "no-cors" })
