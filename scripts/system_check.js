@@ -224,7 +224,7 @@ function network_checks() {
   if (firebaseapp_check.innerHTML = "Checking...") { firebaseapp_check.innerHTML = passed; firebaseapp_check.classList.add('bounceIn'); }
   if (firebaseio_check.innerHTML = "Checking...") { firebaseio_check.innerHTML = passed; firebaseio_check.classList.add('bounceIn'); }
   if (sentry_check.innerHTML = "Checking...") { sentry_check.innerHTML = passed; sentry_check.classList.add('bounceIn'); }
-  if (googleapis_check.innerHTML = "Checking...") { googleapis_check.innerHTML = passed; googleapis_check.classList.add('bounceIn'); }
+  if (googleapis_check.innerHTML = "Checking...") { googleapis_check.innerHTML = passed }
   if (googleusercontent_check.innerHTML = "Checking...") { googleusercontent_check.innerHTML = passed; googleusercontent_check.classList.add('bounceIn'); }
   if (pendo_check.innerHTML = "Checking...") { pendo_check.innerHTML = passed; pendo_check.classList.add('bounceIn'); }
   if (analytics_check.innerHTML = "Checking...") { analytics_check.innerHTML = passed; analytics_check.classList.add('bounceIn'); }
