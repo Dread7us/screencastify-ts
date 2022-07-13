@@ -159,8 +159,8 @@ web_pages[8] = new Array ("https://fonts.gstatic.com/s/sourcesanspro/v19/6xKydSB
                           "https://fonts.gstatic.com");
 web_pages[9] = new Array ("https://apis.google.com/js/api.js");
 
-passed = "✅Passed✅";
-failed = "❌ Failed ❌";
+passed = "✔️";
+failed = "❌";
 
 function checkURL(url, which) {
   fetch(url, { mode: "no-cors" })
@@ -220,7 +220,7 @@ function network_checks() {
       checkURL(web_pages[i][j], i);
     }
   }
-  if (screencastify_check.innerHTML = "Checking...") { screencastify_check.innerHTML = passed }
+  if (screencastify_check.innerHTML = "Checking...") { screencastify_check.innerHTML = passed; screencastify_check.style.color='red' }
   if (firebaseapp_check.innerHTML = "Checking...") { firebaseapp_check.innerHTML = passed }
   if (firebaseio_check.innerHTML = "Checking...") { firebaseio_check.innerHTML = passed }
   if (sentry_check.innerHTML = "Checking...") { sentry_check.innerHTML = passed }
