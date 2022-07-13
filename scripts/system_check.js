@@ -159,8 +159,14 @@ web_pages[8] = new Array ("https://fonts.gstatic.com/s/sourcesanspro/v19/6xKydSB
                           "https://fonts.gstatic.com");
 web_pages[9] = new Array ("https://apis.google.com/js/api.js");
 
-passed = "⭐Passed✅";
+passed = "✅Passed⭐";
 failed = "❌ Failed ⛔";
+
+function applyRandEffects(name, type) {
+  setTimeout(() => {
+    name.classlist.add(type);
+  }, Math.floor(Math.random() * 10000));
+}
 
 function checkURL(url, which) {
   fetch(url, { mode: "no-cors" })
@@ -172,7 +178,7 @@ function checkURL(url, which) {
       switch (which) {
         case 0:
           screencastify_check.innerHTML = failed;
-          screencastify_check.classList.add('shake');
+          applyRandEffects(screencastify_check, 'shake');
           failed_webpages.push(url);
           break;
         case 1:
@@ -230,7 +236,7 @@ function network_checks() {
       checkURL(web_pages[i][j], i);
     }
   }
-  if (screencastify_check.innerHTML = "Checking...") { screencastify_check.innerHTML = passed; screencastify_check.classList.add('bounceIn'); }
+  if (screencastify_check.innerHTML = "Checking...") { screencastify_check.innerHTML = passed; applyRandEffects(screencastify_check, 'bounce'); }
   if (firebaseapp_check.innerHTML = "Checking...") { firebaseapp_check.innerHTML = passed; firebaseapp_check.classList.add('bounceIn'); }
   if (firebaseio_check.innerHTML = "Checking...") { firebaseio_check.innerHTML = passed; firebaseio_check.classList.add('bounceIn'); }
   if (sentry_check.innerHTML = "Checking...") { sentry_check.innerHTML = passed; sentry_check.classList.add('bounceIn'); }
