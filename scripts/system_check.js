@@ -162,9 +162,31 @@ web_pages[9] = new Array ("https://apis.google.com/js/api.js");
 passed = "✅Passed⭐";
 failed = "❌ Failed ⛔";
 
-function applyRandEffects(name, type) {
+function applyRandEffects(which, type) {
   setTimeout(() => {
-    name.classlist.add(type);
+    switch (which) {
+        case 0:
+          screencastify_check.classlist.add(type);
+          break;
+        case 1:
+          break;
+        case 2:
+          break;
+        case 3:
+          break;
+        case 4:
+          break;
+        case 5:
+          break;
+        case 6:
+          break;
+        case 7:
+          break;
+        case 8:
+          break;
+        case 9:
+          break;
+        }
   }, Math.floor(Math.random() * 10000));
 }
 
@@ -178,7 +200,7 @@ function checkURL(url, which) {
       switch (which) {
         case 0:
           screencastify_check.innerHTML = failed;
-          applyRandEffects(screencastify_check, "shake");
+          applyRandEffects(0, "shake");
           failed_webpages.push(url);
           break;
         case 1:
@@ -236,7 +258,7 @@ function network_checks() {
       checkURL(web_pages[i][j], i);
     }
   }
-  if (screencastify_check.innerHTML = "Checking...") { screencastify_check.innerHTML = passed; applyRandEffects(screencastify_check, "bounce"); }
+  if (screencastify_check.innerHTML = "Checking...") { screencastify_check.innerHTML = passed; applyRandEffects(0, "bounce"); }
   if (firebaseapp_check.innerHTML = "Checking...") { firebaseapp_check.innerHTML = passed; firebaseapp_check.classList.add('bounceIn'); }
   if (firebaseio_check.innerHTML = "Checking...") { firebaseio_check.innerHTML = passed; firebaseio_check.classList.add('bounceIn'); }
   if (sentry_check.innerHTML = "Checking...") { sentry_check.innerHTML = passed; sentry_check.classList.add('bounceIn'); }
