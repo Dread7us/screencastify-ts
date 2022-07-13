@@ -165,7 +165,7 @@ failed = "❌ Failed ⛔";
 function applyRandEffects(which, type) {
   setTimeout(() => {
     which.classList.add(type);
-  }, Math.floor(Math.random() * 10000));
+  }, Math.floor(Math.random() * 1000));
 }
 
 function checkURL(url, which) {
@@ -183,47 +183,47 @@ function checkURL(url, which) {
           break;
         case 1:
           firebaseapp_check.innerHTML = failed;
-          firebaseapp_check.classList.add('shake');
+          applyRandEffects(firebaseapp_check, "shake");
           failed_webpages.push(url);
           break;
         case 2:
           firebaseio_check.innerHTML = failed;
-          firebaseio_check.classList.add('shake');
+          applyRandEffects(firebaseio_check, "shake");
           failed_webpages.push(url);
           break;
         case 3:
           sentry_check.innerHTML = failed;
-          sentry_check.classList.add('shake');
+          applyRandEffects(sentry_check, "shake");
           failed_webpages.push(url);
           break;
         case 4:
           googleapis_check.innerHTML = failed;
-          googleapis_check.classList.add('shake');
+          applyRandEffects(googleapis_check, "shake");
           failed_webpages.push(url);
           break;
         case 5:
           googleusercontent_check.innerHTML = failed;
-          googleusercontent_check.classList.add('shake');
+          applyRandEffects(googleusercontent_check, "shake");
           failed_webpages.push(url);
           break;
         case 6:
           pendo_check.innerHTML = failed;
-          pendo_check.classList.add('shake');
+          applyRandEffects(pendo_check, "shake");
           failed_webpages.push(url);
           break;
         case 7:
           analytics_check.innerHTML = failed;
-          analytics_check.classList.add('shake');
+          applyRandEffects(analytics_check, "shake");
           failed_webpages.push(url);
           break;
         case 8:
           gstatic_check.innerHTML = failed;
-          gstatic_check.classList.add('shake');
+          applyRandEffects(gstatic_check, "shake");
           failed_webpages.push(url);
           break;
         case 9:
           apis_check.innerHTML = failed;
-          apis_check.classList.add('shake');
+          applyRandEffects(apis_check, "shake");
           failed_webpages.push(url);
           break;
         }
@@ -237,15 +237,15 @@ function network_checks() {
     }
   }
   if (screencastify_check.innerHTML = "Checking...") { screencastify_check.innerHTML = passed; applyRandEffects(screencastify_check, "bounce"); }
-  if (firebaseapp_check.innerHTML = "Checking...") { firebaseapp_check.innerHTML = passed; firebaseapp_check.classList.add('bounceIn'); }
-  if (firebaseio_check.innerHTML = "Checking...") { firebaseio_check.innerHTML = passed; firebaseio_check.classList.add('bounceIn'); }
-  if (sentry_check.innerHTML = "Checking...") { sentry_check.innerHTML = passed; sentry_check.classList.add('bounceIn'); }
-  if (googleapis_check.innerHTML = "Checking...") { googleapis_check.innerHTML = passed; googleapis_check.classList.add('bounceIn'); }
-  if (googleusercontent_check.innerHTML = "Checking...") { googleusercontent_check.innerHTML = passed; googleusercontent_check.classList.add('bounceIn'); }
-  if (pendo_check.innerHTML = "Checking...") { pendo_check.innerHTML = passed; pendo_check.classList.add('bounceIn'); }
-  if (analytics_check.innerHTML = "Checking...") { analytics_check.innerHTML = passed; analytics_check.classList.add('bounceIn'); }
-  if (gstatic_check.innerHTML = "Checking...") { gstatic_check.innerHTML = passed; gstatic_check.classList.add('bounceIn'); }
-  if (apis_check.innerHTML = "Checking...") { apis_check.innerHTML = passed; apis_check.classList.add('bounceIn'); }
+  if (firebaseapp_check.innerHTML = "Checking...") { firebaseapp_check.innerHTML = passed; applyRandEffects(firebaseapp_check, "bounce"); }
+  if (firebaseio_check.innerHTML = "Checking...") { firebaseio_check.innerHTML = passed; applyRandEffects(firebaseio_check, "bounce"); }
+  if (sentry_check.innerHTML = "Checking...") { sentry_check.innerHTML = passed; applyRandEffects(sentry_check, "bounce"); }
+  if (googleapis_check.innerHTML = "Checking...") { googleapis_check.innerHTML = passed; applyRandEffects(googleapis_check, "bounce");; }
+  if (googleusercontent_check.innerHTML = "Checking...") { googleusercontent_check.innerHTML = passed; applyRandEffects(googleusercontent_check, "bounce");; }
+  if (pendo_check.innerHTML = "Checking...") { pendo_check.innerHTML = passed; applyRandEffects(pendo_check, "bounce"); }
+  if (analytics_check.innerHTML = "Checking...") { analytics_check.innerHTML = passed; applyRandEffects(analytics_check, "bounce"); }
+  if (gstatic_check.innerHTML = "Checking...") { gstatic_check.innerHTML = passed; applyRandEffects(gstatic_check, "bounce"); }
+  if (apis_check.innerHTML = "Checking...") { apis_check.innerHTML = passed; applyRandEffects(apis_check, "bounce"); }
 }
 
 function changeBorderColor(id) {
