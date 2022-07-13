@@ -165,7 +165,7 @@ failed = "❌ Failed ⛔";
 function applyRandEffects(which, type) {
   setTimeout(() => {
     which.classList.add(type);
-  }, Math.floor(Math.random() * 1000));
+  }, Math.floor(Math.random() * 500));
 }
 
 function checkURL(url, which) {
