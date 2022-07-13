@@ -172,42 +172,52 @@ function checkURL(url, which) {
       switch (which) {
         case 0:
           screencastify_check.innerHTML = failed;
+          screencastify_check.classList.add('shake');
           failed_webpages.push(url);
           break;
         case 1:
           firebaseapp_check.innerHTML = failed;
+          firebaseapp_check.classList.add('shake');
           failed_webpages.push(url);
           break;
         case 2:
           firebaseio_check.innerHTML = failed;
+          firebaseio_check.classList.add('shake');
           failed_webpages.push(url);
           break;
         case 3:
           sentry_check.innerHTML = failed;
+          sentry_check.classList.add('shake');
           failed_webpages.push(url);
           break;
         case 4:
           googleapis_check.innerHTML = failed;
+          googleapis_check.classList.add('shake');
           failed_webpages.push(url);
           break;
         case 5:
           googleusercontent_check.innerHTML = failed;
+          googleusercontent_check.classList.add('shake');
           failed_webpages.push(url);
           break;
         case 6:
           pendo_check.innerHTML = failed;
+          pendo_check.classList.add('shake');
           failed_webpages.push(url);
           break;
         case 7:
           analytics_check.innerHTML = failed;
+          analytics_check.classList.add('shake');
           failed_webpages.push(url);
           break;
         case 8:
           gstatic_check.innerHTML = failed;
+          gstatic_check.classList.add('shake');
           failed_webpages.push(url);
           break;
         case 9:
           apis_check.innerHTML = failed;
+          apis_check.classList.add('shake');
           failed_webpages.push(url);
           break;
         }
