@@ -237,16 +237,16 @@ function network_checks() {
       checkURL(web_pages[i][j], i);
     }
   }
-  if (screencastify_check.innerHTML = "Checking...") { screencastify_check.innerHTML = passed; applyRandEffects(screencastify_check, "bounce"); }
-  if (firebaseapp_check.innerHTML = "Checking...") { firebaseapp_check.innerHTML = passed; applyRandEffects(firebaseapp_check, "bounce"); }
-  if (firebaseio_check.innerHTML = "Checking...") { firebaseio_check.innerHTML = passed; applyRandEffects(firebaseio_check, "bounce"); }
-  if (sentry_check.innerHTML = "Checking...") { sentry_check.innerHTML = passed; applyRandEffects(sentry_check, "bounce"); }
-  if (googleapis_check.innerHTML = "Checking...") { googleapis_check.innerHTML = passed; applyRandEffects(googleapis_check, "bounce"); }
-  if (googleusercontent_check.innerHTML = "Checking...") { googleusercontent_check.innerHTML = passed; applyRandEffects(googleusercontent_check, "bounce"); }
-  if (pendo_check.innerHTML = "Checking...") { pendo_check.innerHTML = passed; applyRandEffects(pendo_check, "bounce"); }
-  if (analytics_check.innerHTML = "Checking...") { analytics_check.innerHTML = passed; applyRandEffects(analytics_check, "bounce"); }
-  if (gstatic_check.innerHTML = "Checking...") { gstatic_check.innerHTML = passed; applyRandEffects(gstatic_check, "bounce"); }
-  if (apis_check.innerHTML = "Checking...") { apis_check.innerHTML = passed; applyRandEffects(apis_check, "bounce"); }
+  if (screencastify_check.innerHTML = checking) { screencastify_check.innerHTML = passed; applyRandEffects(screencastify_check, "bounce"); }
+  if (firebaseapp_check.innerHTML = checking) { firebaseapp_check.innerHTML = passed; applyRandEffects(firebaseapp_check, "bounce"); }
+  if (firebaseio_check.innerHTML = checking) { firebaseio_check.innerHTML = passed; applyRandEffects(firebaseio_check, "bounce"); }
+  if (sentry_check.innerHTML = checking) { sentry_check.innerHTML = passed; applyRandEffects(sentry_check, "bounce"); }
+  if (googleapis_check.innerHTML = checking) { googleapis_check.innerHTML = passed; applyRandEffects(googleapis_check, "bounce"); }
+  if (googleusercontent_check.innerHTML = checking) { googleusercontent_check.innerHTML = passed; applyRandEffects(googleusercontent_check, "bounce"); }
+  if (pendo_check.innerHTML = checking) { pendo_check.innerHTML = passed; applyRandEffects(pendo_check, "bounce"); }
+  if (analytics_check.innerHTML = checking) { analytics_check.innerHTML = passed; applyRandEffects(analytics_check, "bounce"); }
+  if (gstatic_check.innerHTML = checking) { gstatic_check.innerHTML = passed; applyRandEffects(gstatic_check, "bounce"); }
+  if (apis_check.innerHTML = checking) { apis_check.innerHTML = passed; applyRandEffects(apis_check, "bounce"); }
 }
 
 function changeBorderColor(id) {
