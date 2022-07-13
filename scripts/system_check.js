@@ -161,7 +161,7 @@ web_pages[9] = new Array ("https://apis.google.com/js/api.js");
 
 passed = "✅Passed⭐";
 failed = "❌ Failed ⛔";
-checking = "🧪Checking...🌐";
+checking = "🧪Checking🌐";
 
 function applyRandEffects(which, type) {
   setTimeout(() => {
