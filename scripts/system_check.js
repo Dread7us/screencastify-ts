@@ -240,8 +240,8 @@ function network_checks() {
   if (firebaseapp_check.innerHTML = "Checking...") { firebaseapp_check.innerHTML = passed; applyRandEffects(firebaseapp_check, "bounce"); }
   if (firebaseio_check.innerHTML = "Checking...") { firebaseio_check.innerHTML = passed; applyRandEffects(firebaseio_check, "bounce"); }
   if (sentry_check.innerHTML = "Checking...") { sentry_check.innerHTML = passed; applyRandEffects(sentry_check, "bounce"); }
-  if (googleapis_check.innerHTML = "Checking...") { googleapis_check.innerHTML = passed; applyRandEffects(googleapis_check, "bounce");; }
-  if (googleusercontent_check.innerHTML = "Checking...") { googleusercontent_check.innerHTML = passed; applyRandEffects(googleusercontent_check, "bounce");; }
+  if (googleapis_check.innerHTML = "Checking...") { googleapis_check.innerHTML = passed; applyRandEffects(googleapis_check, "bounce"); }
+  if (googleusercontent_check.innerHTML = "Checking...") { googleusercontent_check.innerHTML = passed; applyRandEffects(googleusercontent_check, "bounce"); }
   if (pendo_check.innerHTML = "Checking...") { pendo_check.innerHTML = passed; applyRandEffects(pendo_check, "bounce"); }
   if (analytics_check.innerHTML = "Checking...") { analytics_check.innerHTML = passed; applyRandEffects(analytics_check, "bounce"); }
   if (gstatic_check.innerHTML = "Checking...") { gstatic_check.innerHTML = passed; applyRandEffects(gstatic_check, "bounce"); }
