@@ -11,7 +11,7 @@
   100% { border-color:#ddd; }
 }
 
-.bounceIn {
+.bounce {
   -webkit-animation-name: bounceIn;
   animation-name: bounceIn;
   -webkit-animation-duration: .75s;
