@@ -171,6 +171,14 @@
   display: none;
 }
 
+.shrink {
+  float: right;
+  cursor: pointer;
+  position: sticky;
+  top: 10px;
+  margin-right: 10px;
+}
+
 .shrink img {
   transition: 1s ease;
 }
@@ -180,14 +188,6 @@
   -ms-transform: scale(0.8);
   transform: scale(0.8);
   transition: 1s ease;
-}
-
-.help {
-  float: right;
-  cursor: pointer;
-  position: sticky;
-  top: 10px;
-  margin-right: 10px;
 }
 
 .button {
