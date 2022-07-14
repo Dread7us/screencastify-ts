@@ -172,11 +172,6 @@
 }
 
 .shrink img {
-  float: right;
-  cursor: pointer;
-  position: sticky;
-  top: 10px;
-  margin-right: 10px;
   transition: 1s ease;
 }
 
