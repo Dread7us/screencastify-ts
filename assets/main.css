@@ -171,15 +171,12 @@
   display: none;
 }
 
-.helpimg {
+.shrink img {
   float: right;
   cursor: pointer;
   position: sticky;
   top: 10px;
   margin-right: 10px;
-}
-
-.shrink img {
   transition: 1s ease;
 }
 
