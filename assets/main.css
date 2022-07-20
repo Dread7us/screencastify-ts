@@ -139,13 +139,18 @@
   font-family: 'Helvetica';
   color: #555555;
   width: 100%;
-  border: 1px solid #555555;
   border-radius: 6px;
   cursor: arrow;
   margin: 1px 1px;
   font-size: 24px;
   white-space: nowrap;
   font-style: oblique;
+}
+
+.flex-teen-gradient1 {
+  border-width: 1px;
+  border-style: solid;
+  border-image: linear-gradient(to right, #7952FF, #3CCC6C) 1;
 }
 
 .flex-child {
