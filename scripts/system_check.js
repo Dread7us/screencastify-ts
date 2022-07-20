@@ -36,7 +36,7 @@ var zoom = Math.round(
   (window.outerWidth / window.document.documentElement.clientWidth) * 100
 );
 var downloaded = false;
-var help_url = "https://learn.screencastify.com/hc/en-us/articles/6000436901143-Diagnostic-Tool";
+var help_url = "https://askcastify.zendesk.com/hc/en-us/articles/6019857370647-Diagnostic-Tool";
 
 console.log("Screencastify TS: Testing in progress, ignore any console errors");
 
