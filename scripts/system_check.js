@@ -8,6 +8,18 @@ var pendo_check = document.getElementById("pendo.io");
 var analytics_check = document.getElementById("google-analytics.com");
 var gstatic_check = document.getElementById("fonts.gstatic.com");
 var apis_check = document.getElementById("apis.google.com");
+
+var accounts_google = document.getElementById("accounts.google");
+var apis_google = document.getElementById("apis.google");
+var app_castify = document.getElementById("app.castify");
+var askcastify_zendesk = document.getElementById("askcastify.zendesk");
+var google_analytics = document.getElementById("google-analytics");
+var googleapis = document.getElementById("googleapis");
+var googleusercontent = document.getElementById("googleusercontent");
+var fonts_gstatic = document.getElementById("fonts.gstatic");
+var pendo = document.getElementById("pendo");
+var static_zdassets = document.getElementById("static.zdassets");
+
 var browser_label = document.getElementById("browser");
 var ip_label = document.getElementById("ip_address");
 var os_label = document.getElementById("operating");
@@ -140,24 +152,17 @@ navigator.webkitTemporaryStorage.queryUsageAndQuota(
 
 var failed_webpages = new Array ();
 var web_pages = new Array ();
-web_pages[0] = new Array ("https://screencastify.com", 
-                          "https://api.screencastify.com/images/cleardot.gif", 
-                          "https://umbrella.svc.screencastify.com", 
-                          "https://dash-assets.watch.screencastify.com");
-web_pages[1] = new Array ("https://dental2-test.firebaseapp.com", 
-                          "https://castify-storage.firebaseapp.com");
-web_pages[2] = new Array ("https://webconf.firebaseio.com/favicon.ico");
-web_pages[3] = new Array ("https://sentry.io");
-web_pages[4] = new Array ("https://firestore.googleapis.com", 
-                          "https://firebasestorage.googleapis.com", 
-                          "https://firebase.googleapis.com/v1beta1/availableProjects", 
-                          "https://googleapis.com/drive/v2/files");
-web_pages[5] = new Array ("https://lh3.googleusercontent.com/favicon.ico");
-web_pages[6] = new Array ("https://pendo.io");
-web_pages[7] = new Array ("https://google-analytics.com");
-web_pages[8] = new Array ("https://fonts.gstatic.com/s/sourcesanspro/v19/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdu3cOWxw.woff2", 
+web_pages[0] = new Array ("https://accounts.google.com");
+web_pages[1] = new Array ("https://apis.google.com/js/api.js");
+web_pages[2] = new Array ("https://app.castify.com");
+web_pages[3] = new Array ("https://askcastify.zendesk.com");
+web_pages[4] = new Array ("https://google-analytics.com");
+web_pages[5] = new Array ("https://googleapis.com/drive/v2/files");
+web_pages[6] = new Array ("https://lh3.googleusercontent.com/favicon.ico");
+web_pages[7] = new Array ("https://fonts.gstatic.com/s/sourcesanspro/v19/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdu3cOWxw.woff2", 
                           "https://fonts.gstatic.com");
-web_pages[9] = new Array ("https://apis.google.com/js/api.js");
+web_pages[8] = new Array ("https://pendo.io");
+web_pages[9] = new Array ("https://static.zdassets.com");
 
 passed = "✅Passed⭐";
 failed = "❌ Failed ⛔";
@@ -178,52 +183,52 @@ function checkURL(url, which) {
       //console.log(e);
       switch (which) {
         case 0:
-          screencastify_check.innerHTML = failed;
+          accounts_google.innerHTML = failed;
           applyRandEffects(screencastify_check, "shake");
           failed_webpages.push(url);
           break;
         case 1:
-          firebaseapp_check.innerHTML = failed;
+          apis_google.innerHTML = failed;
           applyRandEffects(firebaseapp_check, "shake");
           failed_webpages.push(url);
           break;
         case 2:
-          firebaseio_check.innerHTML = failed;
+          app_castify.innerHTML = failed;
           applyRandEffects(firebaseio_check, "shake");
           failed_webpages.push(url);
           break;
         case 3:
-          sentry_check.innerHTML = failed;
+          askcastify_zendesk.innerHTML = failed;
           applyRandEffects(sentry_check, "shake");
           failed_webpages.push(url);
           break;
         case 4:
-          googleapis_check.innerHTML = failed;
+          google_analytics.innerHTML = failed;
           applyRandEffects(googleapis_check, "shake");
           failed_webpages.push(url);
           break;
         case 5:
-          googleusercontent_check.innerHTML = failed;
+          googleapis.innerHTML = failed;
           applyRandEffects(googleusercontent_check, "shake");
           failed_webpages.push(url);
           break;
         case 6:
-          pendo_check.innerHTML = failed;
+          googleusercontent.innerHTML = failed;
           applyRandEffects(pendo_check, "shake");
           failed_webpages.push(url);
           break;
         case 7:
-          analytics_check.innerHTML = failed;
+          fonts_gstatic.innerHTML = failed;
           applyRandEffects(analytics_check, "shake");
           failed_webpages.push(url);
           break;
         case 8:
-          gstatic_check.innerHTML = failed;
+          pendo.innerHTML = failed;
           applyRandEffects(gstatic_check, "shake");
           failed_webpages.push(url);
           break;
         case 9:
-          apis_check.innerHTML = failed;
+          static_zdassets.innerHTML = failed;
           applyRandEffects(apis_check, "shake");
           failed_webpages.push(url);
           break;
@@ -237,16 +242,16 @@ function network_checks() {
       checkURL(web_pages[i][j], i);
     }
   }
-  if (screencastify_check.innerHTML = checking) { screencastify_check.innerHTML = passed; applyRandEffects(screencastify_check, "bounce"); }
-  if (firebaseapp_check.innerHTML = checking) { firebaseapp_check.innerHTML = passed; applyRandEffects(firebaseapp_check, "bounce"); }
-  if (firebaseio_check.innerHTML = checking) { firebaseio_check.innerHTML = passed; applyRandEffects(firebaseio_check, "bounce"); }
-  if (sentry_check.innerHTML = checking) { sentry_check.innerHTML = passed; applyRandEffects(sentry_check, "bounce"); }
-  if (googleapis_check.innerHTML = checking) { googleapis_check.innerHTML = passed; applyRandEffects(googleapis_check, "bounce"); }
-  if (googleusercontent_check.innerHTML = checking) { googleusercontent_check.innerHTML = passed; applyRandEffects(googleusercontent_check, "bounce"); }
-  if (pendo_check.innerHTML = checking) { pendo_check.innerHTML = passed; applyRandEffects(pendo_check, "bounce"); }
-  if (analytics_check.innerHTML = checking) { analytics_check.innerHTML = passed; applyRandEffects(analytics_check, "bounce"); }
-  if (gstatic_check.innerHTML = checking) { gstatic_check.innerHTML = passed; applyRandEffects(gstatic_check, "bounce"); }
-  if (apis_check.innerHTML = checking) { apis_check.innerHTML = passed; applyRandEffects(apis_check, "bounce"); }
+  if (accounts_google.innerHTML = checking) { accounts_google.innerHTML = passed; applyRandEffects(accounts_google, "bounce"); }
+  if (apis_google.innerHTML = checking) { apis_google.innerHTML = passed; applyRandEffects(apis_google, "bounce"); }
+  if (app_castify.innerHTML = checking) { app_castify.innerHTML = passed; applyRandEffects(app_castify, "bounce"); }
+  if (askcastify_zendesk.innerHTML = checking) { askcastify_zendesk.innerHTML = passed; applyRandEffects(askcastify_zendesk, "bounce"); }
+  if (google_analytics.innerHTML = checking) { google_analytics.innerHTML = passed; applyRandEffects(google_analytics, "bounce"); }
+  if (googleapis.innerHTML = checking) { googleapis.innerHTML = passed; applyRandEffects(googleapis, "bounce"); }
+  if (googleusercontent.innerHTML = checking) { googleusercontent.innerHTML = passed; applyRandEffects(googleusercontent, "bounce"); }
+  if (fonts_gstatic.innerHTML = checking) { fonts_gstatic.innerHTML = passed; applyRandEffects(fonts_gstatic, "bounce"); }
+  if (pendo.innerHTML = checking) { pendo.innerHTML = passed; applyRandEffects(pendo, "bounce"); }
+  if (static_zdassets.innerHTML = checking) { static_zdassets.innerHTML = passed; applyRandEffects(static_zdassets, "bounce"); }
 }
 
 function changeBorderColor(id) {
