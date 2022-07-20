@@ -149,7 +149,7 @@
   border: 2px solid transparent;
   border-radius: 6px;
   background: 
-    linear-gradient(to right, white, white), 
+    linear-gradient(to right, #F9FAFC, #F9FAFC), 
     linear-gradient(to right, #7952FF, #3CCC6C); 
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
@@ -163,7 +163,7 @@
     linear-gradient(to right, #7952FF, #3CCC6C); 
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
-  margin: 5px;
+  padding: 5px;
 }
 
 .flex-child {
