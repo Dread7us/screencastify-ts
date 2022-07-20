@@ -163,7 +163,7 @@
     linear-gradient(to right, #7952FF, #3CCC6C); 
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
-  padding: 5px;
+  padding: 0 5px 0 3px;
 }
 
 .flex-child {
