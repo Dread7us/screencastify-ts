@@ -148,9 +148,11 @@
 }
 
 .flex-teen-gradient1 {
-  border-width: 1px;
-  border-style: solid;
-  border-image: linear-gradient(to right, #7952FF, #3CCC6C) 1;
+  background: 
+    linear-gradient(var(--color-bg), var(--color-bg)) padding-box,
+    linear-gradient(to right, #7952FF, #3CCC6C) border-box;
+  border-radius: 5em;
+  border: 4px solid transparent;
 }
 
 .flex-child {
