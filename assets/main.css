@@ -163,7 +163,7 @@
     linear-gradient(to right, #00AAFF, #7952FF); 
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
-  padding: 0 5px 0 3px;
+  padding: 0 15px 0 15px;
   color: white;
 }
 
