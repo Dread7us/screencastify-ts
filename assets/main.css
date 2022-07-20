@@ -135,11 +135,11 @@
 }
 
 .flex-teen {
-  background-color: White;
+  background-color: #FFFFFF;
   font-family: 'Helvetica';
   color: #555555;
   width: 100%;
-  border: 1px solid #FF8282;
+  border: 1px solid #FFFFFF;
   border-radius: 6px;
   cursor: arrow;
   margin: 1px 1px;
