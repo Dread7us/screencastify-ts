@@ -157,7 +157,7 @@
 
 .beta-border {
   border: 2px solid transparent;
-  border-radius: 12px;
+  border-radius: 25px;
   background: 
     linear-gradient(to right, #00AAFF, #7952FF), 
     linear-gradient(to right, #00AAFF, #7952FF); 
