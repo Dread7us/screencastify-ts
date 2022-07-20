@@ -175,56 +175,55 @@ function checkURL(url, which) {
       // Nothing to do
     })
     .catch((e) => {
-      //console.log(e);
       switch (which) {
         case 0:
           accounts_google.innerHTML = failed;
-          applyRandEffects(screencastify_check, "shake");
+          applyRandEffects(accounts_google, "shake");
           failed_webpages.push(url);
           break;
         case 1:
           apis_google.innerHTML = failed;
-          applyRandEffects(firebaseapp_check, "shake");
+          applyRandEffects(apis_google, "shake");
           failed_webpages.push(url);
           break;
         case 2:
           app_castify.innerHTML = failed;
-          applyRandEffects(firebaseio_check, "shake");
+          applyRandEffects(app_castify, "shake");
           failed_webpages.push(url);
           break;
         case 3:
           askcastify_zendesk.innerHTML = failed;
-          applyRandEffects(sentry_check, "shake");
+          applyRandEffects(askcastify_zendesk, "shake");
           failed_webpages.push(url);
           break;
         case 4:
           google_analytics.innerHTML = failed;
-          applyRandEffects(googleapis_check, "shake");
+          applyRandEffects(google_analytics, "shake");
           failed_webpages.push(url);
           break;
         case 5:
           googleapis.innerHTML = failed;
-          applyRandEffects(googleusercontent_check, "shake");
+          applyRandEffects(googleapis, "shake");
           failed_webpages.push(url);
           break;
         case 6:
           googleusercontent.innerHTML = failed;
-          applyRandEffects(pendo_check, "shake");
+          applyRandEffects(googleusercontent, "shake");
           failed_webpages.push(url);
           break;
         case 7:
           fonts_gstatic.innerHTML = failed;
-          applyRandEffects(analytics_check, "shake");
+          applyRandEffects(fonts_gstatic, "shake");
           failed_webpages.push(url);
           break;
         case 8:
           pendo.innerHTML = failed;
-          applyRandEffects(gstatic_check, "shake");
+          applyRandEffects(pendo, "shake");
           failed_webpages.push(url);
           break;
         case 9:
           static_zdassets.innerHTML = failed;
-          applyRandEffects(apis_check, "shake");
+          applyRandEffects(static_zdassets, "shake");
           failed_webpages.push(url);
           break;
         }
