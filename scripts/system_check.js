@@ -1,14 +1,3 @@
-var screencastify_check = document.getElementById("screencastify.com");
-var firebaseapp_check = document.getElementById("firebaseapp.com");
-var firebaseio_check = document.getElementById("firebaseio.com");
-var sentry_check = document.getElementById("sentry.io");
-var googleapis_check = document.getElementById("googleapis.com");
-var googleusercontent_check = document.getElementById("googleusercontent.com");
-var pendo_check = document.getElementById("pendo.io");
-var analytics_check = document.getElementById("google-analytics.com");
-var gstatic_check = document.getElementById("fonts.gstatic.com");
-var apis_check = document.getElementById("apis.google.com");
-
 var accounts_google = document.getElementById("accounts.google");
 var apis_google = document.getElementById("apis.google");
 var app_castify = document.getElementById("app.castify");
@@ -19,7 +8,6 @@ var googleusercontent = document.getElementById("googleusercontent");
 var fonts_gstatic = document.getElementById("fonts.gstatic");
 var pendo = document.getElementById("pendo");
 var static_zdassets = document.getElementById("static.zdassets");
-
 var browser_label = document.getElementById("browser");
 var ip_label = document.getElementById("ip_address");
 var os_label = document.getElementById("operating");
@@ -154,14 +142,21 @@ var failed_webpages = new Array ();
 var web_pages = new Array ();
 web_pages[0] = new Array ("https://accounts.google.com");
 web_pages[1] = new Array ("https://apis.google.com/js/api.js");
-web_pages[2] = new Array ("https://app.castify.com");
+web_pages[2] = new Array ("https://app.castify.com",
+                          "studio-backend.castify.com",
+                          "studio-graphql.castify.com");
 web_pages[3] = new Array ("https://askcastify.zendesk.com");
 web_pages[4] = new Array ("https://google-analytics.com");
-web_pages[5] = new Array ("https://googleapis.com/drive/v2/files");
+web_pages[5] = new Array ("https://firestore.googleapis.com", 
+                          "https://firebasestorage.googleapis.com", 
+                          "https://firebase.googleapis.com/v1beta1/availableProjects", 
+                          "storage.googleapis.com",
+                          "https://googleapis.com/drive/v2/files");
 web_pages[6] = new Array ("https://lh3.googleusercontent.com/favicon.ico");
 web_pages[7] = new Array ("https://fonts.gstatic.com/s/sourcesanspro/v19/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdu3cOWxw.woff2", 
                           "https://fonts.gstatic.com");
-web_pages[8] = new Array ("https://pendo.io");
+web_pages[8] = new Array ("https://pendo.io",
+                          "data.pendo.io");
 web_pages[9] = new Array ("https://static.zdassets.com");
 
 passed = "✅Passed⭐";
