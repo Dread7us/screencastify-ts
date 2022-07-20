@@ -144,15 +144,9 @@
   margin: 1px 1px;
   font-size: 24px;
   white-space: nowrap;
-  font-style: oblique;
-  
-  border: 2px solid transparent;
+  font-style: oblique;  
   border-radius: 6px;
-  background: 
-    linear-gradient(to right, #F9FAFC, #F9FAFC), 
-    linear-gradient(to right, #00AAFF, #3CCC6C); 
-  background-clip: padding-box, border-box;
-  background-origin: padding-box, border-box;
+  border: 2px solid lightgray;
 }
 
 .beta-border {
