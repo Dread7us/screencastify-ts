@@ -205,9 +205,8 @@
   background-color: #00AAFF;
   font-family: 'Helvetica';
   color: White;
-  height: 50px;
+  height: 60px;
   width: 260px;
-  box-shadow: 0 4px 8px 0 rgba(44, 44, 44, 0.15), 0 6px 20px 0 rgba(44, 44, 44, 0.15); 
   border: 1px solid #00AAFF;
   border-radius: 6px;
   cursor: pointer;
@@ -224,7 +223,7 @@
   height: 24px;
   width: 24px;
   line-height: 24px;
-  margin: 0 4px -6px -4px;
+  margin: 0 8px -6px -4px;
   position: relative;
   top: 0px;
   left: 0px;
