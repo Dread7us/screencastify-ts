@@ -158,7 +158,7 @@
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
   padding: 0 15px 0 15px;
-  color: white;
+  color: #FAFAFA;
   letter-spacing: 0.4rem;
 }
 
@@ -188,7 +188,7 @@
   transition: 1s ease;
   background-color: #922fff;
   font-family: 'Helvetica';
-  color: White;
+  color: white;
   border: 1px solid #922fff;
   border-radius: 25px;
   height: 50px;
@@ -265,7 +265,7 @@
 }
 
 .cancel {
-  background-color: #F9FAFC;
+  background-color: transparent;
   font-family: 'Helvetica';
   color: #7952FF;
   height: 60px;
