@@ -207,6 +207,20 @@
   transition: 1s ease;
 }
 
+.help-btn:before {
+  content:  "\0000a0";
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
+  margin: 0 8px -6px -4px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABoUlEQVRIid2VsU4CQRCGv4CchfIGaGsCvINY2BokhlJLIjGIL2GI0acQKQyJiYmWthbaiEYR9QmMJoKFNJzFzobNsncHlPzJ5JJ/Zv7Zm5vZg1mHBxSBBtAGfsXawJn4vGnFC8AH4EfYO7A5iXAMODIEHoAKkAYWxDLAPtAy4mqSGwkt/geUIpJiwK7E6iKhKBjiqwa/BDSBrtgFsGL4c0aRfJC4x7DnJUv8i9Hef4tPoyz8G5BwFSgy7LnZlqbwV0BK7Fq4cyMuDjwKv+Uq0BBnxeK7wqest/KBHyu2KnzdVeBVnGmX08KyxH5afEb4titJnzQZIT6PapcPHFu+pPDdaQvMAZcSd8PoFocWGKdFJxJzG3CQLFaLzGm5l+d6SIEdeW4DPYdf5965kvWYthhz5S3EgSdCxtRDXVw+av1d0Evmwp74OgQsGqhbUV8VuQkKrAF9YABsBIlr1IwiZdSrByEuJ+9LzmGUOKj+6yI+av2rqCVaFMsCBwx7PhDxib5dHnVxRf1wOozRliAkUBNRB15Qo9kDnoFT8QV+0NnAP6DYjx+4gAtFAAAAAElFTkSuQmCC") no-repeat left center transparent;
+  background-size: 100% 100%;
+}
+
 .button {
   background-color: #00AAFF;
   font-family: 'Helvetica';
