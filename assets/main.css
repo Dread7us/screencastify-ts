@@ -204,6 +204,7 @@
   right: 0;
   bottom: 0;
   padding-bottom: 4px;
+  letter-spacing: 1px;
 }
 
 .help-btn:hover {
@@ -242,6 +243,7 @@
   text-align: center;
   font-style: oblique;
   padding-bottom: 4px;
+  letter-spacing: 1px;
 }
 
 .button:before {
@@ -279,6 +281,7 @@
   text-align: center;
   font-style: oblique;
   padding-bottom: 4px;
+  letter-spacing: 1px;
 }
 
 .cancel:hover {
