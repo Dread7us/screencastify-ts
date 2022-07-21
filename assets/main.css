@@ -184,7 +184,7 @@
   display: none;
 }
 
-.help {
+.help-btn {
   transition: 1s ease;
   background-color: #7952FF;
   font-family: 'Helvetica';
@@ -200,7 +200,7 @@
   font-style: oblique;
 }
 
-.help:hover {
+.help-btn:hover {
   -webkit-transform: scale(1.2);
   -ms-transform: scale(1.2);
   transform: scale(1.2);
