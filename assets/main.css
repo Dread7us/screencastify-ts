@@ -218,6 +218,20 @@
   font-style: oblique;
 }
 
+.button:before{
+  content:  "\0000a0";
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  line-height: 24px;
+  margin: 0 4px -6px -4px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAA7EAAAOxAGVKw4bAAABJElEQVRIie3VL0tDYRQG8J9DFpZElmUYh8ksNpvBTyByGX4Ak0kQMe87aDQYTGIwGU1idRhsLgguDL3MsHvlOu6fdw4x6IGnHJ7zPOcc3sPLf/x2zAVwmtjGBpaT3AOucILnWRrYQR+jAvQRfVd8v0R4EofTiq8jnsIgxmaI8BbOla+lCPeYLxJexGVJ8QBttBK0k9wkby1PvI7riu4GaGRqGgUGTzjFatYgChg/1CDFELsp+eYHDEZ4S1dWRjw23vkSahmDWpJr4aik/kIyTlkXHcURJZyi+he4qxg1ln+tkepbGcJBBSlvkk5F5yluYQG9QJMoYC1ZfL6kFTwGFMQBa0lxZuKym+gaH0uIQBF62DM+4Nz/oO7rm582XvE+Q/1fiw82f/fqTCUp5gAAAABJRU5ErkJggg==") no-repeat left center transparent;
+  background-size: 100% 100%;
+}
+
 .button:hover {
   color: White;
   background-color: #0088cc;
