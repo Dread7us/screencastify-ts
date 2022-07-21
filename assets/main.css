@@ -233,7 +233,7 @@
   font-family: 'Helvetica';
   color: White;
   height: 48px;
-  width: 260px;
+  padding: 6px 16px;
   border: 1px solid #00AAFF;
   border-radius: 8px;
   cursor: pointer;
@@ -244,6 +244,8 @@
   font-style: oblique;
   padding-bottom: 4px;
   letter-spacing: 1px;
+  padding: 6px 16px;
+  min-width: 64px;
 }
 
 .button:before {
@@ -271,7 +273,7 @@
   font-family: 'Helvetica';
   color: #7952FF;
   height: 48px;
-  width: 260px;
+  padding: 6px 16px;
   border: 1px solid #7952FF;
   border-radius: 8px;
   cursor: pointer;
@@ -282,6 +284,8 @@
   font-style: oblique;
   padding-bottom: 4px;
   letter-spacing: 1px;
+  padding: 6px 16px;
+  min-width: 64px;
 }
 
 .cancel:hover {
