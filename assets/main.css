@@ -208,7 +208,7 @@
   height: 60px;
   width: 260px;
   border: 1px solid #00AAFF;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   margin: 1px 1px;
   font-size: 24px;
@@ -244,7 +244,7 @@
   height: 60px;
   width: 260px;
   border: 1px solid #7952FF;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   margin: 1px 1px;
   font-size: 24px;
