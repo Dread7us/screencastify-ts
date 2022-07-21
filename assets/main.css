@@ -186,7 +186,7 @@
 
 .shrink img {
   background: 
-    linear-gradient(to right, #FFFFFF, #FFFFFF), 
+    linear-gradient(to right, #F9FAFC, #F9FAFC), 
     linear-gradient(to right, #00AAFF, #3CCC6C); 
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
