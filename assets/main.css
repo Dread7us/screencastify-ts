@@ -189,15 +189,19 @@
   background-color: #7952FF;
   font-family: 'Helvetica';
   color: White;
-  border: 2px solid #7952FF;
+  border: 1px solid #7952FF;
   border-radius: 25px;
   height: 60px;
   cursor: pointer;
-  margin: 1px 1px;
+  margin: 1px 10px, 1px, 1px;
   font-size: 1.3rem;
   white-space: nowrap;
   text-align: center;
   font-style: oblique;
+  
+  float: right;
+  position: sticky;
+  top: 10px;
 }
 
 .help-btn:hover {
