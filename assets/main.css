@@ -241,6 +241,7 @@
   white-space: nowrap;
   text-align: center;
   font-style: oblique;
+  padding-bottom: 4px;
 }
 
 .button:before {
@@ -277,6 +278,7 @@
   white-space: nowrap;
   text-align: center;
   font-style: oblique;
+  padding-bottom: 4px;
 }
 
 .cancel:hover {
