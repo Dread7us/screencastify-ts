@@ -174,13 +174,13 @@
   font-style: normal;  
 }
 
-.content {
-  /* This is the magic bit for Firefox */
+.body-style {
   scrollbar-width: none;
+  background-color: #FAFAFA;
+  margin: 0;
 }
 
-.content::-webkit-scrollbar {
-  /* This is the magic bit for WebKit */
+.body-style::-webkit-scrollbar {
   display: none;
 }
 
