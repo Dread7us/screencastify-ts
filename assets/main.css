@@ -1,3 +1,13 @@
+hr {
+  background-color: transparent;
+  border-color: #DCD6F7;
+  border-width: 10px;
+  border-style: none;
+  border-top-style: dotted;
+  width: 5rem;
+  margin: 80px auto 80px auto;
+}
+
 @-webkit-keyframes fade {
   0%   { border-color:red; }
   100% { border-color:#ddd; }
@@ -309,7 +319,7 @@
 }
 
 .footer-btns {
-  background-color: #DCD6F7; 
+  background-color: transparent; 
   border: 2px solid lightgray;
   margin: -2px 0 0 0;
 }
