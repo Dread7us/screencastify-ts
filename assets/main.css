@@ -184,6 +184,16 @@ hr {
   font-style: normal;  
 }
 
+.hr-bottom {
+  background-color: transparent;
+  border-color: #E7E7E7;
+  border-width: 10px;
+  border-style: none;
+  border-top-style: dotted;
+  width: 5rem;
+  margin: 15px auto 15px auto;
+}
+
 .body-style {
   scrollbar-width: none;
   background-color: #FAFAFA;
