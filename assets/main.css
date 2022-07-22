@@ -315,9 +315,15 @@
 }
 
 .middle-container {
-  background-color: #DCD6F7; 
+  //background-color: lightgray; 
   border: 2px solid lightgray;
   margin: 0 0 0 0;
+  
+  background: 
+    linear-gradient(to right, lightgray, transparent), 
+    linear-gradient(to right, lightgray, transparent); 
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
 }
 
 .input {
