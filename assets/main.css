@@ -352,6 +352,14 @@ hr {
   text-align: left;
 }
 
+.disclaimer-table {
+  font-family: 'Helvetica'; 
+  font-size: 12px; 
+  font-style: normal; 
+  color: #555555; 
+  line-height: 8px;
+}
+
 .input {
   font-family: 'Helvetica';
   padding: 10px 10px;
