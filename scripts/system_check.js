@@ -299,8 +299,8 @@ document.getElementById("click_test").addEventListener(
         document.getElementById("click_test").style.display="none";
         document.getElementById("help").style.display="none";
         document.getElementById("restart").style.display="none";
-        document.getElementByClass("hr-bottom").style.display="none";
-        document.getElementByClass("hr-system-info").style.display="none";
+        document.getElementsByClassName("hr-bottom").style.display="none";
+        document.getElementsByClassName("hr-system-info").style.display="none";
         
         if (failed_webpages.length > 0) {
           var failed_list = "";
