@@ -309,7 +309,15 @@
 }
 
 .footer-btns {
-  background-color: #E7E7E7; 
+  background-color: #DCD6F7; 
+  border: 2px solid lightgray;
+  margin: -2px 0 0 0;
+}
+
+.middle-container {
+  background-color: #DCD6F7; 
+  border: 2px solid lightgray;
+  margin: -2px 0 0 0;
 }
 
 .input {
