@@ -316,7 +316,7 @@
 
 .middle-container {
   //background-color: lightgray; 
-  border: 2px solid lightgray;
+  border: 2px solid transparent;
   margin: 0 0 0 0;
   
   background: 
