@@ -137,10 +137,11 @@ hr {
 
 .h1-topnav {
   font-size: 35px;
-  background-color: #E7E7E7;
+  background-color: #ffffff;
   border: 2px solid lightgray;
   padding: 50px;
-  margin: -2px -2px 20px -2px;
+  width: 896px;
+  margin: 0 0 34px 0;
 }
 
 .flex {
