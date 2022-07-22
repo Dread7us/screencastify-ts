@@ -333,6 +333,10 @@ hr {
   background-origin: padding-box, border-box;
 }
 
+.bottom-disclaimer {
+  width: 30%;
+}
+
 .input {
   font-family: 'Helvetica';
   padding: 10px 10px;
