@@ -105,70 +105,72 @@
     <font style="font-family:'Helvetica'; font-size:12px; font-style:normal; color:#555555"><p id="failed_websites"; style="margin:12px;" line-height:5px;><b>
     * This tool is a fetch test on specific URLs that are used in our application; it cannot test every sub domain possibility and as such, in rare circumstances, we can see false positives.</p></font></b>
     
-    <div class="flex">
-      <button class="flex-teen">
-        <br>
-        System information results
-        <br>
-        <font class="flex-child">
-          <table style="margin-left:50px; margin-bottom:20px; border-spacing: 150px 5px">
-            <tbody align="left">
-              <tr>
-                <td>Operating system*</td>
-                <td id="operating"></td>
-              </tr>
-              <tr>
-                <td>IP address</td>
-                <td id="ip_address">Please wait...</td>
-              </tr>
-              <tr>
-                <td>Temporary storage</td>
-                <td id="temp_storage"></td>
-              </tr>
-              <tr>
-                <td>Browser name*</td>
-                <td id="browser"></td>
-              </tr>
-              <tr>
-                <td>Chrome version*</td>
-                <td id="browser_version"></td>
-              </tr>
-              <tr>
-                <td>CPU cores*</td>
-                <td id="cpu_cores"></td>
-              </tr>
-              <tr>
-                <td>RAM installed*</td>
-                <td id="ram"></td>
-              </tr>
-              <tr>
-                <td>Screen resolution*</td>
-                <td id="screen_resolution"></td>
-              </tr>
-              <tr>
-                <td>Browser resolution*</td>
-                <td id="browser_resolution"></td>
-              </tr>
-              <tr>
-                <td>Cookies enabled</td>
-                <td id="cookies"></td>
-              </tr>
-              <tr>
-                <td>Zoom detected*</td>
-                <td id="zoom"></td>
-              </tr>
-              <tr>
-                <td>Downlink effective type**&nbsp;&nbsp;</td>
-                <td id="downlink"></td>
-              </tr>
-              <tr valign="top">
-                <td>User agent</td>
-                <td id="user_agent" style="white-space: normal;"></td>
-              </tr>
-            </tbody>
-          </table>
-        </font>
-      </button>
+    <div class="middle-container">
+      <div class="flex">
+        <button class="flex-teen">
+          <br>
+          System information results
+          <br>
+          <font class="flex-child">
+            <table style="margin-left:50px; margin-bottom:20px; border-spacing: 150px 5px">
+              <tbody align="left">
+                <tr>
+                  <td>Operating system*</td>
+                  <td id="operating"></td>
+                </tr>
+                <tr>
+                  <td>IP address</td>
+                  <td id="ip_address">Please wait...</td>
+                </tr>
+                <tr>
+                  <td>Temporary storage</td>
+                  <td id="temp_storage"></td>
+                </tr>
+                <tr>
+                  <td>Browser name*</td>
+                  <td id="browser"></td>
+                </tr>
+                <tr>
+                  <td>Chrome version*</td>
+                  <td id="browser_version"></td>
+                </tr>
+                <tr>
+                  <td>CPU cores*</td>
+                  <td id="cpu_cores"></td>
+                </tr>
+                <tr>
+                  <td>RAM installed*</td>
+                  <td id="ram"></td>
+                </tr>
+                <tr>
+                  <td>Screen resolution*</td>
+                  <td id="screen_resolution"></td>
+                </tr>
+                <tr>
+                  <td>Browser resolution*</td>
+                  <td id="browser_resolution"></td>
+                </tr>
+                <tr>
+                  <td>Cookies enabled</td>
+                  <td id="cookies"></td>
+                </tr>
+                <tr>
+                  <td>Zoom detected*</td>
+                  <td id="zoom"></td>
+                </tr>
+                <tr>
+                  <td>Downlink effective type**&nbsp;&nbsp;</td>
+                  <td id="downlink"></td>
+                </tr>
+                <tr valign="top">
+                  <td>User agent</td>
+                  <td id="user_agent" style="white-space: normal;"></td>
+                </tr>
+              </tbody>
+            </table>
+          </font>
+        </button>
+      </div>
     </div>
     <br>
     <iframe id="speedtest" align="center"; style="text-align:center;border:none;overflow:hidden !important;width:70%;height:70%;min-height:590px;margin-top:-30px;margin-bottom:-30px" src="//openspeedtest.com/Get-widget.php?run"></iframe>
