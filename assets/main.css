@@ -165,7 +165,7 @@ hr {
   white-space: nowrap;
   font-style: oblique;  
   border-radius: 6px;
-  <!-- border: 2px solid lightgray; -->
+  border: 2px solid transparent;
 }
 
 .beta-border {
