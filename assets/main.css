@@ -347,6 +347,10 @@ hr {
   width: 30%;
 }
 
+.disclaimer-text {
+  margin: 0;
+}
+
 .input {
   font-family: 'Helvetica';
   padding: 10px 10px;
