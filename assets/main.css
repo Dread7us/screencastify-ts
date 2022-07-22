@@ -344,11 +344,12 @@ hr {
 }
 
 .bottom-disclaimer {
-  width: 50%;
+  width: 1000px;
 }
 
 .disclaimer-text {
   margin: 0;
+  text-align: left;
 }
 
 .input {
