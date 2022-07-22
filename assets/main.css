@@ -319,18 +319,16 @@ hr {
 }
 
 .footer-btns {
-  background-color: #E7E7E7; 
+  background-color: #EFEFEF; 
   border: 2px solid lightgray;
   margin: -2px 0 0 0;
 }
 
 .middle-container {
-  //background-color: lightgray; 
   border: 2px solid transparent;
   margin: 0 0 0 0;
-  
   background: 
-    linear-gradient(to right, transparent, lightgray 50%, transparent); 
+    linear-gradient(to right, transparent, #E7E7E7 50%, transparent); 
   background-clip: padding-box, border-box;
   background-origin: padding-box, border-box;
 }
