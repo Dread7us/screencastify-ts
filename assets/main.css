@@ -141,7 +141,11 @@ hr {
   border: 1px solid lightgray;
   padding: 50px;
   width: 100%;
-  margin: -2px -2px 34px -2px;
+  margin: -2px -2px 0px -2px;
+}
+
+.hr-top-nav {
+  margin: 14px auto 14px auto;
 }
 
 .flex {
