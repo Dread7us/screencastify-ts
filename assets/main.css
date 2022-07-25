@@ -139,9 +139,10 @@ hr {
   font-size: 35px;
   background-color: #ffffff;
   border: 1px solid lightgray;
-  padding: 50px;
   width: 100%;
-  margin: -2px -2px 0px -2px;
+  margin: -1px auto 0 auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .hr-top-nav {
