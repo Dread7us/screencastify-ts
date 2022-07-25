@@ -8,6 +8,11 @@ hr {
   margin: 14px auto 10px auto;
 }
 
+html {
+  overflow: hidden;
+  height: 100%;
+}
+
 @-webkit-keyframes fade {
   0%   { border-color:red; }
   100% { border-color:#ddd; }
@@ -213,6 +218,8 @@ hr {
   background-color: #FAFAFA;
   margin: 0;
   width: 100%;
+  height: 100%;
+  overflow: auto;
 }
 
 .body-style::-webkit-scrollbar {
