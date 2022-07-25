@@ -301,7 +301,7 @@ document.getElementById("click_test").addEventListener(
         document.getElementById("restart").style.display="none";
         document.getElementById("hr-system-info").style.display="none";
         document.getElementById("hr-at-the-bottom").style.display="none";
-        document.getElementById("hr-top-nav").style.display="none";
+        document.getElementById("hr-title-nav").style.display="none";
         
         if (failed_webpages.length > 0) {
           var failed_list = "";
