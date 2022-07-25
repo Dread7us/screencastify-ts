@@ -213,7 +213,6 @@ hr {
   background-color: #FAFAFA;
   margin: 0;
   width: 100%;
-  overflow-x: hidden;
 }
 
 .body-style::-webkit-scrollbar {
