@@ -295,12 +295,13 @@ document.getElementById("click_test").addEventListener(
         download_label.innerHTML = download.value + " Mbps";
         jitter_label.innerHTML = jitter.value + " ms";
         ping_label.innerHTML = ping.value + " ms";
-        // Temporarily remove the buttons as we don't need on resulting HTML download
+        // Temporarily remove the buttons and HR elements as we don't need on resulting HTML download
         document.getElementById("click_test").style.display="none";
         document.getElementById("help").style.display="none";
         document.getElementById("restart").style.display="none";
         document.getElementById("hr-system-info").style.display="none";
         document.getElementById("hr-at-the-bottom").style.display="none";
+        document.getElementById("hr-top-nav").style.display="none";
         
         if (failed_webpages.length > 0) {
           var failed_list = "";
