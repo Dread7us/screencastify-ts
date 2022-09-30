@@ -143,8 +143,8 @@ var web_pages = new Array ();
 web_pages[0] = new Array ("https://accounts.google.com");
 web_pages[1] = new Array ("https://apis.google.com/js/api.js");
 web_pages[2] = new Array ("https://app.castify.com",
-                          "studio-backend.castify.com",
-                          "studio-graphql.castify.com");
+                          "https://studio-backend.castify.com",
+                          "https://studio-graphql.castify.com");
 web_pages[3] = new Array ("https://askcastify.zendesk.com");
 web_pages[4] = new Array ("https://google-analytics.com");
 web_pages[5] = new Array ("https://firestore.googleapis.com", 
