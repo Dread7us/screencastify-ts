@@ -110,7 +110,6 @@ const cookieTest = (iFrameUri, callBack) => {
     }
     document.body.appendChild(frame)
 }
-export default cookieTest;
 
 function cookies_enabled() {
   if (cookieTest) {
