@@ -93,6 +93,16 @@ function get_browser_version() {
 }
 
 function cookies_enabled() {
+  try {
+    if (window.localStorage) {
+      cookies_label.innerHTML = "True";
+    }
+  } catch (err) {
+    cookies_label.innerHTML = "False";
+  }
+}
+
+function cookies_enabled_original() {
   // Check to see if cookies are enabled
   var cookies = navigator.cookieEnabled;
   if ((cookies = true)) {
