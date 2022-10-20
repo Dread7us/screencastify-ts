@@ -92,7 +92,35 @@ function get_browser_version() {
   version_label.innerHTML = M[1];
 }
 
+const cookieTest = (iFrameUri, callBack) => {
+    let messageHandler = (event) => {
+        // check for trusted origins here         
+        const data = JSON.parse(event.data)
+        callBack(data['result'])
+        window.removeEventListener('message', messageHandler);
+        document.body.removeChild(frame)
+    }
+    window.addEventListener('message', messageHandler);
+    const frame = document.createElement('iframe')
+    frame.src = iFrameUri
+    frame.sandbox = "allow-scripts allow-same-origin"
+    frame.style = `display:none`
+    frame.onload = (e) => {
+        frame.contentWindow.postMessage(JSON.stringify({ 'test': 'cookie' }), '*');
+    }
+    document.body.appendChild(frame)
+}
+export default cookieTest;
+
 function cookies_enabled() {
+  if (cookieTest) {
+    cookies_label.innerHTML = "True";
+  } else {
+    cookies_label.innerHTML = "False";
+  }  
+}
+
+function cookies_enabled_original() {
   // Check to see if cookies are enabled
   var cookies = navigator.cookieEnabled;
   if ((cookies = true)) {
