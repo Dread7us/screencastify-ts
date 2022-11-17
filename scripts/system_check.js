@@ -140,7 +140,8 @@ navigator.webkitTemporaryStorage.queryUsageAndQuota(
 
 var failed_webpages = new Array ();
 var web_pages = new Array ();
-web_pages[0] = new Array ("https://accounts.google.com");
+web_pages[0] = new Array ("https://accounts.google.com",
+                          "https://clients2.google.com/service/update2/crx");
 web_pages[1] = new Array ("https://apis.google.com/js/api.js");
 web_pages[2] = new Array ("https://app.castify.com",
                           "https://studio-backend.castify.com",
@@ -152,7 +153,8 @@ web_pages[5] = new Array ("https://firestore.googleapis.com",
                           "https://firebase.googleapis.com/v1beta1/availableProjects", 
                           "https://storage.googleapis.com",
                           "https://googleapis.com/drive/v2/files");
-web_pages[6] = new Array ("https://lh3.googleusercontent.com/favicon.ico");
+web_pages[6] = new Array ("https://lh3.googleusercontent.com/favicon.ico",
+                          "https://*.googleusercontent.com");
 web_pages[7] = new Array ("https://fonts.gstatic.com/s/sourcesanspro/v19/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdu3cOWxw.woff2", 
                           "https://fonts.gstatic.com");
 web_pages[8] = new Array ("https://pendo.io",
