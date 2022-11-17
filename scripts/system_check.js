@@ -145,20 +145,30 @@ web_pages[0] = new Array ("https://accounts.google.com",
 web_pages[1] = new Array ("https://apis.google.com/js/api.js");
 web_pages[2] = new Array ("https://app.castify.com",
                           "https://studio-backend.castify.com",
-                          "https://studio-graphql.castify.com");
+                          "https://studio-graphql.castify.com",
+                          "https://app.screencastify.com", 
+                          "https://captions.screencastify.com",
+                          "https://edit.screencastify.com",
+                          "https://questions.screencastify.com",
+                          "https://watch.screencastify.com",
+                          "https://account.screencastify.com",);
 web_pages[3] = new Array ("https://askcastify.zendesk.com");
 web_pages[4] = new Array ("https://google-analytics.com");
 web_pages[5] = new Array ("https://firestore.googleapis.com", 
                           "https://firebasestorage.googleapis.com", 
                           "https://firebase.googleapis.com/v1beta1/availableProjects", 
                           "https://storage.googleapis.com",
+                          "https://pendo-static-5576174479474688.storage.googleapis.com",
+                          "https://pendo-io-static.storage.googleapis.com",
                           "https://googleapis.com/drive/v2/files");
-web_pages[6] = new Array ("https://lh3.googleusercontent.com/favicon.ico",
-                          "https://*.googleusercontent.com");
+web_pages[6] = new Array ("https://lh3.googleusercontent.com/favicon.ico");
 web_pages[7] = new Array ("https://fonts.gstatic.com/s/sourcesanspro/v19/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdu3cOWxw.woff2", 
                           "https://fonts.gstatic.com");
 web_pages[8] = new Array ("https://pendo.io",
-                          "https://data.pendo.io");
+                          "https://data.pendo.io",
+                          "https://app.pendo.io",
+                          "https://cdn.pendo.io",
+                          "");
 web_pages[9] = new Array ("https://static.zdassets.com");
 
 passed = "✅Passed⭐";
