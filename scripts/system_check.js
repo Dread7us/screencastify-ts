@@ -10,6 +10,7 @@ var pendo = document.getElementById("pendo");
 var static_zdassets = document.getElementById("static.zdassets");
 var browser_label = document.getElementById("browser");
 var ip_label = document.getElementById("ip_address");
+var canvas_label = document.getElementById("canvas_supported");
 var os_label = document.getElementById("operating");
 var version_label = document.getElementById("browser_version");
 var cpu_label = document.getElementById("cpu_cores");
@@ -66,6 +67,11 @@ var browser = (function () {
       return "Other";
   }
 })();
+
+function isCanvasSupported(){
+  var elem = document.createElement('canvas');
+  return !!(elem.getContext && elem.getContext('2d'));
+}
 
 function get_browser_version() {
   // Function to get browser version (stackoverflow)
@@ -347,6 +353,8 @@ get_IP();
 os_label.innerHTML = window.navigator.platform;
 browser_label.innerHTML = browser;
 get_browser_version();
+if (!isCanvasSupported()) { canvas_label.innerHTML = "Not Supported"; 
+} else { canvas_label.innerHTML = "Supported";
 cpu_label.innerHTML = navigator.hardwareConcurrency + " logical cores";
 ram_label.innerHTML = navigator.deviceMemory + " GBs";
 screen_label.innerHTML = screen.height + " x " + screen.width + " pixels";
