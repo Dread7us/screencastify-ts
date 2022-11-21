@@ -354,8 +354,10 @@ os_label.innerHTML = window.navigator.platform;
 browser_label.innerHTML = browser;
 get_browser_version();
 if (!isCanvasSupported()) { 
+  canvas_label.style.color = 'red';
   canvas_label.innerHTML = "Not Supported"; 
 } else { 
+  canvas_label.style.color = 'red';
   canvas_label.innerHTML = "Supported";
 }
 cpu_label.innerHTML = navigator.hardwareConcurrency + " logical cores";
