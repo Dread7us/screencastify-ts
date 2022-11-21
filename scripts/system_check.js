@@ -353,8 +353,11 @@ get_IP();
 os_label.innerHTML = window.navigator.platform;
 browser_label.innerHTML = browser;
 get_browser_version();
-if (!isCanvasSupported()) { canvas_label.innerHTML = "Not Supported"; 
-} else { canvas_label.innerHTML = "Supported";
+if (!isCanvasSupported()) { 
+  canvas_label.innerHTML = "Not Supported"; 
+} else { 
+  canvas_label.innerHTML = "Supported";
+}
 cpu_label.innerHTML = navigator.hardwareConcurrency + " logical cores";
 ram_label.innerHTML = navigator.deviceMemory + " GBs";
 screen_label.innerHTML = screen.height + " x " + screen.width + " pixels";
