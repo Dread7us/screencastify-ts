@@ -76,7 +76,7 @@ function is_canvas_supported() {
 
 function camera_detected() {
   navigator.permissions.query({ name: "camera" }).then(res => {
-    camera_lable.innerHTML = res.state;
+    camera_label.innerHTML = res.state;
   });
 }
 
