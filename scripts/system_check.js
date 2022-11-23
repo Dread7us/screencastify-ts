@@ -74,9 +74,13 @@ function is_canvas_supported() {
   return !!(elem.getContext && elem.getContext('2d'));
 }
 
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 function camera_detected() {
   navigator.permissions.query({ name: "camera" }).then(res => {
-    camera_label.innerHTML = res.state;
+    camera_label.innerHTML = capitalizeFirstLetter(res.state);
   });
 }
 
