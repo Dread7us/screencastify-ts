@@ -21,6 +21,7 @@ var cookies_label = document.getElementById("cookies");
 var storage_label = document.getElementById("temp_storage");
 var zoom_label = document.getElementById("zoom");
 var camera_label = document.getElementById("camera_permission");
+var microphone_label = document.getElementById("microphone_permission");
 var downlink_label = document.getElementById("downlink");
 var user_label = document.getElementById("user_agent");
 var upload = document.getElementById("upload_speed");
@@ -84,6 +85,11 @@ function camera_detected() {
   });
 }
 
+function microphone_detected() {
+  navigator.permissions.query({ name: "microphone" }).then(res => {
+    microphone_label.innerHTML = capitalizeFirstLetter(res.state);
+  });
+}
 
 function get_browser_version() {
   // Function to get browser version (stackoverflow)
