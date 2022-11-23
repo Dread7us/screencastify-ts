@@ -20,6 +20,7 @@ var screen_label = document.getElementById("screen_resolution");
 var cookies_label = document.getElementById("cookies");
 var storage_label = document.getElementById("temp_storage");
 var zoom_label = document.getElementById("zoom");
+var camera_label = document.getElementById("camera_permission");
 var downlink_label = document.getElementById("downlink");
 var user_label = document.getElementById("user_agent");
 var upload = document.getElementById("upload_speed");
@@ -68,10 +69,17 @@ var browser = (function () {
   }
 })();
 
-function isCanvasSupported(){
+function isCanvasSupported() {
   var elem = document.createElement('canvas');
   return !!(elem.getContext && elem.getContext('2d'));
 }
+
+function cameraDetected() {
+  navigator.permissions.query({ name: "camera" }).then(res => {
+    camera_lable.innerHTML = res.state;
+  });
+}
+
 
 function get_browser_version() {
   // Function to get browser version (stackoverflow)
@@ -364,6 +372,7 @@ ram_label.innerHTML = navigator.deviceMemory + " GBs";
 screen_label.innerHTML = screen.height + " x " + screen.width + " pixels";
 res_label.innerHTML = window.screen.availHeight + " x " + window.screen.availWidth + " pixels";
 cookies_enabled();
+camera_detected();
 zoom_label.innerHTML = zoom + "%";
 downlink_label.innerHTML = navigator.connection.downlink + " (et: " + navigator.connection.effectiveType + ")";
 user_label.innerHTML = navigator.userAgent;
