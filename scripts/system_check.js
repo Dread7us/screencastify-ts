@@ -69,12 +69,12 @@ var browser = (function () {
   }
 })();
 
-function isCanvasSupported() {
+function is_canvas_supported() {
   var elem = document.createElement('canvas');
   return !!(elem.getContext && elem.getContext('2d'));
 }
 
-function cameraDetected() {
+function camera_detected() {
   navigator.permissions.query({ name: "camera" }).then(res => {
     camera_lable.innerHTML = res.state;
   });
@@ -361,7 +361,7 @@ get_IP();
 os_label.innerHTML = window.navigator.platform;
 browser_label.innerHTML = browser;
 get_browser_version();
-if (!isCanvasSupported()) { 
+if (!is_canvas_supported()) { 
   canvas_label.style.color = 'red';
   canvas_label.innerHTML = "Not Supported"; 
 } else { 
