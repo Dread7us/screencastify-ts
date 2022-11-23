@@ -383,6 +383,7 @@ screen_label.innerHTML = screen.height + " x " + screen.width + " pixels";
 res_label.innerHTML = window.screen.availHeight + " x " + window.screen.availWidth + " pixels";
 cookies_enabled();
 camera_detected();
+microphone_detected();
 zoom_label.innerHTML = zoom + "%";
 downlink_label.innerHTML = navigator.connection.downlink + " (et: " + navigator.connection.effectiveType + ")";
 user_label.innerHTML = navigator.userAgent;
