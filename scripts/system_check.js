@@ -169,6 +169,7 @@ web_pages[0] = new Array ("https://accounts.google.com",
 web_pages[1] = new Array ("https://apis.google.com/js/api.js");
 web_pages[2] = new Array ("https://app.castify.com",
                           "https://screencastify.com",
+                          "https://studio-backend.castify.com/api/studioService/legacy-proxy/account/survey", 
                           "https://studio-backend.castify.com",
                           "https://studio-graphql.castify.com",
                           "https://app.screencastify.com", 
