@@ -182,7 +182,6 @@ web_pages[2] = new Array ("https://app.castify.com",
 web_pages[3] = new Array ("https://askcastify.zendesk.com");
 web_pages[4] = new Array ("https://google-analytics.com");
 web_pages[5] = new Array ("https://firestore.googleapis.com", 
-                          "https://firebaselogging.googleapis.com",
                           "https://firebasestorage.googleapis.com", 
                           "https://firebase.googleapis.com/v1beta1/availableProjects", 
                           "https://storage.googleapis.com",
