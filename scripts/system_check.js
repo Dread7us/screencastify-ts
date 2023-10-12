@@ -158,6 +158,7 @@ function network_checks() {
     failed_title.innerHTML = "Failed URLs";          
     for (var i = 0; i < failed_webpages.length; i++) {
       failed_list += failed_webpages[i] + "\n"
+      console.log(failed_webpages[i] + "\n");
     }
     failed_label.innerHTML = failed_list;
   }
