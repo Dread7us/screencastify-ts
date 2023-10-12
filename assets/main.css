@@ -144,7 +144,17 @@ html {
 }
 
 .custom-table {
-    margin-left: 0px;
-    margin-bottom: 0px;
-    border-spacing: 0px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  border-spacing: 0px;
+  width: 100%;
+}
+
+.custom-table td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: 1px solid #ccc; /* Optional, but can help visualize cell boundaries */
+  padding: 5px 10px; /* Optional padding for better spacing */
+  max-width: 0; /* This is to ensure that the cell doesn't grow beyond what's available */
 }
