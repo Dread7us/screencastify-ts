@@ -153,12 +153,4 @@ function network_checks() {
   if (app_castify.innerHTML = checking) { app_castify.innerHTML = passed; applyRandEffects(app_castify, "bounce"); }
 }
 
-document.getElementById("restart").addEventListener(
-  "click",
-  function () {
-    window.location.reload();
-  },
-  false
-);
-
 network_checks();
