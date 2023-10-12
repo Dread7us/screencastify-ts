@@ -1,119 +1,87 @@
 <!Doctype html>
 <html>
-<head>
-  <!-- Preloading the fonts -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style">
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@900&display=swap" as="style">
-  <!-- Linking the fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@900&display=swap" rel="stylesheet">
-  <title>Screencastify Network Test</title>
-  <link rel="stylesheet" type="text/css" href="assets/main.css">
-  <link rel="shortcut icon" type="image/png" href="screencastify-ts/assets/icons/tools-blue.png?">
-  <base href="/">
-  <meta charset="utf-8" />
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
-  <meta name="robots" content="noindex,nofollow" />
-  <style>
+  <head>
+    <!-- Preloading the fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@900&display=swap" as="style">
+    <!-- Linking the fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@900&display=swap" rel="stylesheet">
+    <title>Screencastify Network Test</title>
+    <link rel="stylesheet" type="text/css" href="assets/main.css">
+    <link rel="shortcut icon" type="image/png" href="screencastify-ts/assets/icons/tools-blue.png?">
+    <base href="/">
+    <meta charset="utf-8" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <style>
       body {
-          font-family: 'Roboto', sans-serif;
+      font-family: 'Roboto', sans-serif;
       }
-  </style> 
-</head>
-
-<body class="body-style">
-  <center>
+    </style>
+  </head>
+  <body class="body-style">
     <div class="flex">
-      <button class="flex-teen">
-        <br>
-        Network check results*
-        <br>
-        <font class="flex-child">
-          <table class="custom-table">
-            <tbody align="left">
-              <tr>
-                <td>Testing screencastify</td>
-                <td id="screencastify.com">🧪Checking🌐</td>
-              </tr>
-              <tr>
-                <td>Testing firebaseapp</td>
-                <td id="firebaseapp.com">🧪Checking🌐</td>
-              </tr>
-              <tr>
-                <td>Testing firebaseio</td>
-                <td id="firebaseio.com">🧪Checking🌐</td>
-              </tr>
-              <tr>
-                <td>Testing sentry.io</td>
-                <td id="sentry.io">🧪Checking🌐</td>
-              </tr>
-              <tr>
-                <td>Testing googleapis</td>
-                <td id="googleapis.com">🧪Checking🌐</td>
-              </tr>
-              <tr>
-                <td>Testing googleusercontent</td>
-                <td id="googleusercontent.com">🧪Checking🌐</td>
-              </tr>
-              <tr>
-                <td>Testing pendo.io</td>
-                <td id="pendo.io">🧪Checking🌐</td>
-              </tr>
-              <tr>
-                <td>Testing google-analytics</td>
-                <td id="google-analytics.com">🧪Checking🌐</td>
-              </tr>
-              <tr>
-                <td>Testing fonts.gstatic</td>
-                <td id="fonts.gstatic.com">🧪Checking🌐</td>
-              </tr>
-              <tr>
-                <td>Testing apis.google</td>
-                <td id="apis.google.com">🧪Checking🌐</td>
-              </tr>
-              <tr>
-                <td>Testing app.castify</td>
-                <td id="app.castify">🧪Checking🌐</td>
-              </tr>
-              <tr valign="top">
-                <td id="failed_title"></td>
-                <td id="failed_label"; style="white-space: normal;"></td>
-              </tr>
-            </tbody>
-          </table>
-        </font>
-      </button>
-    </div>
-    
-    <div class="footer-btns">
-      <br>
-      <br>
-      <button id="restart" class="cancel" type="button">Restart the Test</button>
-      <br>
-      <br>
-      <div class="bottom-disclaimer">
-        <table class="disclaimer-table">
-          <tbody align="left">
-            <tr>
-              <td>*</td>
-              <td>Network check is a fetch attempt on specific endpoints in our application and as such, we can see false positives.</td>
-            </tr>
-            <tr>
-              <td>**</td>
-              <td>Browser reported information may not be entirely accurate - some experimental technology is being used.</td>
-            </tr>
-            <tr>
-             <td>***</td>
-              <td>Returns the information about the quality of the current connection based on recently observed performance metrics.</td>
-            </tr>
-          </tbody>
-        </table>    
-      </div>
+    <button class="flex-teen">
     <br>
-  </div>
-  </center>
-<script src="/screencastify-ts/scripts/system_check.js" type="text/javascript"></script>
-</body>
+    Network check results*
+    <br>
+    <font class="flex-child">
+      <table class="custom-table">
+        <tbody align="left">
+          <tr>
+            <td>Testing screencastify</td>
+            <td id="screencastify.com">🧪Checking🌐</td>
+          </tr>
+          <tr>
+            <td>Testing firebaseapp</td>
+            <td id="firebaseapp.com">🧪Checking🌐</td>
+          </tr>
+          <tr>
+            <td>Testing firebaseio</td>
+            <td id="firebaseio.com">🧪Checking🌐</td>
+          </tr>
+          <tr>
+            <td>Testing sentry.io</td>
+            <td id="sentry.io">🧪Checking🌐</td>
+          </tr>
+          <tr>
+            <td>Testing googleapis</td>
+            <td id="googleapis.com">🧪Checking🌐</td>
+          </tr>
+          <tr>
+            <td>Testing googleusercontent</td>
+            <td id="googleusercontent.com">🧪Checking🌐</td>
+          </tr>
+          <tr>
+            <td>Testing pendo.io</td>
+            <td id="pendo.io">🧪Checking🌐</td>
+          </tr>
+          <tr>
+            <td>Testing google-analytics</td>
+            <td id="google-analytics.com">🧪Checking🌐</td>
+          </tr>
+          <tr>
+            <td>Testing fonts.gstatic</td>
+            <td id="fonts.gstatic.com">🧪Checking🌐</td>
+          </tr>
+          <tr>
+            <td>Testing apis.google</td>
+            <td id="apis.google.com">🧪Checking🌐</td>
+          </tr>
+          <tr>
+            <td>Testing app.castify</td>
+            <td id="app.castify">🧪Checking🌐</td>
+          </tr>
+          <tr valign="top">
+            <td id="failed_title"></td>
+            <td id="failed_label"; style="white-space: normal;"></td>
+          </tr>
+        </tbody>
+      </table>
+    </font>
+    <script src="/screencastify-ts/scripts/system_check.js" type="text/javascript"></script>
+  </body>
 </html>
