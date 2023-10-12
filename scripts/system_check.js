@@ -50,7 +50,9 @@ web_pages[7] = new Array ("https://google-analytics.com",
                           "https://www.googletagmanager.com");
 web_pages[8] = new Array ("https://fonts.gstatic.com/s/sourcesanspro/v19/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdu3cOWxw.woff2", 
                           "https://fonts.gstatic.com");
-web_pages[9] = new Array ("https://apis.google.com/js/api.js");
+web_pages[9] = new Array ("https://apis.google.com/js/api.js", 
+                          "https://pagead2.googlesyndication.com", 
+                          "https://googleads.g.doubleclick.net");
 web_pages[10] = new Array ("https://app.castify.com",
                           "https://studio-backend.castify.com/api/studioService/legacy-proxy/account/survey",
                           "https://studio-backend.castify.com",
