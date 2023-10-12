@@ -69,77 +69,68 @@ function applyRandEffects(which, type) {
   }, Math.floor(Math.random() * 100));
 }
 
-function showFailedURLs() {
-  var failed_list = "";
-  failed_title.innerHTML = "Failed URLs";          
-  for (var i = 0; i < failed_webpages.length; i++) {
-    failed_list += failed_webpages[i] + "\n"
-    console.log(failed_webpages[i] + "\n");
-  }
-  failed_label.innerHTML = failed_list;
-}
-
 function checkURL(url, which) {
   fetch(url, { mode: "no-cors" })
     .then((r) => {
       // Nothing to do
     })
     .catch((e) => {
+      failed_title.innerHTML = "Failed URLs";
       switch (which) {
         case 0:
           screencastify_check.innerHTML = failed;
           applyRandEffects(screencastify_check, "shake");
-          failed_webpages.push(url);
+          failed_label.innerHTML += url;
           break;
         case 1:
           firebaseapp_check.innerHTML = failed;
           applyRandEffects(firebaseapp_check, "shake");
-          failed_webpages.push(url);
+          failed_label.innerHTML += url;
           break;
         case 2:
           firebaseio_check.innerHTML = failed;
           applyRandEffects(firebaseio_check, "shake");
-          failed_webpages.push(url);
+          failed_label.innerHTML += url;
           break;
         case 3:
           sentry_check.innerHTML = failed;
           applyRandEffects(sentry_check, "shake");
-          failed_webpages.push(url);
+          failed_label.innerHTML += url;
           break;
         case 4:
           googleapis_check.innerHTML = failed;
           applyRandEffects(googleapis_check, "shake");
-          failed_webpages.push(url);
+          failed_label.innerHTML += url;
           break;
         case 5:
           googleusercontent_check.innerHTML = failed;
           applyRandEffects(googleusercontent_check, "shake");
-          failed_webpages.push(url);
+          failed_label.innerHTML += url;
           break;
         case 6:
           pendo_check.innerHTML = failed;
           applyRandEffects(pendo_check, "shake");
-          failed_webpages.push(url);
+          failed_label.innerHTML += url;
           break;
         case 7:
           analytics_check.innerHTML = failed;
           applyRandEffects(analytics_check, "shake");
-          failed_webpages.push(url);
+          failed_label.innerHTML += url;
           break;
         case 8:
           gstatic_check.innerHTML = failed;
           applyRandEffects(gstatic_check, "shake");
-          failed_webpages.push(url);
+          failed_label.innerHTML += url;
           break;
         case 9:
           apis_check.innerHTML = failed;
           applyRandEffects(apis_check, "shake");
-          failed_webpages.push(url);
+          failed_label.innerHTML += url;
           break;
         case 10:
           app_castify.innerHTML = failed;
           applyRandEffects(app_castify, "shake");
-          failed_webpages.push(url);
+          failed_label.innerHTML += url;
           break;
         }
     });
@@ -165,6 +156,3 @@ function network_checks() {
 }
 
 network_checks();
-if (failed_webpages.length > 0) {
-  showFailedURLs();
-}
