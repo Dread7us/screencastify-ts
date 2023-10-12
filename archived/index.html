@@ -1,0 +1,248 @@
+<!Doctype html>
+<html>
+<style>
+  @font-face {
+    font-family: 'Helvetica';
+    src: url('assets/fonts/helvetica-regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Helvetica';
+    src: url('assets/fonts/helvetica-bold.ttf');
+    font-weight: 700;
+    font-style: oblique;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Source Sans Pro';
+    src: url('assets/fonts/SourceSansPro-Black.ttf');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+</style>
+<head>
+  <title>Screencastify Beta Diagnostic Tool</title>
+  <link rel="stylesheet" type="text/css" href="assets/main.css">
+  <link rel="shortcut icon" type="image/png" href="screencastify-ts/assets/icons/tools-blue.png?">
+  <base href="/">
+  <meta charset="utf-8" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <meta name="robots" content="noindex,nofollow" />
+</head>
+
+<body class="body-style">
+  <button id="help" class="help-btn">Help</button>
+  <center>
+    <h1 class="h1-topnav">
+      <font style="font-family:'Source Sans Pro'; font-style:bold; color:#555555;">Screencastify <span class="beta-border">BETA</span> Diagnostic Tool</font>
+    </h1>
+    <hr class="hr-top-nav" id="hr-title-nav">
+    <div class="flex">
+      <button class="flex-teen">
+        <br>
+        Network check results*
+        <br>
+        <font class="flex-child">
+          <table style="margin-left:50px; margin-bottom:20px; border-spacing: 150px 5px">
+            <tbody align="left">
+              <tr>
+                <td>Testing accounts.google</td>
+                <td id="accounts.google">🧪Checking🌐</td>
+              </tr>
+              <tr>
+                <td>Testing apis.google</td>
+                <td id="apis.google">🧪Checking🌐</td>
+              </tr>
+              <tr>
+                <td>Testing app.castify</td>
+                <td id="app.castify">🧪Checking🌐</td>
+              </tr>
+              <tr>
+                <td>Testing askcastify.zendesk</td>
+                <td id="askcastify.zendesk">🧪Checking🌐</td>
+              </tr>
+              <tr>
+                <td>Testing google-analytics</td>
+                <td id="google-analytics">🧪Checking🌐</td>
+              </tr>
+              <tr>
+                <td>Testing googleapis</td>
+                <td id="googleapis">🧪Checking🌐</td>
+              </tr>
+              <tr>
+                <td>Testing googleusercontent</td>
+                <td id="googleusercontent">🧪Checking🌐</td>
+              </tr>
+              <tr>
+                <td>Testing fonts.gstatic</td>
+                <td id="fonts.gstatic">🧪Checking🌐</td>
+              </tr>
+              <tr>
+                <td>Testing pendo.io</td>
+                <td id="pendo">🧪Checking🌐</td>
+              </tr>
+              <tr>
+                <td>Testing static.zdassets</td>
+                <td id="static.zdassets">🧪Checking🌐</td>
+              </tr>
+              <tr valign="top">
+                <td id="failed_title"></td>
+                <td id="failed_label"; style="white-space: normal;"></td>
+              </tr>
+            </tbody>
+          </table>
+        </font>
+      </button>
+    </div>
+    <hr id="hr-system-info">   
+    <div class="middle-container">
+      <div class="flex">
+        <button class="flex-teen">
+          <br>
+          System information results
+          <br>
+          <font class="flex-child">
+            <table style="margin-left:50px; margin-bottom:20px; border-spacing: 150px 5px">
+              <tbody align="left">
+                <tr>
+                  <td>Operating system**</td>
+                  <td id="operating"></td>
+                </tr>
+                <tr>
+                  <td>IP address</td>
+                  <td id="ip_address">Please wait...</td>
+                </tr>
+                <tr>
+                  <td>HTML5 Canvas**</td>
+                  <td id="canvas_supported"></td>
+                </tr>
+                <tr>
+                  <td>Temporary storage**</td>
+                  <td id="temp_storage"></td>
+                </tr>
+                <tr>
+                  <td>Browser name**</td>
+                  <td id="browser"></td>
+                </tr>
+                <tr>
+                  <td>Chrome version**</td>
+                  <td id="browser_version"></td>
+                </tr>
+                <tr>
+                  <td>CPU cores**</td>
+                  <td id="cpu_cores"></td>
+                </tr>
+                <tr>
+                  <td>RAM installed**</td>
+                  <td id="ram"></td>
+                </tr>
+                <tr>
+                  <td>Screen resolution**</td>
+                  <td id="screen_resolution"></td>
+                </tr>
+                <tr>
+                  <td>Browser resolution**</td>
+                  <td id="browser_resolution"></td>
+                </tr>
+                <tr>
+                  <td>Cookies enabled**</td>
+                  <td id="cookies"></td>
+                </tr>
+                <tr>
+                  <td>Zoom detected**</td>
+                  <td id="zoom"></td>
+                </tr>
+                <tr>
+                  <td>Camera permission</td>
+                  <td id="camera_permission"></td>
+                </tr>
+                <tr>
+                  <td>Microphone permission</td>
+                  <td id="microphone_permission"></td>
+                </tr>
+                <tr>
+                  <td>Downlink effective type***&nbsp;</td>
+                  <td id="downlink"></td>
+                </tr>
+                <tr valign="top">
+                  <td>User agent</td>
+                  <td id="user_agent" style="white-space: normal;"></td>
+                </tr>
+              </tbody>
+            </table>
+          </font>
+        </button>
+      </div>
+    </div>
+    <br>
+    <iframe id="speedtest" align="center"; style="text-align:center;border:none;overflow:hidden !important;width:70%;height:70%;min-height:590px;margin-top:-30px;margin-bottom:-30px" src="//openspeedtest.com/Get-widget.php?run"></iframe>
+    <div class="flex" style="margin-top:20px;">
+      <button class="flex-teen">
+        <br>
+        Input internet speed
+        <br>
+        <br>
+        <font style="font-family:'Helvetica'; font-size:15px; font-style:normal; color:#555555"><p style="margin:0px;" line-height:10px;>
+          Please wait for the speed test above to conclude and then input the download, jitter, ping and upload values below. Once you have &nbsp;&nbsp;&nbsp;&nbsp;<br>
+          the download, jitter, ping and upload values, please press the 'Download results' button and then send us the file that is generated 🎉</p></font>
+        <font class="flex-child">
+          <table style="margin-left:50px; margin-bottom:20px; border-spacing: 150px 5px">
+            <tbody align="left">
+              <tr>
+                <td>Download speed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td id="download"><input id="download_speed" class="input" type="number" autocomplete="off"></td>
+              </tr>           
+              <tr>
+                <td>Jitter time</td>
+                <td id="jitter"><input id="jitter_speed" class="input" type="number" autocomplete="off"></td>
+              </tr>
+              <tr>
+                <td>Ping time</td>
+                <td id="ping"><input id="ping_speed" class="input" type="number" autocomplete="off"></td>
+              </tr>
+              <tr>
+                <td>Upload speed</td>
+                <td id="upload"><input id="upload_speed" class="input" type="number" autocomplete="off"></td>
+              </tr>
+            </tbody>
+          </table>
+        </font>
+      </button>
+    </div>
+    <hr class="hr-bottom" id="hr-at-the-bottom">
+    <div class="footer-btns">
+      <br>
+      <br>
+      <button id="click_test" class="button" type="button">Download Results</button>&nbsp;&nbsp;<button id="restart" class="cancel" type="button">Restart the Test</button>
+      <br>
+      <br>
+      <br>
+      <div class="bottom-disclaimer">
+        <table class="disclaimer-table">
+          <tbody align="left">
+            <tr>
+              <td>*</td>
+              <td>Network check is a fetch attempt on specific endpoints in our application and as such, we can see false positives.</td>
+            </tr>
+            <tr>
+              <td>**</td>
+              <td>Browser reported information may not be entirely accurate - some experimental technology is being used.</td>
+            </tr>
+            <tr>
+             <td>***</td>
+              <td>Returns the information about the quality of the current connection based on recently observed performance metrics.</td>
+            </tr>
+          </tbody>
+        </table>    
+      </div>
+    <br>
+  </div>
+</center>
+<script src="/screencastify-ts/scripts/system_check.js" type="text/javascript"></script>
+</body>
+</html>
