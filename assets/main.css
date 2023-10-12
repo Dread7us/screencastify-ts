@@ -148,6 +148,7 @@ html {
   margin: -1px auto 0 auto;
   padding-top: 50px;
   padding-bottom: 50px;
+  font style="font-family:'Source Sans Pro'; font-style:bold; color:#555555;"
 }
 
 .hr-top-nav {
@@ -383,40 +384,8 @@ html {
   line-height: 8px;
 }
 
-.input {
-  font-family: 'Helvetica';
-  padding: 10px 10px;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  background-color: transparent;
-  font-size: 16px;
-}
-
-.input:hover {
-   border: 1px solid #00AAFF;
-}
-
-input:focus {
-  outline: none;
-  border: 1px solid #00AAFF;
-}
-
-.inputred {
-  -webkit-animation: fade 5s;
-  -moz-animation:    fade 5s;
-  -ms-animation:     fade 5s;
-  font-family: 'Helvetica';
-  padding: 10px 10px;
-  border: 1px solid Red;
-  border-radius: 3px;
-  background-color: transparent;
-  font-size: 16px;
-}
-
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    margin: 0; 
+.custom-table {
+    margin-left: 50px;
+    margin-bottom: 20px;
+    border-spacing: 150px 5px;
 }
