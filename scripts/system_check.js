@@ -69,6 +69,16 @@ function applyRandEffects(which, type) {
   }, Math.floor(Math.random() * 100));
 }
 
+function showFailedURLs() {
+  var failed_list = "";
+  failed_title.innerHTML = "Failed URLs";          
+  for (var i = 0; i < failed_webpages.length; i++) {
+    failed_list += failed_webpages[i] + "\n"
+    console.log(failed_webpages[i] + "\n");
+  }
+  failed_label.innerHTML = failed_list;
+}
+
 function checkURL(url, which) {
   fetch(url, { mode: "no-cors" })
     .then((r) => {
@@ -151,17 +161,10 @@ function network_checks() {
   if (analytics_check.innerHTML = checking) { analytics_check.innerHTML = passed; applyRandEffects(analytics_check, "bounce"); }
   if (gstatic_check.innerHTML = checking) { gstatic_check.innerHTML = passed; applyRandEffects(gstatic_check, "bounce"); }
   if (apis_check.innerHTML = checking) { apis_check.innerHTML = passed; applyRandEffects(apis_check, "bounce"); }
-  if (app_castify.innerHTML = checking) { app_castify.innerHTML = passed; applyRandEffects(app_castify, "bounce"); }
-
-  if (failed_webpages.length > 0) {
-    var failed_list = "";
-    failed_title.innerHTML = "Failed URLs";          
-    for (var i = 0; i < failed_webpages.length; i++) {
-      failed_list += failed_webpages[i] + "\n"
-      console.log(failed_webpages[i] + "\n");
-    }
-    failed_label.innerHTML = failed_list;
-  }
+  if (app_castify.innerHTML = checking) { app_castify.innerHTML = passed; applyRandEffects(app_castify, "bounce"); }  
 }
 
 network_checks();
+if (failed_webpages.length > 0) {
+  showFailedURLs();
+}
