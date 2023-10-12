@@ -154,7 +154,7 @@ html {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  
+  border: 1px solid #ccc;
   padding: 5px 10px; /* Optional padding for better spacing */
   max-width: 0; /* This is to ensure that the cell doesn't grow beyond what's available */
 }
