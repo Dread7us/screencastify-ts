@@ -80,7 +80,7 @@ function checkURL(url, which) {
         case 0:
           screencastify_check.innerHTML = failed;
           applyRandEffects(screencastify_check, "shake");
-          failed_label.innerHTML += url;
+          failed_label.innerHTML += url + "";
           break;
         case 1:
           firebaseapp_check.innerHTML = failed;
@@ -100,37 +100,37 @@ function checkURL(url, which) {
         case 4:
           googleapis_check.innerHTML = failed;
           applyRandEffects(googleapis_check, "shake");
-          failed_label.innerHTML += url;
+          failed_label.innerHTML += url + "\n";
           break;
         case 5:
           googleusercontent_check.innerHTML = failed;
           applyRandEffects(googleusercontent_check, "shake");
-          failed_label.innerHTML += url;
+          failed_label.innerHTML += url + "\n";
           break;
         case 6:
           pendo_check.innerHTML = failed;
           applyRandEffects(pendo_check, "shake");
-          failed_label.innerHTML += url;
+          failed_label.innerHTML += url + "\n";
           break;
         case 7:
           analytics_check.innerHTML = failed;
           applyRandEffects(analytics_check, "shake");
-          failed_label.innerHTML += url;
+          failed_label.innerHTML += url + "\n";
           break;
         case 8:
           gstatic_check.innerHTML = failed;
           applyRandEffects(gstatic_check, "shake");
-          failed_label.innerHTML += url;
+          failed_label.innerHTML += url + "\n";
           break;
         case 9:
           apis_check.innerHTML = failed;
           applyRandEffects(apis_check, "shake");
-          failed_label.innerHTML += url;
+          failed_label.innerHTML += url + "\n";
           break;
         case 10:
           app_castify.innerHTML = failed;
           applyRandEffects(app_castify, "shake");
-          failed_label.innerHTML += url;
+          failed_label.innerHTML += url + "\n";
           break;
         }
     });
