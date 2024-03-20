@@ -26,7 +26,7 @@ web_pages[0] = new Array ("https://screencastify.com",
                           "https://questions.screencastify.com",
                           "https://watch.screencastify.com",
                           "https://account.screencastify.com",
-                          "https://api.screencastify.com/images/cleardot.gif", 
+                          "https://cdn.castify.com/images/cleardot.gif", 
                           "https://umbrella.svc.screencastify.com", 
                           "https://dash-assets.watch.screencastify.com");
 web_pages[1] = new Array ("https://dental2-test.firebaseapp.com", 
