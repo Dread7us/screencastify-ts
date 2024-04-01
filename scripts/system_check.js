@@ -54,6 +54,7 @@ web_pages[9] = new Array ("https://apis.google.com/js/api.js",
                           "https://pagead2.googlesyndication.com", 
                           "https://googleads.g.doubleclick.net");
 web_pages[10] = new Array ("https://app.castify.com",
+                          "https://cdn.castify.com",
                           "https://studio-backend.castify.com/api/studioService/legacy-proxy/account/survey",
                           "https://studio-backend.castify.com",
                           "https://logs.browser-intake-datadoghq.com",
