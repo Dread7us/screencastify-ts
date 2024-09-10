@@ -26,6 +26,7 @@ web_pages[0] = new Array ("https://screencastify.com",
                           "https://questions.screencastify.com",
                           "https://watch.screencastify.com",
                           "https://account.screencastify.com",
+                          "http://widget-mediator.zopim.com",
                           "https://cdn.castify.com/images/cleardot.gif", 
                           "https://umbrella.svc.screencastify.com", 
                           "https://dash-assets.watch.screencastify.com");
