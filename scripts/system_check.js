@@ -1,7 +1,7 @@
 var screencastify_check = document.getElementById("screencastify.com");
 var firebaseapp_check = document.getElementById("firebaseapp.com");
 var firebaseio_check = document.getElementById("firebaseio.com");
-var sentry_check = document.getElementById("sentry.io");
+var youtube_check = document.getElementById("youtubeEducation");
 var googleapis_check = document.getElementById("googleapis.com");
 var googleusercontent_check = document.getElementById("googleusercontent.com");
 var pendo_check = document.getElementById("pendo.io");
@@ -33,7 +33,7 @@ web_pages[0] = new Array ("https://screencastify.com",
 web_pages[1] = new Array ("https://dental2-test.firebaseapp.com", 
                           "https://castify-storage.firebaseapp.com");
 web_pages[2] = new Array ("https://webconf.firebaseio.com/favicon.ico");
-web_pages[3] = new Array ("https://sentry.io");
+web_pages[3] = new Array ("https://www.youtubeeducation.com");
 web_pages[4] = new Array ("https://firestore.googleapis.com",
                           "https://pendo-static-5576174479474688.storage.googleapis.com",
                           "https://clients2.google.com/service/update2/crx",
@@ -42,6 +42,7 @@ web_pages[4] = new Array ("https://firestore.googleapis.com",
                           "https://firebase.googleapis.com/v1beta1/availableProjects",
                           "https://storage.googleapis.com",
                           "https://identitytoolkit.googleapis.com",
+                          "https://youtube.googleapis.com",
                           "https://googleapis.com/drive/v2/files");
 web_pages[5] = new Array ("https://lh3.googleusercontent.com/favicon.ico");
 web_pages[6] = new Array ("https://pendo.io",
@@ -95,8 +96,8 @@ function checkURL(url, which) {
           failed_label.innerHTML += url;
           break;
         case 3:
-          sentry_check.innerHTML = failed;
-          applyRandEffects(sentry_check, "shake");
+          youtube_check.innerHTML = failed;
+          applyRandEffects(youtube_check, "shake");
           failed_label.innerHTML += url;
           break;
         case 4:
@@ -147,7 +148,7 @@ function network_checks() {
   if (screencastify_check.innerHTML = checking) { screencastify_check.innerHTML = passed; applyRandEffects(screencastify_check, "bounce"); }
   if (firebaseapp_check.innerHTML = checking) { firebaseapp_check.innerHTML = passed; applyRandEffects(firebaseapp_check, "bounce"); }
   if (firebaseio_check.innerHTML = checking) { firebaseio_check.innerHTML = passed; applyRandEffects(firebaseio_check, "bounce"); }
-  if (sentry_check.innerHTML = checking) { sentry_check.innerHTML = passed; applyRandEffects(sentry_check, "bounce"); }
+  if (youtube_check.innerHTML = checking) { youtube_check.innerHTML = passed; applyRandEffects(youtube_check, "bounce"); }
   if (googleapis_check.innerHTML = checking) { googleapis_check.innerHTML = passed; applyRandEffects(googleapis_check, "bounce"); }
   if (googleusercontent_check.innerHTML = checking) { googleusercontent_check.innerHTML = passed; applyRandEffects(googleusercontent_check, "bounce"); }
   if (pendo_check.innerHTML = checking) { pendo_check.innerHTML = passed; applyRandEffects(pendo_check, "bounce"); }
